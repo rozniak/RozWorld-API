@@ -43,8 +43,9 @@
     <Compile Include="Chat\ChatColour.cs" />
     <Compile Include="Entity\Player.cs" />
     <Compile Include="Level\WorldPosition.cs" />
-    <Compile Include="Network\Packet.cs" />
-    <Compile Include="Network\PacketPriority.cs" />
+    <Compile Include="Mod\Plugin.cs" />
+    <Compile Include="Network\Data\Packet.cs" />
+    <Compile Include="Network\Data\PacketEnums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
   </ItemGroup>
