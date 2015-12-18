@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld-API.Network.Data.PacketPriority -- RozWorld Network Packet Priority
+ * RozWorld-API.Network.Data.PacketEnums -- RozWorld Network Packet Enumerations
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>

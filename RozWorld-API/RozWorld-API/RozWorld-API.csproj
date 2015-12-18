@@ -41,7 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chat\ChatColour.cs" />
+    <Compile Include="Chat\ChatGraphic.cs" />
+    <Compile Include="Container\Inventory.cs" />
+    <Compile Include="Container\ItemSlot.cs" />
+    <Compile Include="Entity\Creature.cs" />
+    <Compile Include="Entity\DroppedItem.cs" />
+    <Compile Include="Entity\Item.cs" />
+    <Compile Include="Entity\Pet.cs" />
     <Compile Include="Entity\Player.cs" />
+    <Compile Include="Event\PlayerChatEvent.cs" />
+    <Compile Include="Level\CardinalDirection.cs" />
     <Compile Include="Level\WorldPosition.cs" />
     <Compile Include="Mod\Plugin.cs" />
     <Compile Include="Network\Data\Packet.cs" />
@@ -49,9 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Event\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

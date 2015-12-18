@@ -21,30 +21,25 @@ namespace RozWorld_API.Network.Data
         /// </summary>
         public PacketDestiny Destiny { get; private set; }
 
-
         /// <summary>
         /// Gets or sets this packet's priority.
         /// </summary>
         public PacketPriority Priority;
-
 
         /// <summary>
         /// Gets or sets the ID of this packet.
         /// </summary>
         public ushort ID { get; private set; }
 
-
         /// <summary>
         /// Gets or sets the data contents of this packet.
         /// </summary>
         public IList<byte> Data { get; private set; }
 
-
         /// <summary>
         /// Gets or sets the origin date/time of this packet.
         /// </summary>
         public DateTime OriginTime { get; private set; }
-
 
         /// <summary>
         /// Gets or sets whether this packet should drop on updates.
