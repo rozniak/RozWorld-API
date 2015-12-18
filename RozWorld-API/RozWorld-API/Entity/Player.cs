@@ -10,6 +10,7 @@
  */
 
 using RozWorld_API.Level;
+using RozWorld_API.Event;
 
 namespace RozWorld_API.Entity
 {
@@ -18,7 +19,12 @@ namespace RozWorld_API.Entity
         /// <summary>
         /// Gets or sets the username of this player.
         /// </summary>
-        public virtual string Name { get; protected set; }
+        public string Name
+        {
+            get { return _Name; }
+            set { if (_Name != null) _Name = value; }
+        }
+        private string _Name;
 
         /// <summary>
         /// Gets or sets the nickname of this player.
@@ -34,5 +40,43 @@ namespace RozWorld_API.Entity
         /// Gets the cardinal direction this player is facing.
         /// </summary>
         public abstract CardinalDirection Direction { get; }
+
+        /// <summary>
+        /// Gets or sets this player's game mode.
+        /// </summary>
+        public virtual PlayerGameMode GameMode
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets this player's health.
+        /// </summary>
+        public virtual uint Health
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets this player's maximum health.
+        /// </summary>
+        public virtual uint MaxHealth
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
+        /// Gets or sets the parent server of this player.
+        /// </summary>
+        protected Server ParentServer
+        {
+            get { return _ParentServer; }
+            set { if (_ParentServer == null) _ParentServer = value; }
+        }
+        private Server _ParentServer;
     }
 }

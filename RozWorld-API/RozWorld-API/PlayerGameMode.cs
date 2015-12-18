@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld-API.Thing.ItemType -- RozWorld Item Type
+ * RozWorld-API.PlayerGameMode -- RozWorld Player Game Mode
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -9,12 +9,12 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-namespace RozWorld_API.Thing
+namespace RozWorld_API
 {
-    public enum ItemType
+    public enum PlayerGameMode
     {
-        Weapon,
-        Consumable,
-        Material
+        Mortal,
+        Omnipotent,
+        Ghost
     }
 }

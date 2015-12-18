@@ -19,9 +19,24 @@ namespace RozWorld_API.Event
 
     public class PlayerChatEventArgs
     {
+        /// <summary>
+        /// Gets the player who sent the chat message.
+        /// </summary>
         public Player Sender { get; private set; }
+
+        /// <summary>
+        /// Gets the recipients of the chat message.
+        /// </summary>
         public IList<Player> Recipients { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the message being sent.
+        /// </summary>
         public string Message;
+
+        /// <summary>
+        /// Gets or sets the cancelled status of the chat message event.
+        /// </summary>
         public bool Cancelled;
 
 

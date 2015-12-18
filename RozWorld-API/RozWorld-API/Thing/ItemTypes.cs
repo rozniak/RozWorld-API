@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld-API.Thing.WeaponItem -- RozWorld Weapon Item
+ * RozWorld-API.Thing.ItemTypes -- RozWorld Item Types
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -11,16 +11,17 @@
 
 namespace RozWorld_API.Thing
 {
-    public abstract class WeaponItem : Item
+    public enum ItemType
     {
-        /// <summary>
-        /// Gets the amount of damage this weapon does.
-        /// </summary>
-        public abstract uint Damage { get; }
+        Weapon,
+        Consumable,
+        Material
+    }
 
-        /// <summary>
-        /// Gets the way this weapon does damage.
-        /// </summary>
-        public abstract WeaponType DamageType { get; }
+    public enum WeaponType
+    {
+        Melee,
+        Hitscan,
+        Projectile
     }
 }

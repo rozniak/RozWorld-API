@@ -36,11 +36,19 @@ namespace RozWorld_API.Thing
         /// <summary>
         /// Gets the ID of this item.
         /// </summary>
-        public ushort ID { get { return 0; } }
+        public ushort ID
+        {
+            get { return ParentServer.GetItemID(Name); } 
+        }
 
         /// <summary>
         /// Gets or sets the parent server of this item.
         /// </summary>
-        protected Server ParentServer;
+        protected Server ParentServer
+        {
+            get { return _ParentServer; }
+            set { if (_ParentServer != null) _ParentServer = value; }
+        }
+        private Server _ParentServer;
     }
 }

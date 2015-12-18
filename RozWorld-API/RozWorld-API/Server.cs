@@ -10,6 +10,7 @@
  */
 
 using RozWorld_API.Entity;
+using RozWorld_API.Event;
 using RozWorld_API.Thing;
 
 using System;
@@ -19,11 +20,6 @@ namespace RozWorld_API
 {
     public abstract class Server
     {
-        /**
-         * 
-         * SERVER PROPERTIES
-         * 
-         */
         #region Server Properties
 
         /// <summary>
@@ -73,12 +69,13 @@ namespace RozWorld_API
 
         #endregion
 
+        #region Game Events
 
-        /**
-         * 
-         * SERVER FUNCTIONS
-         * 
-         */
+        public event PlayerChatEvent PlayerChatMessageSent;
+        public event PlayerGameModeEvent PlayerGameModeChanged;
+
+        #endregion
+        
         #region Server Functions
 
         /// <summary>
