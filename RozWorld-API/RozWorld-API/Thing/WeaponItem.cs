@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld-API.Entity.Item -- RozWorld Item
+ * RozWorld-API.Thing.WeaponItem -- RozWorld Weapon Item
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -9,9 +9,9 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-namespace RozWorld_API.Entity
+namespace RozWorld_API.Thing
 {
-    public abstract class Item
+    public abstract class WeaponItem : Item
     {
         // Incomplete
     }

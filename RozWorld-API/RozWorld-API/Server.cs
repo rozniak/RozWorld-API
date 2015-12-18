@@ -10,14 +10,14 @@
  */
 
 using RozWorld_API.Entity;
+using RozWorld_API.Thing;
 
 using System;
 using System.Collections.Generic;
 
-
 namespace RozWorld_API
 {
-    public interface Server
+    public abstract class Server
     {
         /**
          * 
@@ -29,17 +29,17 @@ namespace RozWorld_API
         /// <summary>
         /// Gets the version of this server.
         /// </summary>
-        public ushort Version { get; }
+        public abstract ushort Version { get; }
 
         /// <summary>
         /// Gets the name of this server implementation.
         /// </summary>
-        public string ImplementationName { get; }
+        public abstract string ImplementationName { get; }
 
         /// <summary>
         /// Gets whether this server is compatible with vanilla clients.
         /// </summary>
-        public bool VanillaClientCompatible { get; }
+        public abstract bool VanillaClientCompatible { get; }
 
         /// <summary>
         /// Gets the list of client implementations allowed to join this server.
@@ -59,7 +59,7 @@ namespace RozWorld_API
         /// <summary>
         /// Gets or sets whether to whitelist this server.
         /// </summary>
-        public bool WhitelistActive { get; set; }
+        public bool WhitelistActive;
 
         /// <summary>
         /// Gets or sets the port that this server is running on.
@@ -70,8 +70,6 @@ namespace RozWorld_API
         /// Gets or sets whether the server is active or not.
         /// </summary>
         public bool IsActive { get; protected set; }
-
-        protected Dictionary<string, ushort> ContentIDs;
 
         #endregion
 
@@ -88,23 +86,37 @@ namespace RozWorld_API
         /// </summary>
         /// <param name="name">The player's username to locate them by.</param>
         /// <returns>The player if they exist on the server, null otherwise.</returns>
-        public Player GetPlayer(string username);
+        public abstract Player GetPlayer(string username);
 
         /// <summary>
         /// Load or reloads the whitelist from the disk.
         /// </summary>
-        public void LoadWhitelist();
+        public abstract void LoadWhitelist();
 
         /// <summary>
         /// Saves all players' data to the disk.
         /// </summary>
-        public void SavePlayers();
+        public abstract void SavePlayers();
 
         /// <summary>
         /// Broadcasts a message to all players on the server.
         /// </summary>
         /// <param name="message">The message to broadcast.</param>
-        public void BroadcastMessage(string message);
+        public abstract void BroadcastMessage(string message);
+
+        /// <summary>
+        /// Creates a new instance of the item with the exact specified name (case-sensitive).
+        /// </summary>
+        /// <param name="name">The exact case-sensitive name of the item.</param>
+        /// <returns>A new instance of the item with the specified name.</returns>
+        public abstract Item CreateItem(string name);
+
+        /// <summary>
+        /// Gets the ID of an item by its exact specified name (case-sensitive).
+        /// </summary>
+        /// <param name="name">The exact case-sensitive name of the item.</param>
+        /// <returns>The ID of the item if it exists, 0 otherwise.</returns>
+        public abstract ushort GetItemID(string name);
 
         #endregion
     }

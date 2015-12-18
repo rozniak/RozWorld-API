@@ -20,17 +20,7 @@ namespace RozWorld_API.Level
         public double LocalY;
         public double LocalZ;
 
-
-        public WorldPosition()
-        {
-            ChunkX = 0;
-            ChunkY = 0;
-            ChunkZ = 0;
-            LocalX = 0;
-            LocalY = 0;
-            LocalZ = 0;
-        }
-
+        
         public WorldPosition(int chunkX, int chunkY, int chunkZ,
             double localX, double localY, double localZ)
         {

@@ -21,11 +21,11 @@ namespace RozWorld_API.Mod
         /// <summary>
         /// Gets the name of this plugin.
         /// </summary>
-        public string Name { get; }
+        string Name { get; }
 
         /// <summary>
         /// Gets the version of this plugin.
         /// </summary>
-        public ushort Version { get; }
+        ushort Version { get; }
     }
 }
