@@ -9,8 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using RozWorld_API.Level;
 using RozWorld_API.Event;
+using RozWorld_API.Level;
 
 namespace RozWorld_API.Entity
 {
@@ -44,30 +44,27 @@ namespace RozWorld_API.Entity
         /// <summary>
         /// Gets or sets this player's game mode.
         /// </summary>
-        public virtual PlayerGameMode GameMode
-        {
-            get;
-            set;
-        }
+        public virtual PlayerGameMode GameMode { get; set; }
 
         /// <summary>
         /// Gets or sets this player's health.
         /// </summary>
-        public virtual uint Health
-        {
-            get;
-            set;
-        }
+        public abstract uint Health;
 
         /// <summary>
         /// Gets or sets this player's maximum health.
         /// </summary>
-        public virtual uint MaxHealth
-        {
-            get;
-            set;
-        }
+        public abstract uint MaxHealth;
 
+        /// <summary>
+        /// Gets or sets whether this player is dead or not.
+        /// </summary>
+        public abstract bool IsDead { get; protected set; }
+
+        /// <summary>
+        /// Gets or sets this player's speed.
+        /// </summary>
+        public ushort Speed;
 
         /// <summary>
         /// Gets or sets the parent server of this player.

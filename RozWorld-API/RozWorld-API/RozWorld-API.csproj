@@ -44,6 +44,8 @@
     <Compile Include="Chat\ChatGraphic.cs" />
     <Compile Include="Container\Inventory.cs" />
     <Compile Include="Container\ItemSlot.cs" />
+    <Compile Include="Container\PlayerInventory.cs" />
+    <Compile Include="Container\QuickInventory.cs" />
     <Compile Include="Entity\Creature.cs" />
     <Compile Include="Entity\DroppedItem.cs" />
     <Compile Include="Event\PlayerGameModeEvent.cs" />

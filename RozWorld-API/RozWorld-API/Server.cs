@@ -67,6 +67,11 @@ namespace RozWorld_API
         /// </summary>
         public bool IsActive { get; protected set; }
 
+        /// <summary>
+        /// Gets or sets whether the server is running on a LAN or purely local or not.
+        /// </summary>
+        public abstract bool IsLocal { get; protected set; }
+
         #endregion
 
         #region Game Events
