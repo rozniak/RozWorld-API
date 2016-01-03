@@ -29,12 +29,12 @@ namespace RozWorld_API.Entity
         /// <summary>
         /// Gets or sets the nickname of this player.
         /// </summary>
-        public virtual string Nickname { get; set; }
+        public abstract string Nickname { get; set; }
 
         /// <summary>
         /// Gets or sets the angle this player is facing.
         /// </summary>
-        public virtual double Angle { get; protected set; }
+        public abstract double Angle { get; protected set; }
 
         /// <summary>
         /// Gets the cardinal direction this player is facing.
@@ -44,17 +44,17 @@ namespace RozWorld_API.Entity
         /// <summary>
         /// Gets or sets this player's game mode.
         /// </summary>
-        public virtual PlayerGameMode GameMode { get; set; }
+        public abstract PlayerGameMode GameMode { get; set; }
 
         /// <summary>
         /// Gets or sets this player's health.
         /// </summary>
-        public abstract uint Health;
+        public abstract uint Health { get; set; }
 
         /// <summary>
         /// Gets or sets this player's maximum health.
         /// </summary>
-        public abstract uint MaxHealth;
+        public abstract uint MaxHealth { get; set; }
 
         /// <summary>
         /// Gets or sets whether this player is dead or not.
@@ -62,9 +62,9 @@ namespace RozWorld_API.Entity
         public abstract bool IsDead { get; protected set; }
 
         /// <summary>
-        /// Gets or sets this player's speed.
+        /// Gets or sets this player's movement speed.
         /// </summary>
-        public ushort Speed;
+        public abstract ushort Speed { get; set; }
 
         /// <summary>
         /// Gets or sets the parent server of this player.

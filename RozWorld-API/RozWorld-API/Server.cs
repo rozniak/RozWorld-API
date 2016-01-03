@@ -78,6 +78,7 @@ namespace RozWorld_API
 
         public event PlayerChatEvent PlayerChatMessageSent;
         public event PlayerGameModeEvent PlayerGameModeChanged;
+        public event LogEvent LogMessageSent;
 
         #endregion
         

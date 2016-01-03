@@ -48,7 +48,10 @@
     <Compile Include="Container\QuickInventory.cs" />
     <Compile Include="Entity\Creature.cs" />
     <Compile Include="Entity\DroppedItem.cs" />
+    <Compile Include="Event\LogEvent.cs" />
     <Compile Include="Event\PlayerGameModeEvent.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LogMessageType.cs" />
     <Compile Include="PlayerGameMode.cs" />
     <Compile Include="Thing\Item.cs" />
     <Compile Include="Entity\Pet.cs" />
