@@ -11,10 +11,12 @@
 
 using RozWorld_API.Entity;
 using RozWorld_API.Event;
+using RozWorld_API.Logging;
 using RozWorld_API.Thing;
 
 using System;
 using System.Collections.Generic;
+
 
 namespace RozWorld_API
 {
@@ -45,32 +47,37 @@ namespace RozWorld_API
         /// <summary>
         /// Gets or sets the max number of clients allowed on this server.
         /// </summary>
-        public ushort MaxClients { get; protected set; }
+        public abstract ushort MaxClients { get; protected set; }
 
         /// <summary>
         /// Gets or sets the list of whitelisted players on this server.
         /// </summary>
-        public IList<string> WhitelistedPlayers { get; protected set; }
+        public abstract IList<string> WhitelistedPlayers { get; protected set; }
 
         /// <summary>
         /// Gets or sets whether to whitelist this server.
         /// </summary>
-        public bool WhitelistActive;
+        public abstract bool WhitelistActive { get; set; }
 
         /// <summary>
         /// Gets or sets the port that this server is running on.
         /// </summary>
-        public int Port { get; protected set; }
+        public abstract int Port { get; protected set; }
 
         /// <summary>
         /// Gets or sets whether the server is active or not.
         /// </summary>
-        public bool IsActive { get; protected set; }
+        public abstract bool IsActive { get; protected set; }
 
         /// <summary>
         /// Gets or sets whether the server is running on a LAN or purely local or not.
         /// </summary>
         public abstract bool IsLocal { get; protected set; }
+
+        /// <summary>
+        /// Gets or sets the logger on this server.
+        /// </summary>
+        public abstract Logger Log { get; protected set; }
 
         #endregion
 
@@ -120,6 +127,13 @@ namespace RozWorld_API
         /// <param name="name">The exact case-sensitive name of the item.</param>
         /// <returns>The ID of the item if it exists, 0 otherwise.</returns>
         public abstract ushort GetItemID(string name);
+
+        /// <summary>
+        /// Registers a logger to this server instance if it does not have one already.
+        /// </summary>
+        /// <param name="logger">The logger to register.</param>
+        /// <returns>Whether registering the logger was successful or not.</returns>
+        public abstract bool RegisterLogger(Logger logger);
 
         #endregion
     }
