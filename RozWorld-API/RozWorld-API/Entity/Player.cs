@@ -70,5 +70,30 @@ namespace RozWorld_API.Entity
         /// Gets the parent server of this player.
         /// </summary>
         Server ParentServer { get; }
+
+        
+        /// <summary>
+        /// Kicks this player from the server.
+        /// </summary>
+        /// <param name="reason">The reason the player will see to explain why they got kicked.</param>
+        void Kick(string reason = "");
+
+        /// <summary>
+        /// Heals this player.
+        /// </summary>
+        /// <param name="Amount">The amount to heal this player.</param>
+        void Heal(uint Amount = uint.MaxValue);
+
+        /// <summary>
+        /// Sends a message to this player.
+        /// </summary>
+        /// <param name="message">The contents of the message to send.</param>
+        void SendMessage(string message);
+
+        /// <summary>
+        /// Deals some damage to this player.
+        /// </summary>
+        /// <param name="damage">The amount of damage to deal.</param>
+        void DealDamage(uint damage);
     }
 }

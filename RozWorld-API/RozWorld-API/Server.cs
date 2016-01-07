@@ -16,10 +16,13 @@ using RozWorld_API.Thing;
 
 using System;
 using System.Collections.Generic;
+using RozWorld_API.Level.World;
 
 
 namespace RozWorld_API
 {
+    public delegate bool ServerCommand(string sender, IList<string> args);
+
     public interface Server
     {
         #region Server Properties
@@ -48,6 +51,11 @@ namespace RozWorld_API
         /// Gets or sets the max number of clients allowed on this server.
         /// </summary>
         ushort MaxClients { get; set; }
+
+        /// <summary>
+        /// Gets the number of players present on this server.
+        /// </summary>
+        ushort PlayerCount { get; }
 
         /// <summary>
         /// Gets the list of whitelisted players on this server.
@@ -84,6 +92,16 @@ namespace RozWorld_API
         /// </summary>
         byte Difficulty { get; set; }
 
+        /// <summary>
+        /// Gets or sets the message of the day that players receive when they join this server.
+        /// </summary>
+        string MOTD { get; }
+
+        /// <summary>
+        /// Gets this server's name that will appear in clients' server lists.
+        /// </summary>
+        string Name { get; }
+
         #endregion
 
         #region Game Events
@@ -103,6 +121,25 @@ namespace RozWorld_API
         /// <returns>The player if they exist on the server, null otherwise.</returns>
         Player GetPlayer(string username);
 
+        /// <summary>
+        /// Gets all players currently on this server.
+        /// </summary>
+        /// <returns>A full list of all players on this server.</returns>
+        IList<Player> GetPlayers();
+
+        /// <summary>
+        /// Gets a world by its name, case insensitive.
+        /// </summary>
+        /// <param name="name">The world's name to locate it by.</param>
+        /// <returns>The world if they exist on the server, null otherwise.</returns>
+        World GetWorld(string name);
+
+        /// <summary>
+        /// Gets all worlds currently on this server.
+        /// </summary>
+        /// <returns>A full list of all worlds on this server.</returns>
+        IList<World> GetWorlds();
+        
         /// <summary>
         /// Load or reloads the whitelist from the disk.
         /// </summary>
@@ -134,6 +171,34 @@ namespace RozWorld_API
         ushort GetItemID(string name);
 
         /// <summary>
+        /// Creates a new instance of the floor with the exact specified name (case-sensitive).
+        /// </summary>
+        /// <param name="name">The exact case-sensitive name of the floor.</param>
+        /// <returns>A new instance of the floor with the specified name.</returns>
+        Floor CreateFloor(string name);
+
+        /// <summary>
+        /// Gets the ID of a floor by its exact specified name (case-sensitive).
+        /// </summary>
+        /// <param name="name">The exact case-sensitive name of the floor.</param>
+        /// <returns>The ID of the floor if it exists, 0 otherwise.</returns>
+        ushort GetFloorID(string name);
+
+        /// <summary>
+        /// Creates a new instance of the wall with the exact specified name (case-sensitive).
+        /// </summary>
+        /// <param name="name">The exact case-sensitive name of the wall.</param>
+        /// <returns>A new instance of the floor with the specified name.</returns>
+        Wall CreateWall(string name);
+
+        /// <summary>
+        /// Creates a new instance of the wall with the exact specified name (case-sensitive).
+        /// </summary>
+        /// <param name="name">The exact case-sensitive name of the wall.</param>
+        /// <returns>The ID of the wall if it exists, 0 otherwise.</returns>
+        ushort GetWallID(string name);
+
+        /// <summary>
         /// Registers a logger to this server instance if it does not have one already.
         /// </summary>
         /// <param name="logger">The logger to register.</param>
@@ -154,6 +219,14 @@ namespace RozWorld_API
         /// Stops this server, as long as it is already started.
         /// </summary>
         void Stop();
+
+        /// <summary>
+        /// Attempts to register a command on this server.
+        /// </summary>
+        /// <param name="name">The name of the command that will trigger it.</param>
+        /// <param name="command">The delegate to pass onto.</param>
+        /// <returns>Whether the command was successfully registered or not.</returns>
+        bool RegisterCommand(string name, ServerCommand command);
 
         #endregion
     }

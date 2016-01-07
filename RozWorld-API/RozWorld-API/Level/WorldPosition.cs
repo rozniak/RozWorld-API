@@ -13,11 +13,34 @@ namespace RozWorld_API.Level
 {
     public struct WorldPosition
     {
+        /// <summary>
+        /// Gets or sets the x-coordinate representing the chunk this position is inside of.
+        /// </summary>
         public int ChunkX;
+
+        /// <summary>
+        /// Gets or sets the y-coordinate representing the chunk this position is inside of.
+        /// </summary>
         public int ChunkY;
+
+        /// <summary>
+        /// Gets or sets the z-coordinate representing the chunk this position is inside of.
+        /// </summary>
         public int ChunkZ;
+
+        /// <summary>
+        /// Gets or sets the x-coordinate inside of the chunk this position is at.
+        /// </summary>
         public double LocalX;
+
+        /// <summary>
+        /// Gets or sets the y-coordinate inside of the chunk this position is at.
+        /// </summary>
         public double LocalY;
+
+        /// <summary>
+        /// Gets or sets the z-coordinate inside of the chunk this position is at.
+        /// </summary>
         public double LocalZ;
 
         

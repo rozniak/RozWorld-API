@@ -50,9 +50,16 @@
     <Compile Include="Entity\DroppedItem.cs" />
     <Compile Include="Event\LogEvent.cs" />
     <Compile Include="Event\PlayerGameModeEvent.cs" />
+    <Compile Include="Level\World\Floor.cs" />
+    <Compile Include="Level\World\Tile.cs" />
+    <Compile Include="Level\World\Wall.cs" />
+    <Compile Include="Level\World\WorldGenerator.cs" />
+    <Compile Include="Level\World\Chunk.cs" />
+    <Compile Include="Level\World\World.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LogMessageType.cs" />
     <Compile Include="PlayerGameMode.cs" />
+    <Compile Include="Thing\Explosion.cs" />
     <Compile Include="Thing\Item.cs" />
     <Compile Include="Entity\Pet.cs" />
     <Compile Include="Entity\Player.cs" />
@@ -60,8 +67,6 @@
     <Compile Include="Level\CardinalDirection.cs" />
     <Compile Include="Level\WorldPosition.cs" />
     <Compile Include="Mod\Plugin.cs" />
-    <Compile Include="Network\Data\Packet.cs" />
-    <Compile Include="Network\Data\PacketEnums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Thing\ItemTypes.cs" />

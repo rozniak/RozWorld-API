@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld-API.Mod.Plugin -- RozWorld Server Plugin
+ * RozWorld-API.Level.World.Floor -- RozWorld Tile Floor
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -9,19 +9,22 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-namespace RozWorld_API.Mod
+namespace RozWorld_API.Level.World
 {
-    public abstract class Plugin
+    public abstract class Floor
     {
         /// <summary>
-        /// Gets the name of this plugin.
+        /// Gets the internal reference name of this floor.
         /// </summary>
         public abstract string Name { get; }
 
         /// <summary>
-        /// Gets the version of this plugin.
+        /// Gets the ID of this floor.
         /// </summary>
-        public abstract ushort Version { get; }
+        public ushort ID
+        {
+            get { return ParentServer.GetFloorID(Name); }
+        }
 
         /// <summary>
         /// Gets or sets the parent server of this item.
@@ -32,16 +35,5 @@ namespace RozWorld_API.Mod
             set { if (_ParentServer != null) _ParentServer = value; }
         }
         private Server _ParentServer;
-
-
-        /// <summary>
-        /// Method to be called when the server is starting up.
-        /// </summary>
-        public virtual void Load() { }
-
-        /// <summary>
-        /// Method to be called when the server is shutting down.
-        /// </summary>
-        public virtual void Unload() { }
     }
 }
