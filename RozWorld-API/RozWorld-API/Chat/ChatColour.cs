@@ -30,4 +30,24 @@ namespace RozWorld_API.Chat
         public const string YELLOW = "&E";
         public const string WHITE = "&F";
     }
+
+    public static class ColourCode
+    {
+        public const char BLACK = '0';
+        public const char DARK_BLUE = '1';
+        public const char GREEN = '2';
+        public const char TEAL = '3';
+        public const char DARK_RED = '4';
+        public const char PURPLE = '5';
+        public const char ORANGE = '6';
+        public const char GREY = '7';
+        public const char DARK_GREY = '8';
+        public const char BLUE = '9';
+        public const char LIME = 'A';
+        public const char CYAN = 'B';
+        public const char RED = 'C';
+        public const char MAGENTA = 'D';
+        public const char YELLOW = 'E';
+        public const char WHITE = 'F';
+    }
 }

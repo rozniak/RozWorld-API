@@ -35,5 +35,37 @@ namespace RozWorld_API.Chat
         public const char EMOTE_ROZ = (char)0x263A;
         public const char EMOTE_SWEET = (char)0x20AA;
         public const char EMOTE_MARLOW = (char)0x2105;
+
+
+        /// <summary>
+        /// Gets whether the specified character is a special graphic character.
+        /// </summary>
+        /// <param name="subject">The character to check.</param>
+        /// <returns>Whether or not the specified character is a special graphic character.</returns>
+        public static bool IsGraphic(char subject)
+        {
+            // Horrendous long conditional...
+            return subject == XBOX_A_BUTTON ||
+                subject == XBOX_B_BUTTON ||
+                subject == XBOX_X_BUTTON ||
+                subject == XBOX_Y_BUTTON ||
+                subject == XBOX_GUIDE_BUTTON ||
+                subject == XBOX_BACK_BUTTON ||
+                subject == XBOX_START_BUTTON ||
+                subject == XBOX_LEFT_BUMPER ||
+                subject == XBOX_RIGHT_BUMPER ||
+                subject == XBOX_LEFT_TRIGGER ||
+                subject == XBOX_RIGHT_TRIGGER ||
+                subject == XBOX_LEFT_STICK ||
+                subject == XBOX_RIGHT_STICK ||
+                subject == XBOX_DPAD ||
+                subject == EMOTE_JROLL ||
+                subject == EMOTE_VALENTINO ||
+                subject == EMOTE_BENNYV ||
+                subject == EMOTE_RIG ||
+                subject == EMOTE_ROZ ||
+                subject == EMOTE_SWEET ||
+                subject == EMOTE_MARLOW;
+        }
     }
 }

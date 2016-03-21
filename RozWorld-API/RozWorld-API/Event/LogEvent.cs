@@ -15,8 +15,15 @@ using System;
 
 namespace RozWorld_API.Event
 {
+    /// <summary>
+    /// Represents the method that will handle the LogMessageSent event of a Server.
+    /// </summary>
+    /// <param name="e"></param>
     public delegate void LogEvent(LogEventArgs e);
 
+    /// <summary>
+    /// Provides data for the Server.LogMessageSent event.
+    /// </summary>
     public class LogEventArgs
     {
         /// <summary>
