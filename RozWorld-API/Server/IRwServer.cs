@@ -101,20 +101,5 @@ namespace Oddmatics.RozWorld.API.Server
         /// <param name="func">The function to bind to the command.</param>
         /// <returns>Whether or not the registration was successful.</returns>
         bool RegisterCommand(string cmd, CommandSentCallback func);
-
-        /// <summary>
-        /// Restarts this server.
-        /// </summary>
-        void Restart();
-
-        /// <summary>
-        /// Starts this server.
-        /// </summary>
-        void Start();
-
-        /// <summary>
-        /// Stops this server.
-        /// </summary>
-        void Stop();
     }
 }
