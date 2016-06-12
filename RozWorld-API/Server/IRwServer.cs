@@ -22,57 +22,67 @@ namespace Oddmatics.RozWorld.API.Server
     public interface IRwServer
     {
         /// <summary>
-        /// The name of this server that will appear in people's browsers.
+        /// Gets the name of this IRwServer that will appear in people's browsers.
         /// </summary>
         string BrowserName { get; }
 
         /// <summary>
-        /// The port that this server is being hosted on.
+        /// Gets the port that this IRwServer is being hosted on.
         /// </summary>
         ushort HostingPort { get; }
 
         /// <summary>
-        /// The logger the server is using.
+        /// Gets whether this IRwServer is running locally (as in, a singleplayer or splitscreen game).
+        /// </summary>
+        bool IsLocal { get; }
+
+        /// <summary>
+        /// Gets whether this IRwServer is whitelisted.
+        /// </summary>
+        bool IsWhitelisted { get; }
+
+        /// <summary>
+        /// Gets the logger this IRwServer is using.
         /// </summary>
         ILogger Logger { get; }
 
         /// <summary>
-        /// The maximum amount of players allowed on this server at once.
+        /// Gets the maximum amount of players allowed on this IRwServer at once.
         /// </summary>
         short MaxPlayers { get; }
 
         /// <summary>
-        /// A list of the currently online players.
+        /// Gets a list of the currently online players.
         /// </summary>
         IList<IPlayer> OnlinePlayers { get; }
 
         /// <summary>
-        /// A list of the currently installed plugins.
+        /// Gets a list of the currently installed plugins.
         /// </summary>
         IList<IPlugin> Plugins { get; }
 
         /// <summary>
-        /// The target RozWorld version of this server implementation
+        /// Gets the target RozWorld version of this server implementation
         /// </summary>
         string RozWorldVersion { get; }
 
         /// <summary>
-        /// The name of this server implementation.
+        /// Gets the name of this server implementation.
         /// </summary>
         string ServerName { get; }
 
         /// <summary>
-        /// The version of this server implementation.
+        /// Gets the version of this server implementation.
         /// </summary>
         string ServerVersion { get; }
 
         /// <summary>
-        /// The tick rate to use for this server in milliseconds.
+        /// Gets the tick rate to use for this server in milliseconds.
         /// </summary>
         byte TickRate { get; }
         
         /// <summary>
-        /// A list of the whitelisted players.
+        /// Gets a list of the whitelisted players.
         /// </summary>
         IList<string> WhitelistedPlayers { get; }
 
@@ -86,6 +96,11 @@ namespace Oddmatics.RozWorld.API.Server
         /// Occurs when this server is stopping.
         /// </summary>
         event EventHandler Stopping;
+
+        /// <summary>
+        /// Occurs when the tick rate has elapsed.
+        /// </summary>
+        event EventHandler Tick;
 
 
         /// <summary>
