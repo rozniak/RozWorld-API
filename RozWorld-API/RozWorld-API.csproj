@@ -46,6 +46,7 @@
     <Compile Include="Client\IRenderer.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
+    <Compile Include="Generic\Game\Difficulty.cs" />
     <Compile Include="Generic\Game\GameMode.cs" />
     <Compile Include="Generic\Level\Location.cs" />
     <Compile Include="Generic\Level\ISegment.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Server\Accounts\IAccount.cs" />
     <Compile Include="Server\Accounts\IAccountsManager.cs" />
     <Compile Include="Server\Accounts\IPermissionAuthority.cs" />
+    <Compile Include="Server\Accounts\PermissionInfo.cs" />
     <Compile Include="Server\Game\IClan.cs" />
     <Compile Include="Server\Accounts\IPermissionGroup.cs" />
     <Compile Include="Server\Entity\IEntity.cs" />

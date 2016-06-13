@@ -19,12 +19,12 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <summary>
         /// Gets the registrar of the associated permission. 
         /// </summary>
-        string Registrar { get; private set; }
+        public string Registrar { get; private set; }
 
         /// <summary>
         /// Gets the description of the associated permission.
         /// </summary>
-        string Description { get; private set; }
+        public string Description { get; private set; }
 
 
         /// <summary>
