@@ -41,18 +41,21 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         IPAddress LastLoginIP { get; }
 
         /// <summary>
-        /// Gets the level of the player of this IAccount.
+        /// Gets or sets the level of the player of this IAccount.
         /// </summary>
-        int Level { get; }
+        int Level { get; set; }
 
         /// <summary>
-        /// Gets the IPermissionGroup that the player of this IAccount belongs to.
+        /// Gets or sets the permission group this IAccount is assigned to.
         /// </summary>
-        IPermissionGroup PermissionGroup { get; set; }
+        string PermissionGroupName { get; set; }
 
         /// <summary>
         /// Gets the name of the player of this IAccount.
         /// </summary>
         string Name { get; }
+
+
+
     }
 }

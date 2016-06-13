@@ -26,6 +26,8 @@ namespace Oddmatics.RozWorld.API.Server
         /// </summary>
         string BrowserName { get; }
 
+
+
         /// <summary>
         /// Gets the port that this IRwServer is being hosted on.
         /// </summary>

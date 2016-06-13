@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.Level.Weather -- RozWorld World's Weather
+ * Oddmatics.RozWorld.API.Server.Level.IWorld -- RozWorld Server-side World
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -9,28 +9,28 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-namespace Oddmatics.RozWorld.API.Generic.Level
+namespace Oddmatics.RozWorld.API.Server.Level
 {
     /// <summary>
-    /// Specifies constants defining the current weather in an IWorld.
+    /// Represents a server-side world.
     /// </summary>
-    public enum Weather
+    public interface IWorld : RozWorld.API.Generic.Level.IWorld
     {
         /// <summary>
-        /// Represents clear weather.
+        /// Gets the directory path this IWorld is stored in.
         /// </summary>
-        Clear,
+        string DirectoryPath { get; }
+
         /// <summary>
-        /// Represents dull weather with lightning.
+        /// Gets the generator used for 
         /// </summary>
-        Lightning,
+        IWorldGenerator Generator { get; }
+
         /// <summary>
-        /// Represents dull weather with rain.
+        /// Gets the name of this IWorld.
         /// </summary>
-        Rain,
-        /// <summary>
-        /// Represents clear weather with snow.
-        /// </summary>
-        Snow
+        string Name { get; }
+
+        
     }
 }

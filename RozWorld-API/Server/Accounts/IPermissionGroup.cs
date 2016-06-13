@@ -20,21 +20,6 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
     public interface IPermissionGroup
     {
         /// <summary>
-        /// Gets or sets the name of this IPermissionGroup.
-        /// </summary>
-        string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the colour to apply to names of player in this IPermissionGroup when they send chat messages.
-        /// </summary>
-        ChatColour ColourModifier { get; set; }
-
-        /// <summary>
-        /// Gets an IList&lt;string&gt; object representing the permissions granted in this IPermissionGroup.
-        /// </summary>
-        IList<string> Permissions { get; }
-
-        /// <summary>
         /// Gets or sets the prefix to apply to names of players in this IPermissionGroup when they send chat messages.
         /// </summary>
         string ChatPrefix { get; set; }
@@ -45,17 +30,45 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         string ChatSuffix { get; set; }
 
         /// <summary>
-        /// Checks whether a player's in this IPermissionGroup have the specified permission.
+        /// Gets or sets the colour to apply to names of player in this IPermissionGroup when they send chat messages.
         /// </summary>
-        /// <param name="permKey">The permission key to check for.</param>
-        /// <returns>Whether or not this IPermissionGroup grants the specified permission.</returns>
-        bool HasPermission(string permKey);
+        ChatColour ColourModifier { get; set; }
+
+        /// <summary>
+        /// Gets an IList&lt;string&gt; collection representing the permissions granted in this IPermissionGroup.
+        /// </summary>
+        IList<string> Permissions { get; }
+
+        /// <summary>
+        /// Gets all members of this IPermissionGroup as an IList&lt;IAccount&gt; collection.
+        /// </summary>
+        IList<IAccount> Members { get; }
+
 
         /// <summary>
         /// Attempts to add a permission to this IPermissionGroup.
         /// </summary>
-        /// <param name="permKey">The permission key to try to add.</param>
-        /// <returns>Whether or not the permission was added; will return false if the permission is already granted.</returns>
-        bool AddPermission(string permKey);
+        /// <param name="key">The permission key to try to add.</param>
+        /// <returns>Whether or not the permission is granted.</returns>
+        bool AddPermission(string key);
+
+        /// <summary>
+        /// Checks whether a player's in this IPermissionGroup have the specified permission.
+        /// </summary>
+        /// <param name="key">The permission key to check for.</param>
+        /// <returns>Whether or not this IPermissionGroup grants the specified permission.</returns>
+        bool HasPermission(string key);
+
+        /// <summary>
+        /// Evaluates all accounts to locate members of this IPermissionGroup.
+        /// </summary>
+        void RecalculateMembers();
+
+        /// <summary>
+        /// Attempts to remove a permission from this IPermissionGroup.
+        /// </summary>
+        /// <param name="key">The permission key to remove.</param>
+        /// <returns>Whether or not the permission is revoked.</returns>
+        bool RemovePermission(string key);
     }
 }
