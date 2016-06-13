@@ -40,7 +40,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         IList<string> Permissions { get; }
 
         /// <summary>
-        /// Gets all members of this IPermissionGroup as an IList&lt;IAccount&gt; collection.
+        /// Gets an IList&lt;IAccount&gt; collection represents the members of this IPermissionGroup.
         /// </summary>
         IList<IAccount> Members { get; }
 

@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Server.Accounts.IPermissionGroup -- RozWorld Server Permission Group
+ * Oddmatics.RozWorld.API.Server.Accounts.IPermissionAuthority -- RozWorld Server Permission Authority
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -27,6 +27,11 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Gets all IPermissionGroup names available.
         /// </summary>
         IList<string> GroupNames { get; }
+
+        /// <summary>
+        /// Gets an IList&lt;string&gt; collection representing all registered permissions.
+        /// </summary>
+        IList<string> RegisteredPermissions { get; }
 
 
         /// <summary>
@@ -58,6 +63,20 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <param name="name">The name of the IPermissionGroup to get.</param>
         /// <returns>The IPermissionGroup associated with the given name.</returns>
         IPermissionGroup GetGroup(string name);
+
+        /// <summary>
+        /// Gets PermissionInfo associated with a permission by its key.
+        /// </summary>
+        /// <param name="key">The permission key to identify by.</param>
+        /// <returns>The associated PermissionInfo instance of the permission.</returns>
+        PermissionInfo GetPermissionInfo(string key);
+
+        /// <summary>
+        /// Registers a permission and gives it a description.
+        /// </summary>
+        /// <param name="key">The permission key to register.</param>
+        /// <param name="description">The description of the permission.</param>
+        void RegisterPermission(string key, string description);
 
         /// <summary>
         /// Checks the status of a permission by account only (group membership ignored).

@@ -9,6 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Generic.Game;
+using Oddmatics.RozWorld.API.Server.Accounts;
 using Oddmatics.RozWorld.API.Server.Entity;
 using Oddmatics.RozWorld.API.Server.Event;
 using System;
@@ -26,8 +28,16 @@ namespace Oddmatics.RozWorld.API.Server
         /// </summary>
         string BrowserName { get; }
 
+        /// <summary>
+        /// Gets or sets the current game difficulty.
+        /// </summary>
+        Difficulty GameDifficulty { get; }
 
-
+        /// <summary>
+        /// Gets the current game mode.
+        /// </summary>
+        GameMode GameMode { get; }
+        
         /// <summary>
         /// Gets the port that this IRwServer is being hosted on.
         /// </summary>
@@ -44,7 +54,7 @@ namespace Oddmatics.RozWorld.API.Server
         bool IsWhitelisted { get; }
 
         /// <summary>
-        /// Gets the logger this IRwServer is using.
+        /// Gets the ILogger this IRwServer is using.
         /// </summary>
         ILogger Logger { get; }
 
@@ -59,12 +69,17 @@ namespace Oddmatics.RozWorld.API.Server
         IList<IPlayer> OnlinePlayers { get; }
 
         /// <summary>
+        /// Gets this IRwServer's IPermissionAuthority.
+        /// </summary>
+        IPermissionAuthority PermissionAuthority { get; }
+
+        /// <summary>
         /// Gets a list of the currently installed plugins.
         /// </summary>
         IList<IPlugin> Plugins { get; }
 
         /// <summary>
-        /// Gets the target RozWorld version of this server implementation
+        /// Gets the target RozWorld version of this server implementation.
         /// </summary>
         string RozWorldVersion { get; }
 
