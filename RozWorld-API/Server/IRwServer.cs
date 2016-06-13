@@ -94,6 +94,11 @@ namespace Oddmatics.RozWorld.API.Server
         string ServerVersion { get; }
 
         /// <summary>
+        /// Gets the name of the IWorld used as the spawn world.
+        /// </summary>
+        string SpawnWorldName { get; }
+
+        /// <summary>
         /// Gets the tick rate to use for this server in milliseconds.
         /// </summary>
         byte TickRate { get; }
