@@ -9,6 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Generic.Level;
+
 namespace Oddmatics.RozWorld.API.Server.Level
 {
     /// <summary>
@@ -31,6 +33,9 @@ namespace Oddmatics.RozWorld.API.Server.Level
         /// </summary>
         string Name { get; }
 
-        
+        /// <summary>
+        /// Gets or sets the spawn point for this IWorld.
+        /// </summary>
+        Location SpawnPoint { get; set; }
     }
 }
