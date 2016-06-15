@@ -19,5 +19,5 @@ namespace Oddmatics.RozWorld.API.Server.Event
     /// <param name="sender">The object that sent the command.</param>
     /// <param name="args">The argument passed alongside the command.</param>
     /// <returns>Whether or not the command was successful.</returns>
-    public delegate bool CommandSentCallback(object sender, List<string> args);
+    public delegate bool CommandSentCallback(object sender, IList<string> args);
 }
