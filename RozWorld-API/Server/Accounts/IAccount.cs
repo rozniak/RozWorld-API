@@ -67,20 +67,20 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// </summary>
         /// <param name="key">The permission key to check by.</param>
         /// <returns>The PermissionState of the permission associated with the given key.</returns>
-        public PermissionState CheckAccountPermission(string key);
+        PermissionState CheckAccountPermission(string key);
 
         /// <summary>
         /// Gets whether this IAccount has a certain permission by checking its own permissions and its IPermissionGroup membership.
         /// </summary>
         /// <param name="key">The permission key to check for.</param>
         /// <returns>Whether or not the permission associated with the given key is granted.</returns>
-        public bool HasPermission(string key);
+        bool HasPermission(string key);
 
         /// <summary>
         /// Sets the PermissionState of a permission exclusively for this IAccount.
         /// </summary>
         /// <param name="key">The permission key to set by.</param>
         /// <param name="newState">The new PermissionState to set.</param>
-        public void SetAccountPermission(string key, PermissionState newState);
+        void SetAccountPermission(string key, PermissionState newState);
     }
 }

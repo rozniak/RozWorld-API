@@ -60,6 +60,7 @@
     <Compile Include="Server\Accounts\IAccountsManager.cs" />
     <Compile Include="Server\Accounts\IPermissionAuthority.cs" />
     <Compile Include="Server\Accounts\PermissionInfo.cs" />
+    <Compile Include="Server\Accounts\PermissionState.cs" />
     <Compile Include="Server\Game\IClan.cs" />
     <Compile Include="Server\Accounts\IPermissionGroup.cs" />
     <Compile Include="Server\Entity\IEntity.cs" />
