@@ -32,7 +32,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <summary>
         /// Gets or sets the colour to apply to names of player in this IPermissionGroup when they send chat messages.
         /// </summary>
-        ChatColour ColourModifier { get; set; }
+        string ColourModifier { get; set; }
 
         /// <summary>
         /// Gets an IList&lt;string&gt; collection representing the permissions granted in this IPermissionGroup.
