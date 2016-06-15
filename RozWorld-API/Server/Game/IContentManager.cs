@@ -22,5 +22,12 @@ namespace Oddmatics.RozWorld.API.Server.Game
         /// Gets this IContentManager's IEntityFactory.
         /// </summary>
         IEntityFactory EntityFactory { get; }
+
+        /// <summary>
+        /// Gets IEntityAttributes associated with an IEntity by its type name.
+        /// </summary>
+        /// <param name="type">The type name of the IEntity.</param>
+        /// <returns>The IEntityAttributes associated with the IEntity specified.</returns>
+        IEntityAttributes GetEntityAttributes(string type);
     }
 }

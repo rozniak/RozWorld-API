@@ -64,6 +64,7 @@
     <Compile Include="Server\Accounts\PermissionState.cs" />
     <Compile Include="Server\Entity\IEntityFactory.cs" />
     <Compile Include="Server\Entity\ILivingEntity.cs" />
+    <Compile Include="Server\Entity\ILivingEntityAttributes.cs" />
     <Compile Include="Server\Entity\ServerEntityUpdate.cs" />
     <Compile Include="Server\Game\IContentManager.cs" />
     <Compile Include="Server\Game\IClan.cs" />

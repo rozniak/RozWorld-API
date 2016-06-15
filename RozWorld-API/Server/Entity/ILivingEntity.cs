@@ -19,6 +19,11 @@ namespace Oddmatics.RozWorld.API.Server.Entity
     public interface ILivingEntity : IEntity
     {
         /// <summary>
+        /// Gets the ILivingEntityAttributes for this ILivingEntity.
+        /// </summary>
+        ILivingEntityAttributes Attributes { get; }
+
+        /// <summary>
         /// Gets or sets the health of this ILivingEntity.
         /// </summary>
         int Health { get; set; }
@@ -37,6 +42,11 @@ namespace Oddmatics.RozWorld.API.Server.Entity
         /// Gets whether this ILivingEntity is frozen.
         /// </summary>
         bool IsFrozen { get; }
+
+        /// <summary>
+        /// Gets whether this ILivingEntity is poisoned.
+        /// </summary>
+        bool IsPoisoned { get; }
 
         /// <summary>
         /// Gets whether this ILivingEntity is stunned.
