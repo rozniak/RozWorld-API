@@ -63,6 +63,13 @@ namespace Oddmatics.RozWorld.API.Server.Entity
         void Kick(string reason = "");
 
         /// <summary>
+        /// Gets whether this IPlayer has a certain permission by checking its IAccount.
+        /// </summary>
+        /// <param name="key">The permission key to check for.</param>
+        /// <returns>Whether or not the permission associated with the given key is granted.</returns>
+        bool HasPermission(string key);
+
+        /// <summary>
         /// Sends an invitation to this IPlayer as another IPlayer.
         /// </summary>
         /// <param name="sender">The IPlayer to pose as the sender of this invitation.</param>

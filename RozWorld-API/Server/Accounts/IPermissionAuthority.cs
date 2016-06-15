@@ -35,22 +35,6 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
 
 
         /// <summary>
-        /// Checks the status of a permission by account only (group membership ignored).
-        /// </summary>
-        /// <param name="account">The IAccount to use.</param>
-        /// <param name="key">The permission key to check.</param>
-        /// <returns>Whether or not the permission is granted.</returns>
-        bool CheckPermissionByAccount(IAccount account, string key);
-
-        /// <summary>
-        /// Checks the status of a permission by account only (group membership ignored).
-        /// </summary>
-        /// <param name="name">The name of the account to use.</param>
-        /// <param name="key">The permission key to check.</param>
-        /// <returns>Whether or not the permission is granted.</returns>
-        bool CheckPermissionByAccount(string name, string key);
-
-        /// <summary>
         /// Creates a new blank IPermissionGroup with the given name.
         /// </summary>
         /// <param name="name">The name to give the new IPermissionGroup.</param>
@@ -77,21 +61,5 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <param name="key">The permission key to register.</param>
         /// <param name="description">The description of the permission.</param>
         void RegisterPermission(string key, string description);
-
-        /// <summary>
-        /// Checks the status of a permission by account only (group membership ignored).
-        /// </summary>
-        /// <param name="account">The IAccount to use.</param>
-        /// <param name="key">The permission key to set.</param>
-        /// <param name="status">The new status of this permission.</param>
-        void SetPermissionByAccount(IAccount account, string key, bool status);
-
-        /// <summary>
-        /// Checks the status of a permission by account only (group membership ignored).
-        /// </summary>
-        /// <param name="name">The name of the account to use.</param>
-        /// <param name="key">The permission key to set.</param>
-        /// <param name="status">The new status of this permission.</param>
-        void SetPermissionByAccount(string name, string key, bool status);
     }
 }

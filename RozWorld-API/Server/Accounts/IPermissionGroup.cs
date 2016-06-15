@@ -46,11 +46,10 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
 
 
         /// <summary>
-        /// Attempts to add a permission to this IPermissionGroup.
+        /// Adds a permission to this IPermissionGroup.
         /// </summary>
         /// <param name="key">The permission key to try to add.</param>
-        /// <returns>Whether or not the permission is granted.</returns>
-        bool AddPermission(string key);
+        void AddPermission(string key);
 
         /// <summary>
         /// Checks whether a player's in this IPermissionGroup have the specified permission.
@@ -65,10 +64,9 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         void RecalculateMembers();
 
         /// <summary>
-        /// Attempts to remove a permission from this IPermissionGroup.
+        /// Removes a permission from this IPermissionGroup.
         /// </summary>
         /// <param name="key">The permission key to remove.</param>
-        /// <returns>Whether or not the permission is revoked.</returns>
-        bool RemovePermission(string key);
+        void RemovePermission(string key);
     }
 }
