@@ -9,6 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System.Linq;
+
 namespace Oddmatics.RozWorld.API.Generic.Chat
 {
     /// <summary>
@@ -95,5 +97,23 @@ namespace Oddmatics.RozWorld.API.Generic.Chat
         /// Represents the colour white.
         /// </summary>
         public const string WHITE = "&F";
+
+
+        /// <summary>
+        /// Represents all strings that are valid as a ChatColour.
+        /// </summary>
+        private static string[] ValidColours = new string[] { BLACK, DARK_BLUE, GREEN, TEAL, DARK_RED,
+            PURPLE, ORANGE, GREY, DARK_GREY, BLUE, LIME, CYAN, RED, MAGENTA, YELLOW, WHITE };
+
+
+        /// <summary>
+        /// Checks whether a given string is a valid ChatColour.
+        /// </summary>
+        /// <param name="subject">The string subject to check.</param>
+        /// <returns>Whether or not the string is a valid ChatColour.</returns>
+        public bool IsChatColour(string subject)
+        {
+            return ValidColours.Contains(subject);
+        }
     }
 }
