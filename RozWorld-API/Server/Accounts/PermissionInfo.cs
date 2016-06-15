@@ -28,7 +28,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
 
 
         /// <summary>
-        /// Initializes a new instance of the PermissionInfo class with a registrar and description.
+        /// Initialises a new instance of the PermissionInfo class with a registrar and description.
         /// </summary>
         /// <param name="registrar">The registrar of the associated permission.</param>
         /// <param name="description">The description of the associated permission.</param>

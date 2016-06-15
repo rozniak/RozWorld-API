@@ -66,7 +66,7 @@ namespace Oddmatics.RozWorld.API.Generic.Level
         }
 
         /// <summary>
-        /// Initializes a new instance of the Location class with the specified local and segment coordinates in a given IWorld.
+        /// Initialises a new instance of the Location class with the specified local and segment coordinates in a given IWorld.
         /// </summary>
         /// <param name="localX">The local x-coordinate.</param>
         /// <param name="localY">The local y-coordinate.</param>

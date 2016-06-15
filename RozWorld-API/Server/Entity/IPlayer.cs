@@ -17,7 +17,7 @@ namespace Oddmatics.RozWorld.API.Server.Entity
     /// <summary>
     /// Represents a RozWorld player entity.
     /// </summary>
-    public interface IPlayer : IEntity
+    public interface IPlayer : ILivingEntity
     {
         /// <summary>
         /// Gets the IAccount associated with this IPlayer.
@@ -28,6 +28,16 @@ namespace Oddmatics.RozWorld.API.Server.Entity
         /// Gets or sets the AFK (away from keyboard) status of this IPlayer.
         /// </summary>
         bool AFK { get; set; }
+
+        /// <summary>
+        /// Gets or sets the display name for this IPlayer.
+        /// </summary>
+        string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets whether this IPlayer is a real player.
+        /// </summary>
+        bool IsRealPlayer { get; }
 
         /// <summary>
         /// Gets or sets the joinable status of this IPlayer.
@@ -43,6 +53,16 @@ namespace Oddmatics.RozWorld.API.Server.Entity
         /// Gets or sets the status message of this IPlayer.
         /// </summary>
         string Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the visibility of this IPlayer.
+        /// </summary>
+        byte Visibility { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether this IPlayer shows up on scoreboards.
+        /// </summary>
+        bool VisibleOnScoreboard { get; set; }
 
 
         /// <summary>

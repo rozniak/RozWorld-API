@@ -53,19 +53,19 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         IPAddress LastLoginIP { get; }
 
         /// <summary>
-        /// Gets or sets the level of the player of this IAccount.
-        /// </summary>
-        int Level { get; set; }
-
-        /// <summary>
         /// Gets or sets the permission group this IAccount is assigned to.
         /// </summary>
         string PermissionGroupName { get; set; }
 
         /// <summary>
-        /// Gets the name of the player of this IAccount.
+        /// Gets the associated IPlayer instance of this IAccount.
         /// </summary>
-        string Name { get; }
+        IPlayer PlayerInstance { get; }
+
+        /// <summary>
+        /// Gets the username of the player of this IAccount.
+        /// </summary>
+        string Username { get; }
 
         /// <summary>
         /// Gets the individual permissions granted to this IAccount.
@@ -79,12 +79,6 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <param name="key">The permission key to check by.</param>
         /// <returns>The PermissionState of the permission associated with the given key.</returns>
         PermissionState CheckAccountPermission(string key);
-
-        /// <summary>
-        /// Gets the associated IPlayer instance of this IAccount.
-        /// </summary>
-        /// <returns>The IPlayer instance of this IAccount.</returns>
-        IPlayer GetPlayer();
 
         /// <summary>
         /// Gets whether this IAccount has a certain permission by checking its own permissions and its IPermissionGroup membership.

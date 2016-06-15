@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.Level.Weather -- RozWorld World's Weather
+ * Oddmatics.RozWorld.API.Server.Entity.ServerEntityUpdate -- RozWorld World's Weather
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -9,28 +9,28 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-namespace Oddmatics.RozWorld.API.Generic.Level
+namespace Oddmatics.RozWorld.API.Server.Entity
 {
     /// <summary>
-    /// Specifies constants defining the current weather in a world
+    /// Specifies constants defining the update type of a server entity.
     /// </summary>
-    public enum Weather
+    public enum ServerEntityUpdate
     {
         /// <summary>
-        /// Represents clear weather.
+        /// Represents that no updates are permitted.
         /// </summary>
-        Clear,
+        None,
         /// <summary>
-        /// Represents dull weather with lightning.
+        /// Represents that velocity updates are permitted.
         /// </summary>
-        Lightning,
+        Velocity,
         /// <summary>
-        /// Represents dull weather with rain.
+        /// Represents that location updates are permitted.
         /// </summary>
-        Rain,
+        Location,
         /// <summary>
-        /// Represents clear weather with snow.
+        /// Represents that animation updates are permitted.
         /// </summary>
-        Snow
+        Animation
     }
 }
