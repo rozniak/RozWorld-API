@@ -57,17 +57,17 @@ namespace Oddmatics.RozWorld.API.Server.Entity
         void BanIP(string reason = "");
 
         /// <summary>
-        /// Kicks this IPlayer from the server with a specified reason.
-        /// </summary>
-        /// <param name="reason">Provide a reason to this IPlayer for kicking them, leave blank for no reason given.</param>
-        void Kick(string reason = "");
-
-        /// <summary>
         /// Gets whether this IPlayer has a certain permission by checking its IAccount.
         /// </summary>
         /// <param name="key">The permission key to check for.</param>
         /// <returns>Whether or not the permission associated with the given key is granted.</returns>
         bool HasPermission(string key);
+
+        /// <summary>
+        /// Kicks this IPlayer from the server with a specified reason.
+        /// </summary>
+        /// <param name="reason">Provide a reason to this IPlayer for kicking them, leave blank for no reason given.</param>
+        void Kick(string reason = "");
 
         /// <summary>
         /// Sends an invitation to this IPlayer as another IPlayer.

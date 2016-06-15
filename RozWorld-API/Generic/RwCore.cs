@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.RozWorld -- RozWorld Core
+ * Oddmatics.RozWorld.API.Generic.RwCore -- RozWorld Core
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -17,7 +17,7 @@ namespace Oddmatics.RozWorld.API.Generic
     /// <summary>
     /// Represents the RozWorld core systems for handling the client and server instances.
     /// </summary>
-    public class RozWorld
+    public class RwCore
     {
         /// <summary>
         /// Gets the current RozWorld server instance.

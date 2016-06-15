@@ -54,7 +54,7 @@
     <Compile Include="Generic\Level\Weather.cs" />
     <Compile Include="Generic\Level\IWorld.cs" />
     <Compile Include="Generic\Progression\IRankSystem.cs" />
-    <Compile Include="Generic\RozWorld.cs" />
+    <Compile Include="Generic\RwCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\Accounts\IAccount.cs" />
     <Compile Include="Server\Accounts\IAccountsManager.cs" />
