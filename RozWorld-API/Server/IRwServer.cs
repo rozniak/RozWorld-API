@@ -13,6 +13,7 @@ using Oddmatics.RozWorld.API.Generic.Game;
 using Oddmatics.RozWorld.API.Server.Accounts;
 using Oddmatics.RozWorld.API.Server.Entity;
 using Oddmatics.RozWorld.API.Server.Event;
+using Oddmatics.RozWorld.API.Server.Game;
 using System;
 using System.Collections.Generic;
 
@@ -27,6 +28,11 @@ namespace Oddmatics.RozWorld.API.Server
         /// Gets the name of this IRwServer that will appear in people's browsers.
         /// </summary>
         string BrowserName { get; }
+
+        /// <summary>
+        /// Gets the IContentManager instance for this IRwServer.
+        /// </summary>
+        IContentManager ContentManager { get; }
 
         /// <summary>
         /// Gets or sets the current game difficulty.
@@ -47,6 +53,11 @@ namespace Oddmatics.RozWorld.API.Server
         /// Gets whether this IRwServer is running locally (as in, a singleplayer or splitscreen game).
         /// </summary>
         bool IsLocal { get; }
+
+        /// <summary>
+        /// Gets whether this IRwServer is in a paused state (only applicable if running singleplayer or splitscreen).
+        /// </summary>
+        bool IsPaused { get; }
 
         /// <summary>
         /// Gets whether this IRwServer is whitelisted.
@@ -99,7 +110,12 @@ namespace Oddmatics.RozWorld.API.Server
         string SpawnWorldName { get; }
 
         /// <summary>
-        /// Gets the tick rate to use for this server in milliseconds.
+        /// Gets this IRwServer's default StatCalculator.
+        /// </summary>
+        IStatCalculator StatCalculator { get; }
+
+        /// <summary>
+        /// Gets the tick rate to use for this IRwServer in milliseconds.
         /// </summary>
         byte TickRate { get; }
         
@@ -110,12 +126,17 @@ namespace Oddmatics.RozWorld.API.Server
 
 
         /// <summary>
-        /// Occurs when this server is starting.
+        /// Occurs when this IRwServer is paused.
+        /// </summary>
+        event EventHandler Pause;
+
+        /// <summary>
+        /// Occurs when this IRwServer is starting.
         /// </summary>
         event EventHandler Starting;
 
         /// <summary>
-        /// Occurs when this server is stopping.
+        /// Occurs when this IRwServer is stopping.
         /// </summary>
         event EventHandler Stopping;
 

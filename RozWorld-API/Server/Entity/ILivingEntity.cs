@@ -9,6 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Server.Game;
+
 namespace Oddmatics.RozWorld.API.Server.Entity
 {
     /// <summary>
@@ -16,11 +18,6 @@ namespace Oddmatics.RozWorld.API.Server.Entity
     /// </summary>
     public interface ILivingEntity : IEntity
     {
-        /// <summary>
-        /// Gets or sets the experience of this ILivingEntity.
-        /// </summary>
-        int Experience { get; set; }
-
         /// <summary>
         /// Gets or sets the health of this ILivingEntity.
         /// </summary>
@@ -47,14 +44,9 @@ namespace Oddmatics.RozWorld.API.Server.Entity
         bool IsStunned { get; }
 
         /// <summary>
-        /// Gets or sets the level of this ILivingEntity.
+        /// Gets the SafeStatHandler for this ILivingEntity 
         /// </summary>
-        int Level { get; set; }
-
-        /// <summary>
-        /// Gets the maximum health of this ILivingEntity.
-        /// </summary>
-        int MaxHealth { get; }
+        SafeStatHandler Stats { get; }
 
 
         /// <summary>

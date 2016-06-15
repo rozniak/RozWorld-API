@@ -32,5 +32,12 @@ namespace Oddmatics.RozWorld.API.Server.Entity
         /// <param name="name">The display name to give this IPlayer.</param>
         /// <returns>A new instance of an NPC IPlayer with the given display name.</returns>
         IPlayer CreatePlayer(string name);
+
+        /// <summary>
+        /// Checks whether the specified type of IEntity is loaded.
+        /// </summary>
+        /// <param name="type">The IEntity type name.</param>
+        /// <returns>Whether or not the IEntity of the specified type is loaded.</returns>
+        bool IsLoaded(string type);
     }
 }
