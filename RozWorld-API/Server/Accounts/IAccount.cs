@@ -9,6 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Server.Entity;
 using Oddmatics.RozWorld.API.Server.Game;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,16 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Gets the creation IP of the account associated with this IAccount.
         /// </summary>
         IPAddress CreationIP { get; }
+
+        /// <summary>
+        /// Gets whether this IAccount has an associated IPlayer instance.
+        /// </summary>
+        bool IsPlayer { get; }
+
+        /// <summary>
+        /// Gets whether this IAccount is representative of the server itself.
+        /// </summary>
+        bool IsServer { get; }
 
         /// <summary>
         /// Gets the IP of the last login of the account associated with this IAccount.
@@ -68,6 +79,12 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <param name="key">The permission key to check by.</param>
         /// <returns>The PermissionState of the permission associated with the given key.</returns>
         PermissionState CheckAccountPermission(string key);
+
+        /// <summary>
+        /// Gets the associated IPlayer instance of this IAccount.
+        /// </summary>
+        /// <returns>The IPlayer instance of this IAccount.</returns>
+        IPlayer GetPlayer();
 
         /// <summary>
         /// Gets whether this IAccount has a certain permission by checking its own permissions and its IPermissionGroup membership.
