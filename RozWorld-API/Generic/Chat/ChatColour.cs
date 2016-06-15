@@ -111,7 +111,7 @@ namespace Oddmatics.RozWorld.API.Generic.Chat
         /// </summary>
         /// <param name="subject">The string subject to check.</param>
         /// <returns>Whether or not the string is a valid ChatColour.</returns>
-        public bool IsChatColour(string subject)
+        public static bool IsChatColour(string subject)
         {
             return ValidColours.Contains(subject);
         }
