@@ -62,6 +62,7 @@
     <Compile Include="Server\Accounts\IPermissionAuthority.cs" />
     <Compile Include="Server\Accounts\PermissionInfo.cs" />
     <Compile Include="Server\Accounts\PermissionState.cs" />
+    <Compile Include="Server\Entity\IEntityAttributes.cs" />
     <Compile Include="Server\Entity\IEntityFactory.cs" />
     <Compile Include="Server\Entity\ILivingEntity.cs" />
     <Compile Include="Server\Entity\ILivingEntityAttributes.cs" />
