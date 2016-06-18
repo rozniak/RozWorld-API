@@ -9,7 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using Oddmatics.RozWorld.API.Server.Entity;
+using Oddmatics.RozWorld.API.Server.Entities;
 
 namespace Oddmatics.RozWorld.API.Server.Game
 {
@@ -22,12 +22,5 @@ namespace Oddmatics.RozWorld.API.Server.Game
         /// Gets this IContentManager's IEntityFactory.
         /// </summary>
         IEntityFactory EntityFactory { get; }
-
-        /// <summary>
-        /// Gets IEntityAttributes associated with an IEntity by its type name.
-        /// </summary>
-        /// <param name="type">The type name of the IEntity.</param>
-        /// <returns>The IEntityAttributes associated with the IEntity specified.</returns>
-        IEntityAttributes GetEntityAttributes(string type);
     }
 }

@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.Velocity -- Motion Velocity
+ * Oddmatics.RozWorld.API.Generic.Velocity -- 2D Vector
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -14,32 +14,32 @@
 namespace Oddmatics.RozWorld.API.Generic
 {
     /// <summary>
-    /// Represents a velocity vector.
+    /// Represents a vector.
     /// </summary>
-    public struct Velocity
+    public struct Vector
     {
         /// <summary>
-        /// The angle (in radians) of this Velocity.
+        /// The angle (in radians) of this Vector.
         /// 0 is directly east.
         /// </summary>
         public double Angle { get; private set; }
 
         /// <summary>
-        /// The speed of this Velocity.
+        /// The speed of this Vector.
         /// </summary>
-        public double Speed { get; private set; }
+        public double Magnitude { get; private set; }
         
 
         /// <summary>
-        /// Initialises a new instance of the Velocity class with a specified speed and angle.
+        /// Initialises a new instance of the Vector class with a specified angle and magnitude.
         /// </summary>
         /// <param name="angle">The angle (in radians); 0 is directly east.</param>
-        /// <param name="speed">The speed.</param>
-        public Velocity(double angle, double speed)
+        /// <param name="magnitude">The magnitude.</param>
+        public Vector(double angle, double magnitude)
             : this()
         {
             Angle = angle;
-            Speed = speed;
+            Magnitude = magnitude;
         }
     }
 }

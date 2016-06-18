@@ -16,7 +16,7 @@ namespace Oddmatics.RozWorld.API.Server.Game
     /// <summary>
     /// Represents a safe statistics handler to keep all statistics in sync.
     /// </summary>
-    public struct SafeStatHandler
+    public class SafeStatHandler
     {
         /// <summary>
         /// Gets the experience points within this SafeStatHandler.
@@ -73,7 +73,6 @@ namespace Oddmatics.RozWorld.API.Server.Game
         /// </summary>
         /// <param name="statCalc">The IStatCalculator to use.</param>
         public SafeStatHandler(IStatCalculator statCalc)
-            : this()
         {
             if (statCalc == null)
                 throw new ArgumentNullException("statCalc parameter cannot be null.");

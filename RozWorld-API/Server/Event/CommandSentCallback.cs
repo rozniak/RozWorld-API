@@ -9,8 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using System.Collections.Generic;
 using Oddmatics.RozWorld.API.Server.Accounts;
+using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Server.Event
 {

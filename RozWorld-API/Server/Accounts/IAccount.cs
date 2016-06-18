@@ -9,7 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using Oddmatics.RozWorld.API.Server.Entity;
+using Oddmatics.RozWorld.API.Server.Entities;
 using Oddmatics.RozWorld.API.Server.Game;
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <summary>
         /// Gets the associated IPlayer instance of this IAccount.
         /// </summary>
-        IPlayer PlayerInstance { get; }
+        Player PlayerInstance { get; }
 
         /// <summary>
         /// Gets the username of the player of this IAccount.

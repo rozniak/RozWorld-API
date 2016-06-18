@@ -10,7 +10,7 @@
  */
 
 using Oddmatics.RozWorld.API.Generic.Level;
-using Oddmatics.RozWorld.API.Server.Entity;
+using Oddmatics.RozWorld.API.Server.Entities;
 
 namespace Oddmatics.RozWorld.API.Server.Level
 {
@@ -45,7 +45,7 @@ namespace Oddmatics.RozWorld.API.Server.Level
         /// </summary>
         /// <param name="id">The ID of the IEntity.</param>
         /// <returns>The IEntity instance associated with the specified ID.</returns>
-        IEntity GetEntityById(ushort id);
+        Entity GetEntityById(ushort id);
 
         /// <summary>
         /// Places an IEntity inside of this IWorld.
@@ -56,14 +56,14 @@ namespace Oddmatics.RozWorld.API.Server.Level
         /// <param name="segZ">The z-coordinate of the target segment.</param>
         /// <param name="localX">The target local x-coordinate of the segment.</param>
         /// <param name="localY">The target local y-coordinate of the segment.</param>
-        void PutEntity(IEntity entity, int segX, int segY, int segZ, int localX, int localY);
+        void PutEntity(Entity entity, int segX, int segY, int segZ, int localX, int localY);
 
         /// <summary>
         /// Places an IEntity inside of this IWorld.
         /// </summary>
         /// <param name="entity">The IEntity to spawn.</param>
         /// <param name="location">The target Location to spawn at.</param>
-        void PutEntity(IEntity entity, Location location);
+        void PutEntity(Entity entity, Location location);
 
         /// <summary>
         /// Changes the animation state of an IEntity to the specified new state.

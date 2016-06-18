@@ -11,7 +11,7 @@
 
 using Oddmatics.RozWorld.API.Generic.Game;
 using Oddmatics.RozWorld.API.Server.Accounts;
-using Oddmatics.RozWorld.API.Server.Entity;
+using Oddmatics.RozWorld.API.Server.Entities;
 using Oddmatics.RozWorld.API.Server.Event;
 using Oddmatics.RozWorld.API.Server.Game;
 using System;
@@ -77,7 +77,7 @@ namespace Oddmatics.RozWorld.API.Server
         /// <summary>
         /// Gets a list of the currently online players.
         /// </summary>
-        IList<IPlayer> OnlinePlayers { get; }
+        IList<Player> OnlinePlayers { get; }
 
         /// <summary>
         /// Gets this IRwServer's IPermissionAuthority.
@@ -129,6 +129,11 @@ namespace Oddmatics.RozWorld.API.Server
         /// Occurs when this IRwServer is paused.
         /// </summary>
         event EventHandler Pause;
+
+        /// <summary>
+        /// Occurs when this IRwServer has fully started.
+        /// </summary>
+        event EventHandler Started;
 
         /// <summary>
         /// Occurs when this IRwServer is starting.
