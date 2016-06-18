@@ -11,6 +11,8 @@
 
 using Oddmatics.RozWorld.API.Generic;
 using Oddmatics.RozWorld.API.Generic.Level;
+using Oddmatics.RozWorld.API.Server.Event;
+using System;
 
 namespace Oddmatics.RozWorld.API.Server.Entities
 {
@@ -20,25 +22,20 @@ namespace Oddmatics.RozWorld.API.Server.Entities
     public abstract class Entity
     {
         /// <summary>
+        /// Gets the age of this Entity.
+        /// </summary>
+        public int Age { get; private set; }
+
+        /// <summary>
         /// Gets the animation state of this Entity.
         /// </summary>
-        public string AnimationState { get; private set; }
+        public byte AnimationState { get; private set; }
 
         /// <summary>
         /// Gets the ID of this Entity.
         /// </summary>
         public ushort ID { get { return _ID; } set { if (_ID == 0) _ID = value; } }
         private ushort _ID;
-
-        /// <summary>
-        /// Gets or sets whether this Entity is on fire.
-        /// </summary>
-        public bool IsOnFire
-        {
-            get { return _IsOnFire; }
-            set { _IsOnFire = IsFlammable && value; }
-        }
-        private bool _IsOnFire;
         
         /// <summary>
         /// Gets whether this Entity can be controlled externally (eg. by IPlugins).
@@ -51,6 +48,16 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public abstract bool IsFlammable { get; }
 
         /// <summary>
+        /// Gets or sets whether this Entity is on fire.
+        /// </summary>
+        public bool IsOnFire
+        {
+            get { return _IsOnFire; }
+            set { _IsOnFire = IsFlammable && value; }
+        }
+        private bool _IsOnFire;
+
+        /// <summary>
         /// Gets whether this Entity is valid (spawned in an IWorld).
         /// </summary>
         public bool IsValid { get { return false; } } // TODO: code this - should ask server if this entity exists!
@@ -61,18 +68,19 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public Location Location { get; private set; } // Handled by the velocity on Update()
 
         /// <summary>
-        /// Gets the previous animation state of this Entity.
-        /// </summary>
-        public string OldAnimationState { get; private set; }
-
-        /// <summary>
         /// Gets or sets the current velocity of this Entity.
         /// </summary>
         public Vector Velocity { get; set; }
 
 
         /// <summary>
-        /// Applies a force onto this BaseEntity.
+        /// Occurs when this Entity's animation state changes.
+        /// </summary>
+        event StateChangedEventHandler StateChanged;
+
+
+        /// <summary>
+        /// Applies a force onto this Entity.
         /// </summary>
         /// <param name="force">The force Vector to apply.</param>
         public void ApplyForce(Vector force)
@@ -84,13 +92,24 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// Changes the animation state of this Entity on clients.
         /// </summary>
         /// <param name="newState">The new animation state.</param>
-        public void ChangeState(short newState)
+        protected void ChangeState(byte newState, bool loop, byte nextState = 0)
         {
             // Change this animation state and update it on the server
+            if (!RwCore.Server.ContentManager.CheckEntityState(newState, this.GetType()))
+                throw new ArgumentException("The specified new state does not exist for this Entity.");
+
+            if (StateChanged != null)
+                StateChanged(this, newState, loop, nextState);
         }
 
         /// <summary>
-        /// Teleports this IEntity to a specified target IEntity.
+        /// Interacts with this Entity.
+        /// </summary>
+        /// <param name="sender">The Player interacting.</param>
+        public virtual void Interact(Player sender) { }
+
+        /// <summary>
+        /// Teleports this Entity to a specified target IEntity.
         /// </summary>
         /// <param name="target">The target IEntity to teleport to.</param>
         public void TeleportTo(Entity target)
@@ -99,7 +118,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         }
 
         /// <summary>
-        /// Teleports this IEntity to the specified Location.
+        /// Teleports this Entity to the specified Location.
         /// </summary>
         /// <param name="target">The target Location to teleport to.</param>
         public void TeleportTo(Location target)

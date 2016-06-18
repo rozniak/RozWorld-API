@@ -10,6 +10,7 @@
  */
 
 using Oddmatics.RozWorld.API.Server.Entities;
+using System;
 
 namespace Oddmatics.RozWorld.API.Server.Game
 {
@@ -22,5 +23,19 @@ namespace Oddmatics.RozWorld.API.Server.Game
         /// Gets this IContentManager's IEntityFactory.
         /// </summary>
         IEntityFactory EntityFactory { get; }
+
+
+        /// <summary>
+        /// Checks whether an animation state for an Entity exists.
+        /// </summary>
+        /// <param name="state">The state to check for.</param>
+        /// <returns>Whether or not the state exists for the given Entity.</returns>
+        bool CheckEntityState(byte state, Type entityType);
+
+        /// <summary>
+        /// Registers an animation state for an Entity.
+        /// </summary>
+        /// <param name="state">The state to register.</param>
+        void RegisterEntityState(byte state, Type entityType);
     }
 }
