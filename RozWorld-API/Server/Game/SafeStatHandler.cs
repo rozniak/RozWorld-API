@@ -41,9 +41,6 @@ namespace Oddmatics.RozWorld.API.Server.Game
                 }
             }
         }
-        /// <summary>
-        /// Backing variable for Level.
-        /// </summary>
         private int _Level;
 
         /// <summary>

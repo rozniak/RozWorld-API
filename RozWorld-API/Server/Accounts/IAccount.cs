@@ -38,7 +38,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         IPAddress CreationIP { get; }
 
         /// <summary>
-        /// Gets whether this IAccount has an associated IPlayer instance.
+        /// Gets whether this IAccount has an associated Player instance.
         /// </summary>
         bool IsPlayer { get; }
 
@@ -58,7 +58,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         string PermissionGroupName { get; set; }
 
         /// <summary>
-        /// Gets the associated IPlayer instance of this IAccount.
+        /// Gets the associated Player instance of this IAccount.
         /// </summary>
         Player PlayerInstance { get; }
 

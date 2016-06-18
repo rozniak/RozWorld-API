@@ -20,7 +20,7 @@ namespace Oddmatics.RozWorld.API.Server.Game
     public interface IClan
     {
         /// <summary>
-        /// Gets an IList containing all the members of this IClan as IPlayers.
+        /// Gets an IList containing all the members of this IClan as Players.
         /// </summary>
         IList<Player> Members { get; }
 
@@ -28,6 +28,7 @@ namespace Oddmatics.RozWorld.API.Server.Game
         /// Gets or sets whether or not this IClan is public.
         /// </summary>
         bool Public { get; set; }
+
 
         /// <summary>
         /// Adds a new member to this IClan by their account name.
@@ -37,9 +38,9 @@ namespace Oddmatics.RozWorld.API.Server.Game
         bool AddMember(string name);
 
         /// <summary>
-        /// Adds a new member to this IClan by their IPlayer instance.
+        /// Adds a new member to this IClan by their Player instance.
         /// </summary>
-        /// <param name="player">The IPlayer instance of the player to add.</param>
+        /// <param name="player">The Player instance of the player to add.</param>
         /// <returns>Whether or not the player was added to this IClan.</returns>
         bool AddMember(Player player);
 
@@ -51,9 +52,9 @@ namespace Oddmatics.RozWorld.API.Server.Game
         bool RemoveMember(string name);
 
         /// <summary>
-        /// Removes a member from this IClan by their IPlayer instance.
+        /// Removes a member from this IClan by their Player instance.
         /// </summary>
-        /// <param name="player">The IPlayer instance of the player to remove.</param>
+        /// <param name="player">The Player instance of the player to remove.</param>
         /// <returns>Whether or not the player was removed from this IClan.</returns>
         bool RemoveMember(Player player);
     }

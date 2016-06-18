@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Server.Entities.IPlayer -- RozWorld Player
+ * Oddmatics.RozWorld.API.Server.Entities.Player -- RozWorld Player
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>

@@ -31,9 +31,24 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         private ushort _ID;
 
         /// <summary>
+        /// Gets or sets whether this Entity is on fire.
+        /// </summary>
+        public bool IsOnFire
+        {
+            get { return _IsOnFire; }
+            set { _IsOnFire = IsFlammable && value; }
+        }
+        private bool _IsOnFire;
+        
+        /// <summary>
         /// Gets whether this Entity can be controlled externally (eg. by IPlugins).
         /// </summary>
         public abstract bool IsControllable { get; }
+
+        /// <summary>
+        /// Gets whether this Entity is flammable.
+        /// </summary>
+        public abstract bool IsFlammable { get; }
 
         /// <summary>
         /// Gets whether this Entity is valid (spawned in an IWorld).

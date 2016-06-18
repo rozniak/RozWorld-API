@@ -20,9 +20,8 @@ namespace Oddmatics.RozWorld.API.Server.Entities
     /// </summary>
     public abstract class LivingEntity : Entity
     {
-        private int _Health;
         /// <summary>
-        /// Gets or sets the health of this ILivingEntity.
+        /// Gets or sets the health of this LivingEntity.
         /// </summary>
         public int Health
         {
@@ -35,29 +34,40 @@ namespace Oddmatics.RozWorld.API.Server.Entities
                 _Health = value;
             }
         }
+        private int _Health;
 
         /// <summary>
-        /// Gets whether this ILivingEntity is alive.
+        /// Gets whether this LivingEntity is alive.
         /// </summary>
         public bool IsAlive { get { return Health == 0; } }
 
         /// <summary>
-        /// Gets or sets whether this ILivingEntity is frozen.
+        /// Gets whether this LivingEntity is freezable.
         /// </summary>
-        public bool IsFrozen { get; set; } // TODO: This
+        public abstract bool IsFreezable { get; }
 
         /// <summary>
-        /// Gets or sets whether this ILivingEntity is poisoned.
+        /// Gets or sets whether this LivingEntity is frozen.
         /// </summary>
-        public bool IsPoisoned { get; set; } // TODO: This
+        public bool IsFrozen
+        {
+            get { return _IsFrozen; }
+            set { _IsFrozen = IsFreezable && value; }
+        }
+        private bool _IsFrozen;
 
         /// <summary>
-        /// Gets or sets whether this ILivingEntity is stunned.
+        /// Gets whether this LivingEntity is poisoned.
         /// </summary>
-        public bool IsStunned { get; set; } // TODO: This
+        public bool IsPoisoned { get { return false; } } // TODO: This
 
         /// <summary>
-        /// Gets the SafeStatHandler for this ILivingEntity 
+        /// Gets whether this LivingEntity is stunned.
+        /// </summary>
+        public bool IsStunned { get { return false; } } // TODO: This
+
+        /// <summary>
+        /// Gets the SafeStatHandler for this LivingEntity 
         /// </summary>
         public SafeStatHandler Stats { get; protected set; }
 
