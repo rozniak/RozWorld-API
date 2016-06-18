@@ -92,14 +92,15 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// Changes the animation state of this Entity on clients.
         /// </summary>
         /// <param name="newState">The new animation state.</param>
+        /// <param name="loop">Whether the animation should loop.</param>
+        /// <param name="nextState">The next animation state after this finishes (if it's not looping).</param>
         protected void ChangeState(byte newState, bool loop, byte nextState = 0)
         {
-            // Change this animation state and update it on the server
             if (!RwCore.Server.ContentManager.CheckEntityState(newState, this.GetType()))
                 throw new ArgumentException("The specified new state does not exist for this Entity.");
 
             if (StateChanged != null)
-                StateChanged(this, newState, loop, nextState);
+                StateChanged(this, newState, loop, nextState); // Server is a subscriber to this
         }
 
         /// <summary>

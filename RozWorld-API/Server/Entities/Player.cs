@@ -90,10 +90,10 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public abstract void Kick(string reason = "");
 
         /// <summary>
-        /// Sends an invitation to this Player as another Player.
+        /// Sends an invitation from this Player to another Player.
         /// </summary>
-        /// <param name="sender">The Player to pose as the sender of this invitation.</param>
-        public abstract void SendInvite(Player sender);
+        /// <param name="recipient">The Player to send the invitation to.</param>
+        public abstract void SendInviteTo(Player recipient);
 
         /// <summary>
         /// Sends a generic chat message to this Player.
@@ -102,10 +102,16 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public abstract void SendMessage(string message);
 
         /// <summary>
-        /// Sends a private message to this Player as another Player.
+        /// Sends a chat message from this Player to the public game chat.
         /// </summary>
         /// <param name="message">The message to send.</param>
-        /// <param name="sender">The Player to pose as the sender of this private message.</param>
-        public abstract void SendPrivateMessage(string message, Player sender);
+        public abstract void SendPublicMessage(string message);
+
+        /// <summary>
+        /// Sends a private message from this Player to another Player.
+        /// </summary>
+        /// <param name="message">The message to send.</param>
+        /// <param name="recipient">The Player to send the private message to.</param>
+        public abstract void SendPrivateMessageTo(string message, Player recipient);
     }
 }
