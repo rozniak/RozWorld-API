@@ -20,7 +20,8 @@ namespace Oddmatics.RozWorld.API.Server
         /// Outputs a message into the logger.
         /// </summary>
         /// <param name="message">The message to output.</param>
-        void Out(string message);
+        /// <param name="colours">Allow colours in the logged message.</param>
+        void Out(string message, bool colours = true);
 
         /// <summary>
         /// Saves the output from this logging session.
