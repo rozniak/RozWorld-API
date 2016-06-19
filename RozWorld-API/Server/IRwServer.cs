@@ -14,6 +14,7 @@ using Oddmatics.RozWorld.API.Server.Accounts;
 using Oddmatics.RozWorld.API.Server.Entities;
 using Oddmatics.RozWorld.API.Server.Event;
 using Oddmatics.RozWorld.API.Server.Game;
+using Oddmatics.RozWorld.API.Server.Level;
 using System;
 using System.Collections.Generic;
 
@@ -158,6 +159,27 @@ namespace Oddmatics.RozWorld.API.Server
         void BroadcastMessage(string message);
 
         /// <summary>
+        /// Gets a Player by their account name.
+        /// </summary>
+        /// <param name="name">The account name of the Player.</param>
+        /// <returns>The Player instance of the given account name, null if they are not online.</returns>
+        Player GetPlayer(string name);
+
+        /// <summary>
+        /// Gets a Player by their account name, offline or online.
+        /// </summary>
+        /// <param name="name">The account name of the Player.</param>
+        /// <returns>The Player instance of the given account name, null if they do not exist.</returns>
+        Player GetPlayerAbsolute(string name);
+
+        /// <summary>
+        /// Gets an IWorld on this IRwServer by its name.
+        /// </summary>
+        /// <param name="name">The name of the IWorld.</param>
+        /// <returns>The IWorld instance of the given name, null if it does not exist or isn't loaded.</returns>
+        IWorld GetWorld(string name);
+
+        /// <summary>
         /// Checks if an Entity of the given ID is valid (spawned in an IWorld).
         /// </summary>
         /// <param name="id">The Entity's ID.</param>
@@ -171,5 +193,12 @@ namespace Oddmatics.RozWorld.API.Server
         /// <param name="func">The function to bind to the command.</param>
         /// <returns>True if the registration was successful.</returns>
         bool RegisterCommand(string cmd, CommandSentCallback func);
+
+        /// <summary>
+        /// Checks if there is data for the world of the given name able to be loaded.
+        /// </summary>
+        /// <param name="name">The name of the world</param>
+        /// <returns>True if the world of the given name can be loaded.</returns>
+        bool WorldAvailable(string name);
     }
 }
