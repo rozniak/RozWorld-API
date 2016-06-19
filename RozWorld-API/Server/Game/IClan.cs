@@ -33,29 +33,29 @@ namespace Oddmatics.RozWorld.API.Server.Game
         /// <summary>
         /// Adds a new member to this IClan by their account name.
         /// </summary>
-        /// <param name="name">The account name of the player to add to this IClan.</param>
-        /// <returns>Whether or not the player was added to this IClan.</returns>
+        /// <param name="name">The account name of the Player to add to this IClan.</param>
+        /// <returns>True if the Player of the given account name is in this IClan (regardless of whether they were already in it).</returns>
         bool AddMember(string name);
 
         /// <summary>
         /// Adds a new member to this IClan by their Player instance.
         /// </summary>
         /// <param name="player">The Player instance of the player to add.</param>
-        /// <returns>Whether or not the player was added to this IClan.</returns>
+        /// <returns>True if the Player is in this IClan (regardless of whether they were already in it).</returns>
         bool AddMember(Player player);
 
         /// <summary>
         /// Removes a member from this IClan by their account name.
         /// </summary>
         /// <param name="name">The account name of the player to remove from this IClan.</param>
-        /// <returns>Whether or not the player was removed from this IClan.</returns>
+        /// <returns>True if the Player of the given account name is not in this IClan (regardless of whether they were already out of it).</returns>
         bool RemoveMember(string name);
 
         /// <summary>
         /// Removes a member from this IClan by their Player instance.
         /// </summary>
         /// <param name="player">The Player instance of the player to remove.</param>
-        /// <returns>Whether or not the player was removed from this IClan.</returns>
+        /// <returns>True if the Player of the given account name is not in this IClan (regardless of whether they were already out of it).</returns>
         bool RemoveMember(Player player);
     }
 }

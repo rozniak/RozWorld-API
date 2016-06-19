@@ -19,25 +19,31 @@ namespace Oddmatics.RozWorld.API.Server.Entities
     public interface IEntityFactory
     {
         /// <summary>
-        /// Creates a new Entity instance of the given type.
+        /// Creates a new chat bot Player instance (bot only shows up in the chat, no instance in an IWorld).
+        /// </summary>
+        /// <param name="name">The display name to give this chat bot.</param>
+        /// <returns>A new instance of Player, as a chat bot.</returns>
+        Player CreateChatBotPlayer(string name);
+
+        /// <summary>
+        /// Creates a new Entity instance of the given type name.
         /// </summary>
         /// <param name="type">The type name of Entity to create.</param>
-        /// <returns>A new instance of the Entity of the given type.</returns>
+        /// <returns>A new instance of the Entity of the given type, null if the type doesn't exist.</returns>
         Entity CreateEntity(string type);
 
         /// <summary>
-        /// Creates a new Player instance with the given.
-        /// This will be an NPC posing as a player once placed into an IWorld.
+        /// Creates a new bot Player instance.
         /// </summary>
-        /// <param name="name">The display name to give this Player.</param>
-        /// <returns>A new instance of an NPC Player with the given display name.</returns>
-        Player CreatePlayer(string name);
+        /// <param name="name">The display name to give this Player bot.</param>
+        /// <returns>A new instance of Player, controllable as a bot.</returns>
+        Player CreateBotPlayer(string name);
 
         /// <summary>
         /// Checks whether the specified type of Entity is loaded.
         /// </summary>
         /// <param name="type">The Entity type name.</param>
-        /// <returns>Whether or not the Entity of the specified type is loaded.</returns>
+        /// <returns>True if the Entity of the specified type is loaded.</returns>
         bool IsLoaded(string type);
     }
 }

@@ -68,6 +68,11 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public Location Location { get; private set; } // Handled by the velocity on Update()
 
         /// <summary>
+        /// Gets the mass of this Entity.
+        /// </summary>
+        public abstract int Mass { get; }
+
+        /// <summary>
         /// Gets or sets the current velocity of this Entity.
         /// </summary>
         public Vector Velocity { get; set; }
@@ -78,6 +83,40 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// </summary>
         event StateChangedEventHandler StateChanged;
 
+
+        /// <summary>
+        /// Attacks an Entity.
+        /// </summary>
+        /// <param name="entity">The Entity to attack.</param>
+        public void Attack(Entity entity)
+        {
+            // Send a request to the server to do an attack
+            if (this.GetType().GetInterface("IInventoryCarrier") == typeof(IInventoryCarrier))
+            {
+                // Perform the attack with the held item
+            }
+            else
+            {
+                // Perform the attack with the equivilent of nothing
+            }
+        }
+
+        /// <summary>
+        /// Attacks an ITile.
+        /// </summary>
+        /// <param name="tile">The ITile to attack.</param>
+        public void Attack(ITile tile)
+        {
+            // Send a request to the server to do an attack
+            if (this.GetType().GetInterface("IInventoryCarrier") == typeof(IInventoryCarrier))
+            {
+                // Perform the attack with the held item
+            }
+            else
+            {
+                // Perform the attack with the equivilent of nothing
+            }
+        }
 
         /// <summary>
         /// Applies a force onto this Entity.

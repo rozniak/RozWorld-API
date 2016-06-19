@@ -25,7 +25,7 @@ namespace Oddmatics.RozWorld.API.Server.Level
         string DirectoryPath { get; }
 
         /// <summary>
-        /// Gets the generator used for 
+        /// Gets the generator used for this IWorld.
         /// </summary>
         IWorldGenerator Generator { get; }
 
@@ -39,6 +39,12 @@ namespace Oddmatics.RozWorld.API.Server.Level
         /// </summary>
         Location SpawnPoint { get; set; }
 
+
+        /// <summary>
+        /// Creates an explosion at a given Location in this IWorld.
+        /// </summary>
+        /// <param name="location">The Location to spawn the explosion.</param>
+        void CreateExplosion(Location location);
 
         /// <summary>
         /// Gets an IEntity instance in this IWorld by its ID.
@@ -56,40 +62,13 @@ namespace Oddmatics.RozWorld.API.Server.Level
         /// <param name="segZ">The z-coordinate of the target segment.</param>
         /// <param name="localX">The target local x-coordinate of the segment.</param>
         /// <param name="localY">The target local y-coordinate of the segment.</param>
-        void PutEntity(Entity entity, int segX, int segY, int segZ, int localX, int localY);
+        bool PutEntity(Entity entity, int segX, int segY, int segZ, int localX, int localY);
 
         /// <summary>
         /// Places an IEntity inside of this IWorld.
         /// </summary>
         /// <param name="entity">The IEntity to spawn.</param>
         /// <param name="location">The target Location to spawn at.</param>
-        void PutEntity(Entity entity, Location location);
-
-        /// <summary>
-        /// Changes the animation state of an IEntity to the specified new state.
-        /// This function should be used by the IEntity instances themselves, changing an IEntity's state should be
-        /// done via the IEntity.ChangeState() method instead.
-        /// </summary>
-        /// <param name="id">The ID of the IEntity.</param>
-        /// <param name="newState">The new state to change to.</param>
-        void SetEntityState(ushort id, string newState);
-
-        /// <summary>
-        /// Sets the Velocity of an IEntity.
-        /// This function should be used by the IEntity instances themselves, changing an IEntity's Velocity should
-        /// be done via the IEntity.SetVelocity() method instead.
-        /// </summary>
-        /// <param name="id">The ID of the IEntity.</param>
-        /// <param name="newState"></param>
-        void SetEntityVelocity(ushort id, string newState);
-
-        /// <summary>
-        /// Teleports an IEntity of the given ID to the specified Location.
-        /// This function should be used by the IEntity instances themselves, teleporting an IEntity should be done
-        /// via the IEntity.TeleportTo() method instead.
-        /// </summary>
-        /// <param name="id">The ID of the IEntity.</param>
-        /// <param name="destination">The Location to teleport the IEntity to.</param>
-        void TeleportEntity(ushort id, Location destination);
+        bool PutEntity(Entity entity, Location location);
     }
 }

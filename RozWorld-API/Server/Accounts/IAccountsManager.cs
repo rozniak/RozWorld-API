@@ -26,19 +26,21 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Deletes saved data of a given IAccount.
         /// </summary>
         /// <param name="account">The IAccount to delete.</param>
-        void DeleteAccount(IAccount account);
+        /// <returns>True if the was deleted.</returns>
+        bool DeleteAccount(IAccount account);
 
         /// <summary>
         /// Deletes the saved data of an account of the given name.
         /// </summary>
         /// <param name="name">The name of the account to delete.</param>
-        void DeleteAccount(string name);
+        /// <returns>True if the account existed and was deleted.</returns>
+        bool DeleteAccount(string name);
 
         /// <summary>
         /// Gets the IAccount associated with the specified name.
         /// </summary>
         /// <param name="name">The name of the IAccount to get.</param>
-        /// <returns>An IAccount instance obtained from the given name, if it exists.</returns>
+        /// <returns>The IAccount instance obtained from the given name, null if the name has no association.</returns>
         IAccount GetAccount(string name);
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// </summary>
         /// <param name="account">The IAccount instance to rename.</param>
         /// <param name="newName">The new name of the IAccount.</param>
-        void RenameAccount(IAccount account, string newName);
+        /// <returns>True if the IAccount was renamed.</returns>
+        bool RenameAccount(IAccount account, string newName);
     }
 }

@@ -29,13 +29,22 @@ namespace Oddmatics.RozWorld.API.Server.Game
         /// Checks whether an animation state for an Entity exists.
         /// </summary>
         /// <param name="state">The state to check for.</param>
-        /// <returns>Whether or not the state exists for the given Entity.</returns>
+        /// <returns>True if the state is registered for the given Entity Type and the Entity Type is also registered.</returns>
         bool CheckEntityState(byte state, Type entityType);
+
+        /// <summary>
+        /// Registers an Entity Type to this IContentManager.
+        /// </summary>
+        /// <param name="entityType">The Entity's Type to register.</param>
+        /// <returns>True if the Type is not already registered.</returns>
+        bool RegisterEntity(Type entityType);
 
         /// <summary>
         /// Registers an animation state for an Entity.
         /// </summary>
         /// <param name="state">The state to register.</param>
-        void RegisterEntityState(byte state, Type entityType);
+        /// <param name="entityType">The Entity's Type that owns the animation state.</param>
+        /// <returns>True if the state has not been registered for the given Entity Type and the Entity Type is also registered.</returns>
+        bool RegisterEntityState(byte state, Type entityType);
     }
 }

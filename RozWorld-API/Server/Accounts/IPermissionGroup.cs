@@ -49,13 +49,14 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Adds a permission to this IPermissionGroup.
         /// </summary>
         /// <param name="key">The permission key to try to add.</param>
-        void AddPermission(string key);
+        /// <returns>True if the this IPermissionGroup grants the permission (regardless of whether it already granted it).</returns>
+        bool AddPermission(string key);
 
         /// <summary>
         /// Checks whether a player's in this IPermissionGroup have the specified permission.
         /// </summary>
         /// <param name="key">The permission key to check for.</param>
-        /// <returns>Whether or not this IPermissionGroup grants the specified permission.</returns>
+        /// <returns>True if this IPermissionGroup grants the specified permission.</returns>
         bool HasPermission(string key);
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Removes a permission from this IPermissionGroup.
         /// </summary>
         /// <param name="key">The permission key to remove.</param>
-        void RemovePermission(string key);
+        /// <returns>True if this IPermissionGroup does not grant the permission (regardless of whether it never granted it).</returns>
+        bool RemovePermission(string key);
     }
 }

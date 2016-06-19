@@ -135,7 +135,7 @@ namespace Oddmatics.RozWorld.API.Generic.Chat
         /// Gets whether the specified character is a special graphic character.
         /// </summary>
         /// <param name="subject">The character to check.</param>
-        /// <returns>Whether or not the specified character is a special graphic character.</returns>
+        /// <returns>True the specified character is a special graphic character.</returns>
         public static bool IsGraphic(char subject)
         {
             // Horrendous long conditional...

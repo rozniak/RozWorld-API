@@ -11,13 +11,14 @@
 
 using Oddmatics.RozWorld.API.Generic.Level;
 using Oddmatics.RozWorld.API.Server.Accounts;
+using Oddmatics.RozWorld.API.Server.Item;
 
 namespace Oddmatics.RozWorld.API.Server.Entities
 {
     /// <summary>
     /// Represents a RozWorld player entity.
     /// </summary>
-    public abstract class Player : LivingEntity
+    public abstract class Player : LivingEntity, IInventoryCarrier
     {
         /// <summary>
         /// Gets the IAccount associated with this Player.
@@ -35,9 +36,24 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public abstract string DisplayName { get; set; }
 
         /// <summary>
+        /// Gets this Player's IInventory.
+        /// </summary>
+        public abstract IInventory Inventory { get; set; }
+
+        /// <summary>
+        /// Gets whether this Player is a chat bot.
+        /// </summary>
+        public bool IsChatBot { get { return !IsRealPlayer && !IsValid; } }
+
+        /// <summary>
         /// Gets whether this Player is a real player.
         /// </summary>
         public abstract bool IsRealPlayer { get; protected set; }
+
+        /// <summary>
+        /// Gets the IItem in this Player's hand.
+        /// </summary>
+        public abstract IItem ItemInHand { get; set; }
 
         /// <summary>
         /// Gets or sets the joinable status of this Player.

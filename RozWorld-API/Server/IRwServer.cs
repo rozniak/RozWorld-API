@@ -158,11 +158,18 @@ namespace Oddmatics.RozWorld.API.Server
         void BroadcastMessage(string message);
 
         /// <summary>
+        /// Checks if an Entity of the given ID is valid (spawned in an IWorld).
+        /// </summary>
+        /// <param name="id">The Entity's ID.</param>
+        /// <returns>True if the Entity is currently valid.</returns>
+        bool IsValidEntity(ushort id);
+
+        /// <summary>
         /// Attempts to register a command to the specified function.
         /// </summary>
         /// <param name="cmd">The command to register.</param>
         /// <param name="func">The function to bind to the command.</param>
-        /// <returns>Whether or not the registration was successful.</returns>
+        /// <returns>True if the registration was successful.</returns>
         bool RegisterCommand(string cmd, CommandSentCallback func);
     }
 }

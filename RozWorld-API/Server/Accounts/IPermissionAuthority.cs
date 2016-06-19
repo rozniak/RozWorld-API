@@ -38,21 +38,21 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Creates a new blank IPermissionGroup with the given name.
         /// </summary>
         /// <param name="name">The name to give the new IPermissionGroup.</param>
-        /// <returns>The newly created IPermissionGroup instance.</returns>
+        /// <returns>The newly created IPermissionGroup instance, null if an IPermissionGroup of the same name already exists.</returns>
         IPermissionGroup CreateNewGroup(string name);
 
         /// <summary>
         /// Gets an IPermissionGroup by its name.
         /// </summary>
         /// <param name="name">The name of the IPermissionGroup to get.</param>
-        /// <returns>The IPermissionGroup associated with the given name.</returns>
+        /// <returns>The IPermissionGroup associated with the given name, null if no IPermissionGroup was found.</returns>
         IPermissionGroup GetGroup(string name);
 
         /// <summary>
         /// Gets PermissionInfo associated with a permission by its key.
         /// </summary>
         /// <param name="key">The permission key to identify by.</param>
-        /// <returns>The associated PermissionInfo instance of the permission.</returns>
+        /// <returns>The associated PermissionInfo instance of the permission, null if the permissions wasn't found.</returns>
         PermissionInfo GetPermissionInfo(string key);
 
         /// <summary>
@@ -60,6 +60,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// </summary>
         /// <param name="key">The permission key to register.</param>
         /// <param name="description">The description of the permission.</param>
-        void RegisterPermission(string key, string description);
+        /// <returns>True if the permission was reigstered.</returns>
+        bool RegisterPermission(string key, string description);
     }
 }
