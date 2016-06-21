@@ -173,6 +173,13 @@ namespace Oddmatics.RozWorld.API.Server
         Player GetPlayerAbsolute(string name);
 
         /// <summary>
+        /// Gets a Player by their display name.
+        /// </summary>
+        /// <param name="name">The display name of the Player.</param>
+        /// <returns>The Player instance of the given display name, null if they are not online.</returns>
+        Player GetPlayerByDisplayName(string name);
+
+        /// <summary>
         /// Gets an IWorld on this IRwServer by its name.
         /// </summary>
         /// <param name="name">The name of the IWorld.</param>
