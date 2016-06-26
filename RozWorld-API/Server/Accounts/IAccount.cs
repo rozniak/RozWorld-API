@@ -38,6 +38,11 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         IPAddress CreationIP { get; }
 
         /// <summary>
+        /// Gets or sets the display name of this IAccount.
+        /// </summary>
+        string DisplayName { get; set; }
+
+        /// <summary>
         /// Gets whether this IAccount has an associated Player instance.
         /// </summary>
         bool IsPlayer { get; }
@@ -53,9 +58,14 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         IPAddress LastLoginIP { get; }
 
         /// <summary>
-        /// Gets or sets the permission group this IAccount is assigned to.
+        /// Gets the IPermissionGroup this IAccount is assigned to.
         /// </summary>
-        string PermissionGroupName { get; set; }
+        IPermissionGroup PermissionGroup { get; }
+
+        /// <summary>
+        /// Gets the individual permissions granted to this IAccount.
+        /// </summary>
+        IList<string> Permissions { get; }
 
         /// <summary>
         /// Gets the associated Player instance of this IAccount.
@@ -66,11 +76,6 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Gets the username of the player of this IAccount.
         /// </summary>
         string Username { get; }
-
-        /// <summary>
-        /// Gets the individual permissions granted to this IAccount.
-        /// </summary>
-        IList<string> Permissions { get; }
 
 
         /// <summary>
@@ -92,6 +97,14 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// </summary>
         /// <param name="key">The permission key to set by.</param>
         /// <param name="newState">The new PermissionState to set.</param>
-        void SetAccountPermission(string key, PermissionState newState);
+        /// <returns>True if the PermissionState was set for the specified permission.</returns>
+        bool SetAccountPermission(string key, PermissionState newState);
+
+        /// <summary>
+        /// Sets the IPermissionGroup this IAccount is assigned to.
+        /// </summary>
+        /// <param name="name">The name of the IPermissionGroup to assign.</param>
+        /// <returns>True if the IPermissionGroup of the specified name was set for this IAccount.</returns>
+        bool SetPermissionGroup(string name);
     }
 }
