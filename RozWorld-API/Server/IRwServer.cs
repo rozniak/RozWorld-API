@@ -26,6 +26,11 @@ namespace Oddmatics.RozWorld.API.Server
     public interface IRwServer
     {
         /// <summary>
+        /// Gets the IAccountsManager instance for this IRwServer.
+        /// </summary>
+        IAccountsManager AccountsManager { get; }
+
+        /// <summary>
         /// Gets the name of this IRwServer that will appear in people's browsers.
         /// </summary>
         string BrowserName { get; }
