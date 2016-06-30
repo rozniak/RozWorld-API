@@ -65,10 +65,9 @@
     <Compile Include="Server\Entities\IEntityFactory.cs" />
     <Compile Include="Server\Entities\IInventoryCarrier.cs" />
     <Compile Include="Server\Entities\LivingEntity.cs" />
-    <Compile Include="Server\Event\EntityDeathEventHandler.cs" />
-    <Compile Include="Server\Event\HealthCauseEventHandler.cs" />
-    <Compile Include="Server\Event\HealthChangedEventHandler.cs" />
-    <Compile Include="Server\Event\StateChangedEventHandler.cs" />
+    <Compile Include="Server\Event\EntityDeathEvent.cs" />
+    <Compile Include="Server\Event\HealthCauseEvent.cs" />
+    <Compile Include="Server\Event\HealthChangedEvent.cs" />
     <Compile Include="Server\Game\IContentManager.cs" />
     <Compile Include="Server\Game\IClan.cs" />
     <Compile Include="Server\Accounts\IPermissionGroup.cs" />

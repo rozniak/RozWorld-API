@@ -29,7 +29,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
             private set
             {
                 if (HealthChanged != null)
-                    HealthChanged(this, value);
+                    HealthChanged(this, new HealthChangedEventArgs(value - _Health, value));
 
                 _Health = value;
             }
@@ -110,10 +110,10 @@ namespace Oddmatics.RozWorld.API.Server.Entities
                 Kill(cause);
             else
             {
-                Health -= (int)amount;
+                _Health -= (int)amount;
 
                 if (DamageTaken != null)
-                    DamageTaken(this, cause, _Health, amount);
+                    DamageTaken(this, new HealthCauseEventArgs(cause, 0 - amount, _Health));
             }
         }
 
@@ -143,10 +143,10 @@ namespace Oddmatics.RozWorld.API.Server.Entities
             if (amount > Stats.MaxHealth)
                 amount = Stats.MaxHealth - _Health;
 
-            Health += amount;
+            _Health += amount;
 
             if (Healed != null)
-                Healed(this, cause, _Health, amount);
+                Healed(this, new HealthCauseEventArgs(cause, amount, _Health));
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
             Health = 0;
 
             if (Died != null)
-                Died(this, cause);
+                Died(this, new EntityDeathEventArgs(cause));
         }
 
         /// <summary>

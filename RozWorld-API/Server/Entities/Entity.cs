@@ -79,12 +79,6 @@ namespace Oddmatics.RozWorld.API.Server.Entities
 
 
         /// <summary>
-        /// Occurs when this Entity's animation state changes.
-        /// </summary>
-        event StateChangedEventHandler StateChanged;
-
-
-        /// <summary>
         /// Attacks an Entity.
         /// </summary>
         /// <param name="entity">The Entity to attack.</param>
@@ -125,21 +119,6 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public void ApplyForce(Vector force)
         {
             // TODO: Some physics calcs for getting resultant velocity vector
-        }
-
-        /// <summary>
-        /// Changes the animation state of this Entity on clients.
-        /// </summary>
-        /// <param name="newState">The new animation state.</param>
-        /// <param name="loop">Whether the animation should loop.</param>
-        /// <param name="nextState">The next animation state after this finishes (if it's not looping).</param>
-        protected void ChangeState(byte newState, bool loop, byte nextState = 0)
-        {
-            if (!RwCore.Server.ContentManager.CheckEntityState(newState, this.GetType()))
-                throw new ArgumentException("The specified new state does not exist for this Entity.");
-
-            if (StateChanged != null)
-                StateChanged(this, newState, loop, nextState); // Server is a subscriber to this
         }
 
         /// <summary>
