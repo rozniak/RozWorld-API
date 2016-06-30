@@ -169,7 +169,7 @@ namespace Oddmatics.RozWorld.API.Server
         /// <summary>
         /// Occurs when the tick rate has elapsed.
         /// </summary>
-        event EventHandler Tick;
+        event ServerTickEventHandler Tick;
 
 
         /// <summary>
