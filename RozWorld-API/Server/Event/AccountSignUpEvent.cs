@@ -18,7 +18,7 @@ namespace Oddmatics.RozWorld.API.Server.Event
     /// Represents the method that will handle the AccountSignUp event of an IRwServer.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
-    /// <param name="e">A AccountSignUpEventArgs object that contains event data.</param>
+    /// <param name="e">An AccountSignUpEventArgs object that contains event data.</param>
     public delegate void AccountSignUpEventHandler(object sender, AccountSignUpEventArgs e);
 
 

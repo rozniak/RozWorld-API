@@ -71,6 +71,7 @@
     <Compile Include="Server\Event\ICancellable.cs" />
     <Compile Include="Server\Event\PlayerChatEvent.cs" />
     <Compile Include="Server\Event\AccountSignUpEvent.cs" />
+    <Compile Include="Server\Event\PlayerLogInEvent.cs" />
     <Compile Include="Server\Game\IContentManager.cs" />
     <Compile Include="Server\Game\IClan.cs" />
     <Compile Include="Server\Accounts\IPermissionGroup.cs" />

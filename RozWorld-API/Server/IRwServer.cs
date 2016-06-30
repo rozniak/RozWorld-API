@@ -142,6 +142,11 @@ namespace Oddmatics.RozWorld.API.Server
         event PlayerChatEventHandler PlayerChatting;
 
         /// <summary>
+        /// Occurs when a player logs in.
+        /// </summary>
+        event PlayerLogInEventHandler PlayerLogIn;
+
+        /// <summary>
         /// Occurs when this IRwServer is paused.
         /// </summary>
         event EventHandler Pause;
