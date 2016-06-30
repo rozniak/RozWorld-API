@@ -132,6 +132,11 @@ namespace Oddmatics.RozWorld.API.Server
 
 
         /// <summary>
+        /// Occurs on a successful sign up attempt.
+        /// </summary>
+        event AccountSignUpEventHandler AccountSignUp;
+
+        /// <summary>
         /// Occurs when a chat message is sent by a player.
         /// </summary>
         event PlayerChatEventHandler PlayerChatting;

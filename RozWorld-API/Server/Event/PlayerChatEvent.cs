@@ -1,4 +1,14 @@
-﻿
+﻿/**
+ * Oddmatics.RozWorld.API.Server.Event.PlayerChatEvent -- RozWorld Server Player Chat Message Sent Event
+ *
+ * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
+ * <<http://www.oddmatics.uk>>
+ * <<http://roz.world>>
+ * <<http://github.com/rozniak/RozWorld-API>>
+ *
+ * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
+ */
+
 using Oddmatics.RozWorld.API.Server.Entities;
 using System;
 
@@ -15,20 +25,20 @@ namespace Oddmatics.RozWorld.API.Server.Event
     /// <summary>
     /// Provides data for the IRwServer.PlayerChatting event.
     /// </summary>
-    public class PlayerChatEventArgs : EventArgs
+    public class PlayerChatEventArgs : EventArgs, ICancellable
     {
         /// <summary>
         /// Gets or sets a value indicating whether the event should be canceled.
         /// </summary>
-        public bool Cancel;
+        public bool Cancel { get; set; }
 
         /// <summary>
-        /// The message being sent in the chat.
+        /// Gets the message being sent in the chat.
         /// </summary>
         public string Message { get; private set; }
 
         /// <summary>
-        /// The Player that sent the message.
+        /// Gets the instance of the Player that sent the message.
         /// </summary>
         public Player Player { get; private set; }
 
