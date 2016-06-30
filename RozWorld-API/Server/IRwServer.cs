@@ -132,6 +132,11 @@ namespace Oddmatics.RozWorld.API.Server
 
 
         /// <summary>
+        /// Occurs when a chat message is sent by a player.
+        /// </summary>
+        event PlayerChatEventHandler PlayerChatting;
+
+        /// <summary>
         /// Occurs when this IRwServer is paused.
         /// </summary>
         event EventHandler Pause;

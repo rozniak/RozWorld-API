@@ -15,12 +15,10 @@ using System;
 namespace Oddmatics.RozWorld.API.Server.Event
 {
     /// <summary>
-    /// Represents the method that will handle a LivingEntity's DamageTaken and Healed events.
+    /// Represents the method that will handle the DamageTaken and Healed events of a LivingEntity.
     /// </summary>
-    /// <param name="sender">The LivingEntity instance that fired the event.</param>
-    /// <param name="cause">The object that was the cause of the health change.</param>
-    /// <param name="newHealth">The new health value of the LivingEntity.</param>
-    /// <param name="difference">The difference in change in health.</param>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">A HealthCauseEventArgs object that contains event data.</param>
     public delegate void HealthCauseEventHandler(object sender, HealthCauseEventArgs e);
 
 
