@@ -179,25 +179,18 @@ namespace Oddmatics.RozWorld.API.Server
         void BroadcastMessage(string message);
 
         /// <summary>
-        /// Gets a Player by their account name.
-        /// </summary>
-        /// <param name="name">The account name of the Player.</param>
-        /// <returns>The Player instance of the given account name, null if they are not online.</returns>
-        Player GetPlayer(string name);
-
-        /// <summary>
-        /// Gets a Player by their account name, offline or online.
-        /// </summary>
-        /// <param name="name">The account name of the Player.</param>
-        /// <returns>The Player instance of the given account name, null if they do not exist.</returns>
-        Player GetPlayerAbsolute(string name);
-
-        /// <summary>
         /// Gets a Player by their display name.
         /// </summary>
         /// <param name="name">The display name of the Player.</param>
         /// <returns>The Player instance of the given display name, null if they are not online.</returns>
-        Player GetPlayerByDisplayName(string name);
+        Player GetPlayer(string name);
+
+        /// <summary>
+        /// Gets a Player by their display name, offline or online.
+        /// </summary>
+        /// <param name="name">The display name of the Player.</param>
+        /// <returns>The Player instance of the given display name, null if they do not exist.</returns>
+        Player GetPlayerAbsolute(string name);
 
         /// <summary>
         /// Gets an IWorld on this IRwServer by its name.
@@ -212,6 +205,14 @@ namespace Oddmatics.RozWorld.API.Server
         /// <param name="id">The Entity's ID.</param>
         /// <returns>True if the Entity is currently valid.</returns>
         bool IsValidEntity(ushort id);
+
+        /// <summary>
+        /// Kicks a Player from the server by their display name with a specified reason.
+        /// </summary>
+        /// <param name="name">The display name of the Player.</param>
+        /// <param name="reason">Provide a reason to the Player for kicking them, leave blank for no reason given.</param>
+        /// <returns>True if the Player was kicked.</returns>
+        bool Kick(string name, string reason = "");
 
         /// <summary>
         /// Attempts to register a command to the specified function.

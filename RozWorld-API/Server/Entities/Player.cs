@@ -103,7 +103,8 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// Kicks this Player from the server with a specified reason.
         /// </summary>
         /// <param name="reason">Provide a reason to this Player for kicking them, leave blank for no reason given.</param>
-        public abstract void Kick(string reason = "");
+        /// <returns>True if this Player was kicked.</returns>
+        public abstract bool Kick(string reason = "");
 
         /// <summary>
         /// Sends an invitation from this Player to another Player.
