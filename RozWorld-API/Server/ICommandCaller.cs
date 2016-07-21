@@ -17,6 +17,12 @@ namespace Oddmatics.RozWorld.API.Server
     public interface ICommandCaller
     {
         /// <summary>
+        /// Gets the display name of this ICommandCaller.
+        /// </summary>
+        string DisplayName { get; }
+
+
+        /// <summary>
         /// Gets whether this ICommandCaller has a certain permission.
         /// </summary>
         /// <param name="key">The permission key to check for.</param>
