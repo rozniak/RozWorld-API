@@ -48,11 +48,6 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         bool IsPlayer { get; }
 
         /// <summary>
-        /// Gets whether this IAccount is representative of the server itself.
-        /// </summary>
-        bool IsServer { get; }
-
-        /// <summary>
         /// Gets the IP of the last login of the account associated with this IAccount.
         /// </summary>
         IPAddress LastLoginIP { get; }
