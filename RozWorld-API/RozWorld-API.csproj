@@ -82,6 +82,7 @@
     <Compile Include="Server\Game\IClansManager.cs" />
     <Compile Include="Server\Game\SafeStatHandler.cs" />
     <Compile Include="Server\Game\IStatCalculator.cs" />
+    <Compile Include="Server\ICommandCaller.cs" />
     <Compile Include="Server\ILogger.cs" />
     <Compile Include="Server\IPlugin.cs" />
     <Compile Include="Server\IRwServer.cs" />

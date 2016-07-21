@@ -23,7 +23,7 @@ namespace Oddmatics.RozWorld.API.Server
     /// <summary>
     /// Represents a RozWorld server.
     /// </summary>
-    public interface IRwServer
+    public interface IRwServer : ICommandCaller
     {
         /// <summary>
         /// Gets the IAccountsManager instance for this IRwServer.

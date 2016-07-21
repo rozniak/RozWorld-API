@@ -18,7 +18,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
     /// <summary>
     /// Represents a RozWorld player entity.
     /// </summary>
-    public abstract class Player : LivingEntity, IInventoryCarrier
+    public abstract class Player : LivingEntity, IInventoryCarrier, ICommandCaller
     {
         /// <summary>
         /// Gets the IAccount associated with this Player.
@@ -96,7 +96,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// Gets whether this Player has a certain permission by checking its IAccount.
         /// </summary>
         /// <param name="key">The permission key to check for.</param>
-        /// <returns>Whether or not the permission associated with the given key is granted.</returns>
+        /// <returns>True if the permission associated with the given key is granted.</returns>
         public abstract bool HasPermission(string key);
 
         /// <summary>
