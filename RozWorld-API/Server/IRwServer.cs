@@ -36,6 +36,11 @@ namespace Oddmatics.RozWorld.API.Server
         string BrowserName { get; }
 
         /// <summary>
+        /// Gets the currently registered commands as an IList&lt;string&gt; collection.
+        /// </summary>
+        IList<string> Commands { get; }
+
+        /// <summary>
         /// Gets the IContentManager instance for this IRwServer.
         /// </summary>
         IContentManager ContentManager { get; }
@@ -91,7 +96,7 @@ namespace Oddmatics.RozWorld.API.Server
         IPermissionAuthority PermissionAuthority { get; }
 
         /// <summary>
-        /// Gets a list of the currently installed plugins.
+        /// Gets the currently installed plugins as an IList&lt;IPlugin&gt; collection.
         /// </summary>
         IList<IPlugin> Plugins { get; }
 
@@ -184,12 +189,6 @@ namespace Oddmatics.RozWorld.API.Server
         /// <param name="command">The command string.</param>
         /// <returns>The command's description if it was found, String.Empty otherwise.</returns>
         string GetCommandDescription(string command);
-
-        /// <summary>
-        /// Gets the currently registered commands on this IRwServer as an IList&lt;string&gt; collection.
-        /// </summary>
-        /// <returns>The currently registered commands on this IRwServer as an IList&lt;string&gt; collection.</returns>
-        IList<string> GetCommands();
 
         /// <summary>
         /// Gets the commands registered on this IRwServer by a specified plugin as an IList&lt;string&gt; collection.
