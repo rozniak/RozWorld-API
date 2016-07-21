@@ -24,7 +24,7 @@ namespace Oddmatics.RozWorld.API.Server
         bool HasPermission(string key);
 
         /// <summary>
-        /// Sends a generic chat messageto this ICommandCaller
+        /// Sends a generic chat message to this ICommandCaller
         /// </summary>
         /// <param name="message">The message to send.</param>
         void SendMessage(string message);

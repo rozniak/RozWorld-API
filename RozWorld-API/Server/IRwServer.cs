@@ -179,6 +179,33 @@ namespace Oddmatics.RozWorld.API.Server
         void BroadcastMessage(string message);
 
         /// <summary>
+        /// Gets the description of the specified command.
+        /// </summary>
+        /// <param name="command">The command string.</param>
+        /// <returns>The command's description if it was found, String.Empty otherwise.</returns>
+        string GetCommandDescription(string command);
+
+        /// <summary>
+        /// Gets the currently registered commands on this IRwServer as an IList&lt;string&gt; collection.
+        /// </summary>
+        /// <returns>The currently registered commands on this IRwServer as an IList&lt;string&gt; collection.</returns>
+        IList<string> GetCommands();
+
+        /// <summary>
+        /// Gets the commands registered on this IRwServer by a specified plugin as an IList&lt;string&gt; collection.
+        /// </summary>
+        /// <param name="plugin">The name of the plugin.</param>
+        /// <returns>The commands registered on this IRwServer by a specified plugin as an IList&lt;string&gt; collection.</returns>
+        IList<string> GetCommandsByPlugin(string plugin);
+
+        /// <summary>
+        /// Gets the usage of the specified command.
+        /// </summary>
+        /// <param name="command">The command string.</param>
+        /// <returns>The command's usage if it was found, String.Empty otherwise.</returns>
+        string GetCommandUsage(string command);
+
+        /// <summary>
         /// Gets a Player by their display name.
         /// </summary>
         /// <param name="name">The display name of the Player.</param>
