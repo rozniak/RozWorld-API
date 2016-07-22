@@ -245,8 +245,10 @@ namespace Oddmatics.RozWorld.API.Server
         /// </summary>
         /// <param name="cmd">The command to register.</param>
         /// <param name="func">The function to bind to the command.</param>
+        /// <param name="description">The description of the command.</param>
+        /// <param name="usage">The usage information for the command.</param>
         /// <returns>True if the registration was successful.</returns>
-        bool RegisterCommand(string cmd, CommandSentCallback func);
+        bool RegisterCommand(string cmd, CommandSentCallback func, string description, string usage);
 
         /// <summary>
         /// Checks if there is data for the world of the given name able to be loaded.
