@@ -98,12 +98,17 @@ namespace Oddmatics.RozWorld.API.Generic.Chat
         /// </summary>
         public const string WHITE = "&F";
 
+        /// <summary>
+        /// Represents the client's default colour.
+        /// </summary>
+        public const string DEFAULT = "&S";
+
 
         /// <summary>
         /// Represents all strings that are valid as a ChatColour.
         /// </summary>
         private static string[] ValidColours = new string[] { BLACK, DARK_BLUE, GREEN, TEAL, DARK_RED,
-            PURPLE, ORANGE, GREY, DARK_GREY, BLUE, LIME, CYAN, RED, MAGENTA, YELLOW, WHITE };
+            PURPLE, ORANGE, GREY, DARK_GREY, BLUE, LIME, CYAN, RED, MAGENTA, YELLOW, WHITE, DEFAULT };
 
 
         /// <summary>
