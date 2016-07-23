@@ -53,7 +53,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// </summary>
         /// <param name="key">The permission key to identify by.</param>
         /// <returns>The associated PermissionInfo instance of the permission, null if the permissions wasn't found.</returns>
-        PermissionInfo GetPermissionInfo(string key);
+        PermissionInfo? GetPermissionInfo(string key);
 
         /// <summary>
         /// Registers a permission and gives it a description.
