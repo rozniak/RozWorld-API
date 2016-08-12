@@ -48,6 +48,9 @@
     <Compile Include="Generic\Chat\ChatColour.cs" />
     <Compile Include="Generic\Game\Difficulty.cs" />
     <Compile Include="Generic\Game\GameMode.cs" />
+    <Compile Include="Generic\Game\Economy\ICurrency.cs" />
+    <Compile Include="Generic\Item\IGradeable.cs" />
+    <Compile Include="Generic\Item\IItem.cs" />
     <Compile Include="Generic\Level\Location.cs" />
     <Compile Include="Generic\Level\ISegment.cs" />
     <Compile Include="Generic\Level\ITile.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Server\Event\AccountSignUpEvent.cs" />
     <Compile Include="Server\Event\PlayerLogInEvent.cs" />
     <Compile Include="Server\Event\ServerTickEvent.cs" />
+    <Compile Include="Server\Game\Economy\Shops\ItemSellableDelegate.cs" />
     <Compile Include="Server\Game\IContentManager.cs" />
     <Compile Include="Server\Game\IClan.cs" />
     <Compile Include="Server\Accounts\IPermissionGroup.cs" />
@@ -80,8 +84,11 @@
     <Compile Include="Server\Entities\Player.cs" />
     <Compile Include="Server\Event\CommandSentCallback.cs" />
     <Compile Include="Server\Game\IClansManager.cs" />
+    <Compile Include="Generic\Game\Economy\ICost.cs" />
+    <Compile Include="Server\Game\Economy\Shops\IShop.cs" />
     <Compile Include="Server\Game\SafeStatHandler.cs" />
     <Compile Include="Server\Game\IStatCalculator.cs" />
+    <Compile Include="Server\Game\Economy\Shops\IShopItem.cs" />
     <Compile Include="Server\ICommandCaller.cs" />
     <Compile Include="Server\ILogger.cs" />
     <Compile Include="Server\IPlugin.cs" />

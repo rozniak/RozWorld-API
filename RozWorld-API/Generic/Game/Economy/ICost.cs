@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Server.Entities.IInventoryCarrier -- RozWorld Server Inventory Carrier
+ * Oddmatics.RozWorld.API.Generic.Game.Economy.ICost -- RozWorld Economy Cost
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -9,23 +9,21 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using Oddmatics.RozWorld.API.Server.Item;
-
-namespace Oddmatics.RozWorld.API.Server.Entities
+namespace Oddmatics.RozWorld.API.Generic.Game.Economy
 {
     /// <summary>
-    /// Represents an entity's inventory information.
+    /// Represents the cost of an object (usually an item) by an amount of a given currency.
     /// </summary>
-    public interface IInventoryCarrier
+    public interface ICost
     {
         /// <summary>
-        /// Gets or sets the IInventory for this IInventoryCarrier.
+        /// Gets the amount of the given ICurrency required.
         /// </summary>
-        IInventory Inventory { get; set; }
+        uint Amount { get; }
 
         /// <summary>
-        /// Gets the IItem in this IInventoryCarrier's hand.
+        /// Gets the ICurrency required in this ICost.
         /// </summary>
-        IItem ItemInHand { get; }
+        ICurrency Currency { get; }
     }
 }

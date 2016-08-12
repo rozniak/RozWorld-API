@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Server.Entities.IInventoryCarrier -- RozWorld Server Inventory Carrier
+ * Oddmatics.RozWorld.API.Generic.Game.Economy.ICurrency -- RozWorld Game Currency
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -9,23 +9,22 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using Oddmatics.RozWorld.API.Server.Item;
-
-namespace Oddmatics.RozWorld.API.Server.Entities
+namespace Oddmatics.RozWorld.API.Generic.Game.Economy
 {
     /// <summary>
-    /// Represents an entity's inventory information.
+    /// Represents a currency in the game economy.
     /// </summary>
-    public interface IInventoryCarrier
+    public interface ICurrency
     {
         /// <summary>
-        /// Gets or sets the IInventory for this IInventoryCarrier.
+        /// Gets the language string ID for this ICurrency's name.
         /// </summary>
-        IInventory Inventory { get; set; }
+        ushort LidName { get; }
 
         /// <summary>
-        /// Gets the IItem in this IInventoryCarrier's hand.
+        /// Gets the small GUI icon path (relative to texture pack directories) for this ICurrency.
+        /// This value is client-side only.
         /// </summary>
-        IItem ItemInHand { get; }
+        string PathSmallGuiIcon { get; }
     }
 }
