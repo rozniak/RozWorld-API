@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.IItem -- RozWorld Base Item
+ * Oddmatics.RozWorld.API.Generic.Item.IItem -- RozWorld Base Item
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>

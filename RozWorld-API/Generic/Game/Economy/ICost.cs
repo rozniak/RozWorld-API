@@ -9,6 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System;
+
 namespace Oddmatics.RozWorld.API.Generic.Game.Economy
 {
     /// <summary>
@@ -17,13 +19,13 @@ namespace Oddmatics.RozWorld.API.Generic.Game.Economy
     public interface ICost
     {
         /// <summary>
-        /// Gets the amount of the given ICurrency required.
+        /// Gets the amount of the given currency required.
         /// </summary>
         uint Amount { get; }
 
         /// <summary>
-        /// Gets the ICurrency required in this ICost.
+        /// Gets the type of ICurrency required in this ICost.
         /// </summary>
-        ICurrency Currency { get; }
+        Type Currency { get; }
     }
 }

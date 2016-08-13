@@ -76,6 +76,7 @@
     <Compile Include="Server\Event\AccountSignUpEvent.cs" />
     <Compile Include="Server\Event\PlayerLogInEvent.cs" />
     <Compile Include="Server\Event\ServerTickEvent.cs" />
+    <Compile Include="Server\Game\Economy\IEconomySystem.cs" />
     <Compile Include="Server\Game\Economy\Shops\ItemSellableDelegate.cs" />
     <Compile Include="Server\Game\IContentManager.cs" />
     <Compile Include="Server\Game\IClan.cs" />

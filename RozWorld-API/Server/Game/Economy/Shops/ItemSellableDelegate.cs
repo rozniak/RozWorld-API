@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.Game.Economy.Shops.ItemSellableDelegate -- RozWorld Item Sellable Conditions Delegate
+ * Oddmatics.RozWorld.API.Server.Game.Economy.Shops.ItemSellableDelegate -- RozWorld Item Sellable Conditions Delegate
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>

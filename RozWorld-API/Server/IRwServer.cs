@@ -14,6 +14,7 @@ using Oddmatics.RozWorld.API.Server.Accounts;
 using Oddmatics.RozWorld.API.Server.Entities;
 using Oddmatics.RozWorld.API.Server.Event;
 using Oddmatics.RozWorld.API.Server.Game;
+using Oddmatics.RozWorld.API.Server.Game.Economy;
 using Oddmatics.RozWorld.API.Server.Level;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,11 @@ namespace Oddmatics.RozWorld.API.Server
         /// Gets the IContentManager instance for this IRwServer.
         /// </summary>
         IContentManager ContentManager { get; }
+
+        /// <summary>
+        /// Gets the IEconomySystem instance for this IRwServer.
+        /// </summary>
+        IEconomySystem EconomySystem { get; }
 
         /// <summary>
         /// Gets or sets the current game difficulty.

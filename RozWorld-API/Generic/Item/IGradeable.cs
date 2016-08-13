@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Server.IItem -- RozWorld Gradeable Object
+ * Oddmatics.RozWorld.API.Server.Item.IItem -- RozWorld Gradeable Object
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -12,8 +12,8 @@
 namespace Oddmatics.RozWorld.API.Generic.Item
 {
     /// <summary>
-    /// Represents a gradeable object.
-    /// For items, this is some sub-data for things such as weapons.
+    /// Represents a gradeable item.
+    /// This is some sub-data for things such as weapons.
     /// (eg. 'Flaming Axe II' - a 'Flaming Axe' weapon of grade 2).
     /// </summary>
     public interface IGradeable

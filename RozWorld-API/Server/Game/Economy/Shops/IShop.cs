@@ -21,9 +21,9 @@ namespace Oddmatics.RozWorld.API.Server.Game.Economy.Shops
     public interface IShop
     {
         /// <summary>
-        /// Gets an IList&lt;IShopItem&gt; collection containing all the listed items for sale.
+        /// Gets the complete listing of all items for this IShop as an IList&lt;IShopItem&gt; collection.
         /// </summary>
-        IList<IShopItem> Items { get; }
+        IList<IShopItem> AllItems { get; }
 
         /// <summary>
         /// Gets or sets the name of this IShop.
@@ -34,10 +34,10 @@ namespace Oddmatics.RozWorld.API.Server.Game.Economy.Shops
         /// <summary>
         /// Buys an item from this IShop.
         /// </summary>
-        /// <param name="buyer">The IInventoryCarrier instance of the buyer.</param>
+        /// <param name="player">The Player instance.</param>
         /// <param name="itemIndex">The index of the item to purchase.</param>
         /// <returns>True if the item was bought successfully.</returns>
-        bool Buy(IInventoryCarrier buyer, int itemIndex);
+        bool Buy(Player buyer, int itemIndex);
 
         /// <summary>
         /// Evaluates whether the specified IItem can be sold at this IShop.
@@ -47,12 +47,19 @@ namespace Oddmatics.RozWorld.API.Server.Game.Economy.Shops
         bool CanSell(IItem item);
 
         /// <summary>
-        /// Sells an item to this IShop
+        /// Gets the item listings for this shop.
         /// </summary>
-        /// <param name="seller">The IInventoryCarrier instance of the seller.</param>
+        /// <param name="player">The Player instance.</param>
+        /// <returns>The item listings fit for the Player specified, as an IList&lt;IShopItem&gt; collection.</returns>
+        IList<IShopItem> GetListings(Player player);
+
+        /// <summary>
+        /// Sells an item to this IShop.
+        /// </summary>
+        /// <param name="player">The Player instance.</param>
         /// <param name="item">The IItem being sold.</param>
         /// <param name="quantity">The amount to sell to this IShop.</param>
         /// <returns>True if the item was sold successfully.</returns>
-        bool Sell(IInventoryCarrier seller, IItem item, int quantity);
+        bool Sell(Player player, IItem item, int quantity);
     }
 }
