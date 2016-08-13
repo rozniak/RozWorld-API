@@ -37,7 +37,7 @@ namespace Oddmatics.RozWorld.API.Server.Game.Economy.Shops
         /// <param name="player">The Player instance.</param>
         /// <param name="itemIndex">The index of the item to purchase.</param>
         /// <returns>True if the item was bought successfully.</returns>
-        bool Buy(Player buyer, int itemIndex);
+        bool Buy(Player player, int itemIndex);
 
         /// <summary>
         /// Evaluates whether the specified IItem can be sold at this IShop.

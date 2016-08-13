@@ -9,6 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Generic.Language;
 using Oddmatics.RozWorld.API.Server;
 using System;
 
@@ -19,6 +20,11 @@ namespace Oddmatics.RozWorld.API.Generic
     /// </summary>
     public class RwCore
     {
+        /// <summary>
+        /// Gets or sets the shared ILanguageSystem instance for RozWorld.
+        /// </summary>
+        public static ILanguageSystem LanguageSystem { get; set; }
+
         /// <summary>
         /// Gets the current RozWorld server instance.
         /// </summary>

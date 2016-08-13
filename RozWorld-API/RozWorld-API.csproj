@@ -51,6 +51,7 @@
     <Compile Include="Generic\Game\Economy\ICurrency.cs" />
     <Compile Include="Generic\Item\IGradeable.cs" />
     <Compile Include="Generic\Item\IItem.cs" />
+    <Compile Include="Generic\Language\ILanguageSystem.cs" />
     <Compile Include="Generic\Level\Location.cs" />
     <Compile Include="Generic\Level\ISegment.cs" />
     <Compile Include="Generic\Level\ITile.cs" />
