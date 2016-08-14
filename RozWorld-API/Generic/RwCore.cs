@@ -22,26 +22,28 @@ namespace Oddmatics.RozWorld.API.Generic
     {
         /// <summary>
         /// Gets or sets the shared ILanguageSystem instance for RozWorld.
+        /// 
+        /// Setting this must be done at initialisation stage, this can't be set if an instance already exists.
         /// </summary>
-        public static ILanguageSystem LanguageSystem { get; set; }
-
-        /// <summary>
-        /// Gets the current RozWorld server instance.
-        /// </summary>
-        public static IRwServer Server { get; private set; }
-
-
-        /// <summary>
-        /// Attempts to set the RozWorld server instance.
-        /// This can't be done if an instance already exists; this function is for server executables to use on startup only.
-        /// </summary>
-        /// <param name="server">The server instance to set.</param>
-        public static void SetServer(IRwServer server)
+        public static ILanguageSystem LanguageSystem
         {
-            if (Server == null)
-                Server = server;
-            else
-                throw new InvalidOperationException("Cannot set server, it is not null.");
+            get { return _LanguageSystem; }
+            set { if (_LanguageSystem == null) _LanguageSystem = value; else
+                throw new InvalidOperationException("RwCore.Server.LanguageSystem.Set: Cannot set language system, it is not null."); }
         }
+        private static ILanguageSystem _LanguageSystem;
+
+        /// <summary>
+        /// Gets or sets the current RozWorld server instance.
+        /// 
+        /// Setting this must be done at initialisation stage, this can't be set if an instance already exists.
+        /// </summary>
+        public static IRwServer Server
+        {
+            get { return _Server; }
+            set { if (_Server == null) _Server = value; else
+                throw new InvalidOperationException("RwCore.Server.Set: Cannot set server, it is not null."); }
+        }
+        private static IRwServer _Server;
     }
 }
