@@ -23,9 +23,24 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
     public interface IAccount
     {
         /// <summary>
+        /// Gets or sets the prefix to apply to the name of the player associated with this IAccount when they sent a chat message.
+        /// </summary>
+        string ChatPrefix { get; set; }
+
+        /// <summary>
+        /// Gets or sets the suffix to apply to the name of the player associated with this IAccount when they sent a chat message.
+        /// </summary>
+        string ChatSuffix { get; set; }
+
+        /// <summary>
         /// Gets the IClan that the user of this IAccount belongs to.
         /// </summary>
         IClan Clan { get; }
+
+        /// <summary>
+        /// Gets or sets the colour to apply to the name of the player associated with this IAccount when they sent a chat message.
+        /// </summary>
+        char ColourModifier { get; set; } 
 
         /// <summary>
         /// Gets the creation date of the account associated with this IAccount.
