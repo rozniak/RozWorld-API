@@ -40,7 +40,7 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <summary>
         /// Gets or sets the colour to apply to the name of the player associated with this IAccount when they sent a chat message.
         /// </summary>
-        char ColourModifier { get; set; } 
+        string ColourModifier { get; set; } 
 
         /// <summary>
         /// Gets the creation date of the account associated with this IAccount.
