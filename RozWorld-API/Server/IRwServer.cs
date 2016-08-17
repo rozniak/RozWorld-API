@@ -227,14 +227,14 @@ namespace Oddmatics.RozWorld.API.Server
         /// <summary>
         /// Gets a Player by their account username.
         /// </summary>
-        /// <param name="name">The account username of the Player.</param>
+        /// <param name="username">The account username of the Player.</param>
         /// <returns>The Player instance of the given account username, null if they are not online.</returns>
         Player GetPlayerByUsername(string username);
 
         /// <summary>
         /// Gets a Player by their account username, offline or online.
         /// </summary>
-        /// <param name="name">The account username of the Player.</param>
+        /// <param name="username">The account username of the Player.</param>
         /// <returns>The Player instance of the given account username, null if they do not exist.</returns>
         Player GetPlayerByUsernameAbs(string username);
 
