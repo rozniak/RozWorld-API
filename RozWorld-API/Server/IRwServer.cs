@@ -225,6 +225,20 @@ namespace Oddmatics.RozWorld.API.Server
         Player GetPlayerAbsolute(string name);
 
         /// <summary>
+        /// Gets a Player by their account username.
+        /// </summary>
+        /// <param name="name">The account username of the Player.</param>
+        /// <returns>The Player instance of the given account username, null if they are not online.</returns>
+        Player GetPlayerByUsername(string username);
+
+        /// <summary>
+        /// Gets a Player by their account username, offline or online.
+        /// </summary>
+        /// <param name="name">The account username of the Player.</param>
+        /// <returns>The Player instance of the given account username, null if they do not exist.</returns>
+        Player GetPlayerByUsernameAbs(string username);
+
+        /// <summary>
         /// Gets an IWorld on this IRwServer by its name.
         /// </summary>
         /// <param name="name">The name of the IWorld.</param>
