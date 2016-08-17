@@ -21,6 +21,11 @@ namespace Oddmatics.RozWorld.API.Server
         /// </summary>
         string DisplayName { get; }
 
+        /// <summary>
+        /// Gets the chat formatted name of this ICommandCaller.
+        /// </summary>
+        string FormattedName { get; }
+
 
         /// <summary>
         /// Gets whether this ICommandCaller has a certain permission.

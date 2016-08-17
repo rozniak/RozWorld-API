@@ -31,9 +31,14 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public abstract bool AFK { get; set; }
 
         /// <summary>
-        /// Gets or sets the display name for this Player.
+        /// Gets or sets the display name of this Player.
         /// </summary>
         public abstract string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets the chat formatted name of this Player.
+        /// </summary>
+        public abstract string FormattedName { get; }
 
         /// <summary>
         /// Gets this Player's IInventory.
