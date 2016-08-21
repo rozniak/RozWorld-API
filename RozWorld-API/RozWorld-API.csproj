@@ -75,6 +75,7 @@
     <Compile Include="Server\Event\ICancellable.cs" />
     <Compile Include="Server\Event\PlayerChatEvent.cs" />
     <Compile Include="Server\Event\AccountSignUpEvent.cs" />
+    <Compile Include="Server\Event\PlayerCommandEvent.cs" />
     <Compile Include="Server\Event\PlayerLogInEvent.cs" />
     <Compile Include="Server\Event\ServerTickEvent.cs" />
     <Compile Include="Server\Game\Economy\IEconomySystem.cs" />

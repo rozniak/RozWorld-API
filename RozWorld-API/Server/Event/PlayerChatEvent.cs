@@ -28,7 +28,7 @@ namespace Oddmatics.RozWorld.API.Server.Event
     public class PlayerChatEventArgs : EventArgs, ICancellable
     {
         /// <summary>
-        /// Gets or sets a value indicating whether the event should be canceled.
+        /// Gets or sets a value indicating whether the event should be cancelled.
         /// </summary>
         public bool Cancel { get; set; }
 

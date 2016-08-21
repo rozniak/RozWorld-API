@@ -153,6 +153,11 @@ namespace Oddmatics.RozWorld.API.Server
         event PlayerChatEventHandler PlayerChatting;
 
         /// <summary>
+        /// Occurs when a command is sent by a player.
+        /// </summary>
+        event PlayerCommandEventHandler PlayerCommanding;
+
+        /// <summary>
         /// Occurs when a player logs in.
         /// </summary>
         event PlayerLogInEventHandler PlayerLogIn;

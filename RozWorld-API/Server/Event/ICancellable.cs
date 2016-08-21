@@ -17,7 +17,7 @@ namespace Oddmatics.RozWorld.API.Server.Event
     public interface ICancellable
     {
         /// <summary>
-        /// Gets or sets a value indicating whether the event should be canceled.
+        /// Gets or sets a value indicating whether the event should be cancelled.
         /// </summary>
         bool Cancel { get; set; }
     }
