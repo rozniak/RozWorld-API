@@ -32,6 +32,16 @@ namespace Oddmatics.RozWorld.API.Server
         IAccountsManager AccountsManager { get; }
 
         /// <summary>
+        /// Gets whether autosave has been enabled on this IRwServer.
+        /// </summary>
+        bool AutosaveEnabled { get; }
+
+        /// <summary>
+        /// Gets the interval in which autosave occurs in milliseconds.
+        /// </summary>
+        long AutosaveInterval { get; }
+
+        /// <summary>
         /// Gets the name of this IRwServer that will appear in people's browsers.
         /// </summary>
         string BrowserName { get; }
