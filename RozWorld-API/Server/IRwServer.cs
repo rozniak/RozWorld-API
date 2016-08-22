@@ -52,6 +52,11 @@ namespace Oddmatics.RozWorld.API.Server
         IEconomySystem EconomySystem { get; }
 
         /// <summary>
+        /// Gets the game chat formatting string for this IRwServer.
+        /// </summary>
+        string FormattingString { get; }
+
+        /// <summary>
         /// Gets or sets the current game difficulty.
         /// </summary>
         Difficulty GameDifficulty { get; }
