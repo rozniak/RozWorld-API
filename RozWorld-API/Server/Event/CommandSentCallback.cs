@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Server.Event.CommandSentEventHandler -- RozWorld Server Command Sent Callback
+ * Oddmatics.RozWorld.API.Server.Event.CommandSentCallback -- RozWorld Server Command Sent Callback
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
