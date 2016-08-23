@@ -69,6 +69,7 @@
     <Compile Include="Server\Entities\IEntityFactory.cs" />
     <Compile Include="Server\Entities\IInventoryCarrier.cs" />
     <Compile Include="Server\Entities\LivingEntity.cs" />
+    <Compile Include="Server\Event\ChatHookCallback.cs" />
     <Compile Include="Server\Event\EntityDeathEvent.cs" />
     <Compile Include="Server\Event\HealthCauseEvent.cs" />
     <Compile Include="Server\Event\HealthChangedEvent.cs" />

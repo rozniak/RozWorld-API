@@ -11,6 +11,7 @@
 
 using Oddmatics.RozWorld.API.Generic.Level;
 using Oddmatics.RozWorld.API.Server.Accounts;
+using Oddmatics.RozWorld.API.Server.Event;
 using Oddmatics.RozWorld.API.Server.Item;
 
 namespace Oddmatics.RozWorld.API.Server.Entities
@@ -105,11 +106,25 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public abstract bool HasPermission(string key);
 
         /// <summary>
+        /// Makes it so that chat messages sent by this Player are passed to the specified delegate rather than the game chat.
+        /// </summary>
+        /// <param name="callback">The delegate to pass the message to.</param>
+        /// <returns>True if the hook was successful (no active hook is already in place).</returns>
+        public abstract bool HookChatToCallback(ChatHookCallback callback);
+
+        /// <summary>
         /// Kicks this Player from the server with a specified reason.
         /// </summary>
         /// <param name="reason">Provide a reason to this Player for kicking them, leave blank for no reason given.</param>
         /// <returns>True if this Player was kicked.</returns>
         public abstract bool Kick(string reason = "");
+
+        /// <summary>
+        /// Releases the active chat hook and allows this Player to resume normal chat usage.
+        /// 
+        /// Note: This function will only operate when called when a hook is in progress.
+        /// </summary>
+        public abstract void ReleaseChatHook();
 
         /// <summary>
         /// Sends an invitation from this Player to another Player.

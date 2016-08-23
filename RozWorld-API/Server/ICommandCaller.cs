@@ -37,13 +37,14 @@ namespace Oddmatics.RozWorld.API.Server
         bool HasPermission(string key);
 
         /// <summary>
-        /// Makes it so that chat messages sent by this player are passed to the specified delegate rather than the game chat.
+        /// Makes it so that chat messages sent by this ICommandCaller are passed to the specified delegate rather than the game chat.
         /// </summary>
+        /// <param name="callback">The delegate to pass the message to.</param>
         /// <returns>True if the hook was successful (no active hook is already in place).</returns>
         bool HookChatToCallback(ChatHookCallback callback);
 
         /// <summary>
-        /// Releases the active chat hook and allows the ICommandCaller to resume normal chat usage.
+        /// Releases the active chat hook and allows this ICommandCaller to resume normal chat usage.
         /// 
         /// Note: This function will only operate when called when a hook is in progress.
         /// </summary>
