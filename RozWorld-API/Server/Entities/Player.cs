@@ -13,6 +13,7 @@ using Oddmatics.RozWorld.API.Generic.Level;
 using Oddmatics.RozWorld.API.Server.Accounts;
 using Oddmatics.RozWorld.API.Server.Event;
 using Oddmatics.RozWorld.API.Server.Item;
+using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Server.Entities
 {
@@ -70,6 +71,11 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// Gets whether this Player is online or not.
         /// </summary>
         public abstract bool Online { get; }
+
+        /// <summary>
+        /// Gets the permissions that this Player has.
+        /// </summary>
+        public abstract IList<string> Permissions { get; }
 
         /// <summary>
         /// Gets or sets the status message of this Player.
