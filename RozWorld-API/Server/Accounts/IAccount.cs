@@ -68,12 +68,17 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         IPAddress LastLoginIP { get; }
 
         /// <summary>
+        /// Gets the individual permissions granted to this IAccount.
+        /// </summary>
+        IList<string> LocalPermissions { get; }
+
+        /// <summary>
         /// Gets the IPermissionGroup this IAccount is assigned to.
         /// </summary>
         IPermissionGroup PermissionGroup { get; }
 
         /// <summary>
-        /// Gets the individual permissions granted to this IAccount.
+        /// Gets all permissions that this IAccount has, including those granted specifically and those obtained as part of a group.
         /// </summary>
         IList<string> Permissions { get; }
 
