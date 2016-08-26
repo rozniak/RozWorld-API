@@ -296,6 +296,11 @@ namespace Oddmatics.RozWorld.API.Server
         void Save();
 
         /// <summary>
+        /// Safely engages a fatal error, in order to issue a safe server shutdown with cause.
+        /// </summary>
+        void ThrowFatalError(string message);
+
+        /// <summary>
         /// Checks if there is data for the world of the given name able to be loaded.
         /// </summary>
         /// <param name="name">The name of the world</param>
