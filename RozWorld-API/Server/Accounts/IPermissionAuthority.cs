@@ -62,5 +62,10 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <param name="description">The description of the permission.</param>
         /// <returns>True if the permission was reigstered.</returns>
         bool RegisterPermission(string key, string description);
+
+        /// <summary>
+        /// Saves all permission data to the disk.
+        /// </summary>
+        void Save();
     }
 }

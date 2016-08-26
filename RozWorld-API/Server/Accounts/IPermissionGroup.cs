@@ -70,5 +70,11 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <param name="key">The permission key to remove.</param>
         /// <returns>True if this IPermissionGroup does not grant the permission (regardless of whether it never granted it).</returns>
         bool RemovePermission(string key);
+
+        /// <summary>
+        /// Saves this IPermissionGroup's data to the disk.
+        /// </summary>
+        /// <param name="destination">Specify a destination in which to export the data to.</param>
+        void Save(string destination = "");
     }
 }

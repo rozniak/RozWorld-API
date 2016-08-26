@@ -291,6 +291,11 @@ namespace Oddmatics.RozWorld.API.Server
         bool RegisterCommand(string cmd, CommandSentCallback func, string description, string usage);
 
         /// <summary>
+        /// Saves all data on this server to disk.
+        /// </summary>
+        void Save();
+
+        /// <summary>
         /// Checks if there is data for the world of the given name able to be loaded.
         /// </summary>
         /// <param name="name">The name of the world</param>

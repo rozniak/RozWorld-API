@@ -50,5 +50,10 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// <param name="newName">The new name of the IAccount.</param>
         /// <returns>True if the IAccount was renamed.</returns>
         bool RenameAccount(IAccount account, string newName);
+
+        /// <summary>
+        /// Saves all account data to the disk.
+        /// </summary>
+        void Save();
     }
 }

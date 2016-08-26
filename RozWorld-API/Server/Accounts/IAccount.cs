@@ -108,6 +108,12 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         bool HasPermission(string key);
 
         /// <summary>
+        /// Saves this IAccount's data to the disk.
+        /// </summary>
+        /// <param name="destination">Specify a destination in which to export the data to.</param>
+        void Save(string destination = "");
+
+        /// <summary>
         /// Sets the PermissionState of a permission exclusively for this IAccount.
         /// </summary>
         /// <param name="key">The permission key to set by.</param>

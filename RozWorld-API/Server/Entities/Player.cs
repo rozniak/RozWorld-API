@@ -133,6 +133,14 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         public abstract void ReleaseChatHook();
 
         /// <summary>
+        /// Saves all player and account info for this Player to the disk.
+        /// 
+        /// Note: This function will only operate on real players.
+        /// </summary>
+        /// <param name="destination">Specify a directory to export the data to.</param>
+        public abstract void Save(string destination = "");
+
+        /// <summary>
         /// Sends an invitation from this Player to another Player.
         /// </summary>
         /// <param name="recipient">The Player to send the invitation to.</param>
