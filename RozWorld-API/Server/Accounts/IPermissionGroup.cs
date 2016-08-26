@@ -49,6 +49,11 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// </summary>
         IList<IAccount> Members { get; }
 
+        /// <summary>
+        /// Gets or sets the name of this IPermissionGroup.
+        /// </summary>
+        string Name { get; set; }
+
 
         /// <summary>
         /// Adds a permission to this IPermissionGroup.
