@@ -58,6 +58,11 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         string DisplayName { get; set; }
 
         /// <summary>
+        /// Gets the fully-qualified name of this IAccount.
+        /// </summary>
+        string Fqn { get; }
+
+        /// <summary>
         /// Gets whether this IAccount has an associated Player instance.
         /// </summary>
         bool IsPlayer { get; }
