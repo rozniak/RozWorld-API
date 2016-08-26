@@ -115,8 +115,8 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// Makes it so that chat messages sent by this Player are passed to the specified delegate rather than the game chat.
         /// </summary>
         /// <param name="callback">The delegate to pass the message to.</param>
-        /// <returns>True if the hook was successful (no active hook is already in place).</returns>
-        public abstract bool HookChatToCallback(ChatHookCallback callback);
+        /// <returns>A token used to release the callback hook if the hook was successful, -1 if the hook failed.</returns>
+        public abstract int HookChatToCallback(ChatHookCallback callback);
 
         /// <summary>
         /// Kicks this Player from the server with a specified reason.
@@ -130,7 +130,9 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// 
         /// Note: This function will only operate when called when a hook is in progress.
         /// </summary>
-        public abstract void ReleaseChatHook();
+        /// <param name="token">The token to use in order to verify the hook release.</param>
+        /// <returns>True if the hook was released.</returns>
+        public abstract bool ReleaseChatHook(int token);
 
         /// <summary>
         /// Saves all player and account info for this Player to the disk.

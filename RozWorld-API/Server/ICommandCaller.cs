@@ -40,15 +40,17 @@ namespace Oddmatics.RozWorld.API.Server
         /// Makes it so that chat messages sent by this ICommandCaller are passed to the specified delegate rather than the game chat.
         /// </summary>
         /// <param name="callback">The delegate to pass the message to.</param>
-        /// <returns>True if the hook was successful (no active hook is already in place).</returns>
-        bool HookChatToCallback(ChatHookCallback callback);
+        /// <returns>A token used to release the callback hook if the hook was successful, -1 if the hook failed.</returns>
+        int HookChatToCallback(ChatHookCallback callback);
 
         /// <summary>
         /// Releases the active chat hook and allows this ICommandCaller to resume normal chat usage.
         /// 
         /// Note: This function will only operate when called when a hook is in progress.
         /// </summary>
-        void ReleaseChatHook();
+        /// <param name="token">The token to use in order to verify the hook release.</param>
+        /// <returns>True if the hook was released.</returns>
+        bool ReleaseChatHook(int token);
 
         /// <summary>
         /// Sends a generic chat message to this ICommandCaller

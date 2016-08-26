@@ -19,9 +19,9 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
     public interface IPermissionAuthority
     {
         /// <summary>
-        /// Gets or sets the default IPermissionGroup for new players by name.
+        /// Gets or sets the default IPermissionGroup for new players.
         /// </summary>
-        string DefaultGroupName { get; set; }
+        IPermissionGroup DefaultGroup { get; set; }
 
         /// <summary>
         /// Gets all IPermissionGroup names available.
