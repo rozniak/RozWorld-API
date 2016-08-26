@@ -35,6 +35,11 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         string ColourModifier { get; set; }
 
         /// <summary>
+        /// Gets or sets whether this IPermissionGroup is the server's default.
+        /// </summary>
+        bool IsDefault { get; set; }
+
+        /// <summary>
         /// Gets an IList&lt;string&gt; collection representing the permissions granted in this IPermissionGroup.
         /// </summary>
         IList<string> Permissions { get; }
