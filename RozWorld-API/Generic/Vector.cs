@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.Velocity -- 2D Vector
+ * Oddmatics.RozWorld.API.Generic.Vector -- 2D Vector
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -14,7 +14,7 @@
 namespace Oddmatics.RozWorld.API.Generic
 {
     /// <summary>
-    /// Represents a vector.
+    /// Represents a 2D vector.
     /// </summary>
     public struct Vector
     {

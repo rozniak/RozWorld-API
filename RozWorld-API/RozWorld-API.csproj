@@ -42,8 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\Interface\Control\IControl.cs" />
+    <Compile Include="Client\Interface\IControlContainer.cs" />
+    <Compile Include="Client\Interface\Form.cs" />
+    <Compile Include="Client\Interface\IInterfaceHandler.cs" />
     <Compile Include="Client\IPlugin.cs" />
     <Compile Include="Client\IRenderer.cs" />
+    <Compile Include="Client\IRwClient.cs" />
+    <Compile Include="Client\RendererInfo.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
     <Compile Include="Generic\Game\Difficulty.cs" />
@@ -52,11 +58,12 @@
     <Compile Include="Generic\Item\IGradeable.cs" />
     <Compile Include="Generic\Item\IItem.cs" />
     <Compile Include="Generic\Language\ILanguageSystem.cs" />
-    <Compile Include="Generic\Level\Location.cs" />
+    <Compile Include="Generic\Level\WorldLocation.cs" />
     <Compile Include="Generic\Level\ISegment.cs" />
     <Compile Include="Generic\Level\ITile.cs" />
     <Compile Include="Generic\Level\Weather.cs" />
     <Compile Include="Generic\Level\IWorld.cs" />
+    <Compile Include="Generic\Location.cs" />
     <Compile Include="Generic\Progression\IRankSystem.cs" />
     <Compile Include="Generic\RwCore.cs" />
     <Compile Include="Generic\Vector.cs" />
@@ -103,9 +110,7 @@
     <Compile Include="Server\Level\IWorld.cs" />
     <Compile Include="Server\Level\IWorldGenerator.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Client\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

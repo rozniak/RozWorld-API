@@ -65,7 +65,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// <summary>
         /// Gets the location of this Entity.
         /// </summary>
-        public Location Location { get; private set; } // Handled by the velocity on Update()
+        public WorldLocation Location { get; private set; } // Handled by the velocity on Update()
 
         /// <summary>
         /// Gets the mass of this Entity.
@@ -140,7 +140,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// Teleports this Entity to the specified Location.
         /// </summary>
         /// <param name="target">The target Location to teleport to.</param>
-        public void TeleportTo(Location target)
+        public void TeleportTo(WorldLocation target)
         {
             // Do teleport code here for changing the Location and updating the server's info
         }
@@ -155,7 +155,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// <param name="localY">The target local y-coordinate of the segment.</param>
         public void TeleportTo(int localX, int localY, int segX, int segY, int segZ)
         {
-            TeleportTo(new Location(localX, localY, segX, segY, segZ, Location.World));
+            TeleportTo(new WorldLocation(localX, localY, segX, segY, segZ, Location.World));
         }
 
 

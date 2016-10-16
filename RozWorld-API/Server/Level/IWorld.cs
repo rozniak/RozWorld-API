@@ -37,14 +37,14 @@ namespace Oddmatics.RozWorld.API.Server.Level
         /// <summary>
         /// Gets or sets the spawn point for this IWorld.
         /// </summary>
-        Location SpawnPoint { get; set; }
+        WorldLocation SpawnPoint { get; set; }
 
 
         /// <summary>
         /// Creates an explosion at a given Location in this IWorld.
         /// </summary>
         /// <param name="location">The Location to spawn the explosion.</param>
-        void CreateExplosion(Location location);
+        void CreateExplosion(WorldLocation location);
 
         /// <summary>
         /// Gets an IEntity instance in this IWorld by its ID.
@@ -69,6 +69,6 @@ namespace Oddmatics.RozWorld.API.Server.Level
         /// </summary>
         /// <param name="entity">The IEntity to spawn.</param>
         /// <param name="location">The target Location to spawn at.</param>
-        bool PutEntity(Entity entity, Location location);
+        bool PutEntity(Entity entity, WorldLocation location);
     }
 }
