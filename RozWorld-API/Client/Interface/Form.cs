@@ -10,6 +10,7 @@
  */
 
 using Oddmatics.RozWorld.API.Client.Interface.Control;
+using Oddmatics.RozWorld.API.Generic;
 using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Client.Interface
@@ -25,13 +26,28 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         public bool Active { get; set; }
 
         /// <summary>
-        /// Gets the controls of this Form as an IList&lt;IControl&gt; collection.
+        /// Gets the child controls of this Form as a List&lt;IControl&gt; collection.
         /// </summary>
-        public IList<IControl> Controls { get { return null; } } // TODO: Code this
+        public List<IControl> Controls { get { return _Controls; } }
+        private List<IControl> _Controls = new List<IControl>();
+
+        /// <summary>
+        /// Gets or sets the Location of this Form.
+        /// </summary>
+        public Location Location { get; set; }
 
         /// <summary>
         /// Gets the parent IInterfaceHandler of this Form.
         /// </summary>
-        public IInterfaceHandler Parent { get { return null; } } // TODO: Code this
+        public IInterfaceHandler Parent
+        {
+            get { return _Parent; }
+            set
+            {
+                if (value.Forms.Contains(this))
+                    _Parent = value;
+            }
+        }
+        private IInterfaceHandler _Parent;
     }
 }

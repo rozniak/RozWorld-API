@@ -20,8 +20,8 @@ namespace Oddmatics.RozWorld.API.Client.Interface
     public interface IControlContainer
     {
         /// <summary>
-        /// Gets the child IControl instances of this IControlContainer.
+        /// Gets the child controls of this IControlContainer as a List&lt;IControl&gt; collection.
         /// </summary>
-        IList<IControl> Controls { get; }
+        List<IControl> Controls { get; }
     }
 }
