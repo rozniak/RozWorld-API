@@ -79,6 +79,15 @@ namespace Oddmatics.RozWorld.API.Server.Entities
 
 
         /// <summary>
+        /// Applies a force onto this Entity.
+        /// </summary>
+        /// <param name="force">The force Vector to apply.</param>
+        public void ApplyForce(Vector force)
+        {
+            // TODO: Some physics calcs for getting resultant velocity vector
+        }
+
+        /// <summary>
         /// Attacks an Entity.
         /// </summary>
         /// <param name="entity">The Entity to attack.</param>
@@ -113,19 +122,33 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         }
 
         /// <summary>
-        /// Applies a force onto this Entity.
+        /// Performs individual Entity-related thought updates and processes.
         /// </summary>
-        /// <param name="force">The force Vector to apply.</param>
-        public void ApplyForce(Vector force)
-        {
-            // TODO: Some physics calcs for getting resultant velocity vector
-        }
+        protected abstract void EntityUpdate();
 
         /// <summary>
         /// Interacts with this Entity.
         /// </summary>
         /// <param name="sender">The Player interacting.</param>
         public virtual void Interact(Player sender) { }
+
+        /// <summary>
+        /// Performs the required attachments to the server.
+        /// 
+        /// This function should not be called by anything other than the server.
+        /// </summary>
+        public void PerformServerAttachment()
+        {
+            RwCore.Server.Tick += new ServerTickEventHandler(Server_Tick);
+        }
+
+        /// <summary>
+        /// Performs physics calculations for updating this Entity.
+        /// </summary>
+        private void PhysicsUpdate()
+        {
+            // TODO: Some physics calcs for getting the new Location of this Entity based on velocity
+        }
 
         /// <summary>
         /// Teleports this Entity to a specified target IEntity.
@@ -160,12 +183,12 @@ namespace Oddmatics.RozWorld.API.Server.Entities
 
 
         /// <summary>
-        /// [DIRECT INHERITORS ONLY -- ATTACH THIS TO IRWSERVER.TICK EVENT IN YOUR CONSTRUCTOR OR INCLUDE IN UPDATE METHOD]
-        /// Performs physics calculations for updating this Entity.
+        /// [Event] Server tick elapsed.
         /// </summary>
-        protected void EntityUpdate()
+        private void Server_Tick(object sender, ServerTickEventArgs e)
         {
-            // TODO: Some physics calcs for getting the new Location of this Entity based on velocity
+            PhysicsUpdate();
+            EntityUpdate();
         }
     }
 }
