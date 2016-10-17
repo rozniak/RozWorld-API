@@ -24,9 +24,14 @@ namespace Oddmatics.RozWorld.API.Client.Interface.Control
         Location Location { get; set; }
 
         /// <summary>
+        /// Gets or sets the name of this IControl.
+        /// </summary>
+        string Name { get; set; }
+
+        /// <summary>
         /// Gets the parent Form of this IControl.
         /// </summary>
-        Form Parent { get; }
+        IForm Parent { get; }
 
 
         /// <summary>

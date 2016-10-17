@@ -23,19 +23,27 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         /// <summary>
         /// Gets or sets the currently active Form.
         /// </summary>
-        Form ActiveForm { get; set; }
+        IForm ActiveForm { get; set; }
 
         /// <summary>
         /// Gets the child IForm instances of this IInterfaceHandler.
         /// </summary>
-        IList<Form> Forms { get; }
+        IList<IForm> Forms { get; }
 
 
         /// <summary>
         /// Factory method for creating controls from an interface within this API.
         /// </summary>
         /// <param name="controlInterface">The interface's Type.</param>
+        /// <param name="name">The name to give the new instance.</param>
         /// <returns>A new IControl instance of the referred interface Type.</returns>
-        IControl CreateControlFromInterface(Type controlInterface);
+        IControl CreateControlFromInterface(Type controlInterface, string name);
+
+        /// <summary>
+        /// Factory method for creating forms.
+        /// </summary>
+        /// <param name="name">The name to give the new instance.</param>
+        /// <returns>A new IForm instance of the Type specified internally by the client implementation.</returns>
+        IForm CreateForm(string name);
     }
 }

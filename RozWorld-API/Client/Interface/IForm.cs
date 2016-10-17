@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Client.Interface.Control.Form -- RozWorld Client Interface Form
+ * Oddmatics.RozWorld.API.Client.Interface.Control.IForm -- RozWorld Client Interface Form
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -18,36 +18,26 @@ namespace Oddmatics.RozWorld.API.Client.Interface
     /// <summary>
     /// Represents a single interface form for the RozWorld client's interface handler.
     /// </summary>
-    public abstract class Form : IControlContainer
+    public interface IForm : IControlContainer
     {
         /// <summary>
-        /// Gets whether this Form is active or not.
+        /// Gets whether this IForm is active or not.
         /// </summary>
-        public bool Active { get; set; }
+        bool Active { get; set; }
 
         /// <summary>
-        /// Gets the child controls of this Form as a List&lt;IControl&gt; collection.
+        /// Gets or sets the Location of this IForm.
         /// </summary>
-        public List<IControl> Controls { get { return _Controls; } }
-        private List<IControl> _Controls = new List<IControl>();
+        Location Location { get; set; }
 
         /// <summary>
-        /// Gets or sets the Location of this Form.
+        /// Gets or sets the name of this IForm.
         /// </summary>
-        public Location Location { get; set; }
+        string Name { get; set; }
 
         /// <summary>
-        /// Gets the parent IInterfaceHandler of this Form.
+        /// Gets the parent IInterfaceHandler of this IForm.
         /// </summary>
-        public IInterfaceHandler Parent
-        {
-            get { return _Parent; }
-            set
-            {
-                if (value.Forms.Contains(this))
-                    _Parent = value;
-            }
-        }
-        private IInterfaceHandler _Parent;
+        IInterfaceHandler Parent { get; }
     }
 }
