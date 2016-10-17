@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Client.Interface.Control.IButton -- RozWorld Client Interface Button
+ * Oddmatics.RozWorld.API.Client.Interface.Control.ITextBox -- RozWorld Client Interface Text Box
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -12,9 +12,9 @@
 namespace Oddmatics.RozWorld.API.Client.Interface.Control
 {
     /// <summary>
-    /// Represents a button control on the interface.
+    /// Represents a text box control on the interface.
     /// </summary>
-    public interface IButton : IControl, ITextContainer
+    public interface ITextBox : IControl, IControlContainer
     {
 
     }

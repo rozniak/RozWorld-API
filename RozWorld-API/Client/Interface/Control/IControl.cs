@@ -10,6 +10,7 @@
  */
 
 using Oddmatics.RozWorld.API.Generic;
+using System;
 
 namespace Oddmatics.RozWorld.API.Client.Interface.Control
 {
@@ -57,6 +58,17 @@ namespace Oddmatics.RozWorld.API.Client.Interface.Control
         /// Gets the parent Form of this IControl.
         /// </summary>
         IForm Parent { get; }
+
+
+        /// <summary>
+        /// Occurs when the cursor enters the bounds of this control.
+        /// </summary>
+        event EventHandler CursorEnter;
+
+        /// <summary>
+        /// Occurs when the cursor leaves the bounds of this control.
+        /// </summary>
+        event EventHandler CursorLeave;
 
 
         /// <summary>

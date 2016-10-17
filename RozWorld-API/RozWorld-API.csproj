@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Client\Interface\Control\IButton.cs" />
     <Compile Include="Client\Interface\Control\IControl.cs" />
+    <Compile Include="Client\Interface\Control\ITextBox.cs" />
     <Compile Include="Client\Interface\Control\ITextContainer.cs" />
     <Compile Include="Client\Interface\IControlContainer.cs" />
     <Compile Include="Client\Interface\IForm.cs" />
