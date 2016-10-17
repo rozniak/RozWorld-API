@@ -21,7 +21,7 @@ namespace Oddmatics.RozWorld.API.Client.Interface
     public interface IForm : IControlContainer
     {
         /// <summary>
-        /// Gets whether this IForm is active or not.
+        /// Gets or sets whether this IForm is active.
         /// </summary>
         bool Active { get; set; }
 
@@ -39,5 +39,26 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         /// Gets the parent IInterfaceHandler of this IForm.
         /// </summary>
         IInterfaceHandler Parent { get; }
+
+
+        /// <summary>
+        /// Selects the control below the currently selected control.
+        /// </summary>
+        void MoveSelectionDown();
+
+        /// <summary>
+        /// Selects the control to the left of the currently selected control.
+        /// </summary>
+        void MoveSelectionLeft();
+
+        /// <summary>
+        /// Selects the control to the right of the currently selected control.
+        /// </summary>
+        void MoveSelectionRight();
+
+        /// <summary>
+        /// Selects the control above the currently selected control.
+        /// </summary>
+        void MoveSelectionUp();
     }
 }

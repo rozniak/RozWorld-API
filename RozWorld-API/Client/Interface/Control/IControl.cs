@@ -19,6 +19,31 @@ namespace Oddmatics.RozWorld.API.Client.Interface.Control
     public interface IControl
     {
         /// <summary>
+        /// Gets or sets whether this IControl is active.
+        /// </summary>
+        bool Active { get; set; }
+
+        /// <summary>
+        /// Gets or sets the IControl that is above this IControl, and will be selected when moving up.
+        /// </summary>
+        IControl ControlAbove { get; set; }
+
+        /// <summary>
+        /// Gets or sets the IControl that is below this IControl, and will be selected when moving down.
+        /// </summary>
+        IControl ControlBelow { get; set; }
+
+        /// <summary>
+        /// Gets or sets the IControl that is on the left of this IControl, and will be selected when moving left.
+        /// </summary>
+        IControl ControlLeft { get; set; }
+
+        /// <summary>
+        /// Gets or sets the IControl that is on the right of this IControl, and will be selected when moving right.
+        /// </summary>
+        IControl ControlRight { get; set; }
+
+        /// <summary>
         /// Gets or sets the Location of this IControl.
         /// </summary>
         Location Location { get; set; }
