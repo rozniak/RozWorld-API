@@ -12,7 +12,7 @@
 namespace Oddmatics.RozWorld.API.Generic.Level
 {
     /// <summary>
-    /// Specifies constants defining the current weather in a world
+    /// Specifies constants defining the current weather in a world.
     /// </summary>
     public enum Weather
     {
