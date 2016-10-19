@@ -40,6 +40,11 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         /// </summary>
         IInterfaceHandler Parent { get; }
 
+        /// <summary>
+        /// Gets or sets whether this IForm should maintain persistent input focus.
+        /// </summary>
+        bool PersistentInputFocus { get; set; }
+
 
         /// <summary>
         /// Selects the control below the currently selected control.
