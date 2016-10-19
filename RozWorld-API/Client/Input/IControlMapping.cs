@@ -10,6 +10,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Client.Input
 {
@@ -18,6 +19,11 @@ namespace Oddmatics.RozWorld.API.Client.Input
     /// </summary>
     public interface IControlMapping : ICloneable
     {
+        /// <summary>
+        /// Gets all the button control assignments as an IDictionary&lt;string, byte&gt; collection.
+        /// </summary>
+        IDictionary<string, byte> Controls { get; }
+
         /// <summary>
         /// Gets or sets the control used to move the cursor down.
         /// </summary>

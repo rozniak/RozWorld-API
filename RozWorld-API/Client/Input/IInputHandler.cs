@@ -9,6 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System.Collections.Generic;
+
 namespace Oddmatics.RozWorld.API.Client.Input
 {
     /// <summary>
@@ -16,6 +18,9 @@ namespace Oddmatics.RozWorld.API.Client.Input
     /// </summary>
     public interface IInputHandler
     {
-        
+        /// <summary>
+        /// Gets the currently defined controls as an IList&lt;string&gt; collection.
+        /// </summary>
+        IList<string> DefinedControls { get; }
     }
 }
