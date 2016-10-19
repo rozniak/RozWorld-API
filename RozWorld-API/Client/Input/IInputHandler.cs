@@ -22,5 +22,20 @@ namespace Oddmatics.RozWorld.API.Client.Input
         /// Gets the currently defined controls as an IList&lt;string&gt; collection.
         /// </summary>
         IList<string> DefinedControls { get; }
+
+        /// <summary>
+        /// Gets the status of the keyboard.
+        /// </summary>
+        IKeyboard Keyboard { get; }
+
+        /// <summary>
+        /// Gets the status of the mouse.
+        /// </summary>
+        IMouse Mouse { get; }
+
+        /// <summary>
+        /// Gets the statuses of Xbox controllers as an IList&lt;IXboxController&gt; collection.
+        /// </summary>
+        IList<IXboxController> XboxController { get; }
     }
 }
