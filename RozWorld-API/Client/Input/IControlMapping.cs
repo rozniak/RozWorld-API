@@ -16,36 +16,52 @@ namespace Oddmatics.RozWorld.API.Client.Input
     /// <summary>
     /// Represents the control mapping scheme for a player's profile.
     /// </summary>
-    public class ControlMapping : ICloneable
+    public interface IControlMapping : ICloneable
     {
         /// <summary>
         /// Gets or sets the control used to move the cursor down.
         /// </summary>
-        public byte CursorMoveDown;
+        byte CursorMoveDown { get; set; }
 
         /// <summary>
         /// Gets or sets the control used to move the cursor left.
         /// </summary>
-        public byte CursorMoveLeft;
+        byte CursorMoveLeft { get; set; }
 
         /// <summary>
         /// Gets or sets the control used to move the cursor right.
         /// </summary>
-        public byte CursorMoveRight;
+        byte CursorMoveRight { get; set; }
 
         /// <summary>
         /// Gets or sets the control used to move the cursor up.
         /// </summary>
-        public byte CursorMoveUp;
+        byte CursorMoveUp { get; set; }
 
         /// <summary>
         /// Gets or sets the control used to make the cursor press.
         /// </summary>
-        public byte CursorPress;
+        byte CursorPress { get; set; }
 
         /// <summary>
         /// Gets or sets the control used to make the cursor release.
         /// </summary>
-        public byte CursorRelease;
+        byte CursorRelease { get; set; }
+
+        /// <summary>
+        /// Gets or sets the control used to scroll down.
+        /// </summary>
+        byte ScrollDown { get; set; }
+
+        /// <summary>
+        /// Gets or sets the control used to scroll up.
+        /// </summary>
+        byte ScrollUp { get; set; }
+
+
+        /// <summary>
+        /// Sets this IControlMapping to defaults.
+        /// </summary>
+        void SetToDefaults();
     }
 }
