@@ -49,6 +49,7 @@
     <Compile Include="Client\Input\IInputPreferences.cs" />
     <Compile Include="Client\Input\IMouse.cs" />
     <Compile Include="Client\Input\InputType.cs" />
+    <Compile Include="Client\Input\InputUpdateCallback.cs" />
     <Compile Include="Client\Input\IXboxController.cs" />
     <Compile Include="Client\Interface\Control\IButton.cs" />
     <Compile Include="Client\Interface\Control\IControl.cs" />

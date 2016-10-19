@@ -37,6 +37,14 @@ namespace Oddmatics.RozWorld.API.Client.Input
         /// </summary>
         XboxButtonPress,
         /// <summary>
+        /// Represents an Xbox 360 controller being plugged in or otherwise activated.
+        /// </summary>
+        XboxControllerActivated,
+        /// <summary>
+        /// Represents an Xbox 360 controller being unplugged or otherwise deactivated.
+        /// </summary>
+        XboxControllerDeactivated,
+        /// <summary>
         /// Represents an Xbox 360 controller button being released.
         /// </summary>
         XboxButtonRelease,

@@ -9,6 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Client;
 using Oddmatics.RozWorld.API.Generic.Language;
 using Oddmatics.RozWorld.API.Server;
 using System;
@@ -21,6 +22,19 @@ namespace Oddmatics.RozWorld.API.Generic
     public class RwCore
     {
         /// <summary>
+        /// Gets or sets the current RozWorld client instance.
+        /// 
+        /// Setting this must be done at initialisation stage, this can't be set if an instance already exists.
+        /// </summary>
+        public static IRwClient Client
+        {
+            get { return _Client; }
+            set { if (_Client == null) _Client = value; else
+                    throw new InvalidOperationException("RwCore.Client.Set: Cannot set client, it is not null."); }
+        }
+        private static IRwClient _Client;
+
+        /// <summary>
         /// Gets or sets the shared ILanguageSystem instance for RozWorld.
         /// 
         /// Setting this must be done at initialisation stage, this can't be set if an instance already exists.
@@ -29,7 +43,7 @@ namespace Oddmatics.RozWorld.API.Generic
         {
             get { return _LanguageSystem; }
             set { if (_LanguageSystem == null) _LanguageSystem = value; else
-                throw new InvalidOperationException("RwCore.Server.LanguageSystem.Set: Cannot set language system, it is not null."); }
+                throw new InvalidOperationException("RwCore.LanguageSystem.Set: Cannot set language system, it is not null."); }
         }
         private static ILanguageSystem _LanguageSystem;
 

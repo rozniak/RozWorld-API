@@ -9,34 +9,37 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Client.Input;
+using Oddmatics.RozWorld.API.Generic;
+
 namespace Oddmatics.RozWorld.API.Client
 {
     /// <summary>
     /// Represents a graphics renderer for the RozWorld client.
     /// </summary>
-    public interface IRenderer
+    public abstract class Renderer
     {
         /// <summary>
-        /// Gets whether this IRenderer is initialised or not.
+        /// Gets whether this IRenderer is initialised.
         /// </summary>
-        bool Initialised { get; }
+        public abstract bool Initialised { get; protected set; }
 
         /// <summary>
         /// Gets the amount of windows active.
         /// </summary>
-        byte WindowCount { get; }
+        public abstract byte WindowCount { get; }
 
 
         /// <summary>
         /// Initialises this IRenderer.
         /// </summary>
-        void Initialise();
+        public abstract void Initialise();
         
         /// <summary>
         /// Attempts to set the amount of live windows.
         /// </summary>
         /// <param name="count">The amount of windows to set.</param>
-        void SetWindows(byte count);
+        public abstract void SetWindows(byte count);
 
         /// <summary>
         /// Sets the size of a given window.
@@ -44,6 +47,6 @@ namespace Oddmatics.RozWorld.API.Client
         /// <param name="window">The index of the window.</param>
         /// <param name="width">The new width.</param>
         /// <param name="height">The new height</param>
-        void SetWindowSize(byte window, short width, short height);
+        public abstract void SetWindowSize(byte window, short width, short height);
     }
 }

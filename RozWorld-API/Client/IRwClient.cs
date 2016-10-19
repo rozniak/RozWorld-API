@@ -9,6 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using Oddmatics.RozWorld.API.Client.Input;
 using Oddmatics.RozWorld.API.Client.Interface;
 using System.Collections.Generic;
 
@@ -25,14 +26,19 @@ namespace Oddmatics.RozWorld.API.Client
         IList<RendererInfo> AvailableRenderers { get; }
 
         /// <summary>
+        /// Gets the IInputHandler instance for this IRwClient.
+        /// </summary>
+        IInputHandler Input { get; }
+
+        /// <summary>
         /// Gets the IInterfaceHandler instance for this IRwClient.
         /// </summary>
         IInterfaceHandler Interface { get; }
 
         /// <summary>
-        /// Gets the IRenderer instance of the currently active renderer.
+        /// Gets the Renderer instance of the currently active renderer.
         /// </summary>
-        IRenderer Renderer { get; }
+        Renderer Renderer { get; }
 
         /// <summary>
         /// Gets the RendererInfo instance associated with the active renderer.
