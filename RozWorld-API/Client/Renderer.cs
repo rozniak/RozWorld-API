@@ -11,6 +11,7 @@
 
 using Oddmatics.RozWorld.API.Client.Input;
 using Oddmatics.RozWorld.API.Generic;
+using System;
 
 namespace Oddmatics.RozWorld.API.Client
 {
@@ -20,9 +21,20 @@ namespace Oddmatics.RozWorld.API.Client
     public abstract class Renderer
     {
         /// <summary>
-        /// Gets whether this IRenderer is initialised.
+        /// Gets whether this Renderer is initialised.
         /// </summary>
         public abstract bool Initialised { get; protected set; }
+
+        /// <summary>
+        /// Gets the InputUpdateCallback for this Renderer.
+        /// </summary>
+        protected InputUpdateCallback InputUpdateCallback
+        {
+            get { return _InputUpdateCallback; }
+            private set { if (_InputUpdateCallback == null) _InputUpdateCallback = value; else
+                    throw new InvalidOperationException("Renderer.InputUpdateCallback.Set: Cannot set input update callback, it is not null"); }
+        }
+        private InputUpdateCallback _InputUpdateCallback;
 
         /// <summary>
         /// Gets the amount of windows active.
@@ -31,9 +43,20 @@ namespace Oddmatics.RozWorld.API.Client
 
 
         /// <summary>
-        /// Initialises this IRenderer.
+        /// Initialises this Renderer.
         /// </summary>
         public abstract void Initialise();
+
+        /// <summary>
+        /// Attempts to set the input update callback for this Renderer.
+        /// 
+        /// This is only to be called by the RozWorld client itself.
+        /// </summary>
+        /// <param name="callback">The input update callback to use.</param>
+        public void SetInputUpdateCallback(InputUpdateCallback callback)
+        {
+            InputUpdateCallback = callback;
+        }
         
         /// <summary>
         /// Attempts to set the amount of live windows.

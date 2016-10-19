@@ -61,7 +61,7 @@
     <Compile Include="Client\Interface\IInterfaceHandler.cs" />
     <Compile Include="Client\Input\IKeyboard.cs" />
     <Compile Include="Client\IPlugin.cs" />
-    <Compile Include="Client\IRenderer.cs" />
+    <Compile Include="Client\Renderer.cs" />
     <Compile Include="Client\IRwClient.cs" />
     <Compile Include="Client\RendererInfo.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
