@@ -26,6 +26,16 @@ namespace Oddmatics.RozWorld.API.Client
         IList<RendererInfo> AvailableRenderers { get; }
 
         /// <summary>
+        /// Gets the name of this client implementation.
+        /// </summary>
+        string ClientName { get; }
+
+        /// <summary>
+        /// Gets the version of this client implementation.
+        /// </summary>
+        string ClientVersion { get; }
+
+        /// <summary>
         /// Gets the IInputHandler instance for this IRwClient.
         /// </summary>
         IInputHandler Input { get; }
@@ -44,6 +54,11 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the RendererInfo instance associated with the active renderer.
         /// </summary>
         RendererInfo RendererInformation { get; }
+
+        /// <summary>
+        /// Gets the target RozWorld version of this client implementation.
+        /// </summary>
+        string RozWorldVersion { get; }
 
         
         /// <summary>

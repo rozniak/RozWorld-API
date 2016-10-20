@@ -19,7 +19,7 @@ namespace Oddmatics.RozWorld.API.Generic
     /// <summary>
     /// Represents the RozWorld core systems for handling the client and server instances.
     /// </summary>
-    public class RwCore
+    public static class RwCore
     {
         /// <summary>
         /// Gets or sets the current RozWorld client instance.
@@ -33,6 +33,12 @@ namespace Oddmatics.RozWorld.API.Generic
                     throw new InvalidOperationException("RwCore.Client.Set: Cannot set client, it is not null."); }
         }
         private static IRwClient _Client;
+
+        /// <summary>
+        /// Gets the unified game core instance.
+        /// </summary>
+        public static GameCore Game { get { return _Game; } }
+        private static GameCore _Game = new GameCore();
 
         /// <summary>
         /// Gets or sets the shared ILanguageSystem instance for RozWorld.
