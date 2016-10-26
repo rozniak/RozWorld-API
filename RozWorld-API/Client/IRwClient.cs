@@ -11,6 +11,7 @@
 
 using Oddmatics.RozWorld.API.Client.Input;
 using Oddmatics.RozWorld.API.Client.Interface;
+using Oddmatics.RozWorld.API.Generic;
 using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Client
@@ -44,6 +45,11 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the IInterfaceHandler instance for this IRwClient.
         /// </summary>
         IInterfaceHandler Interface { get; }
+
+        /// <summary>
+        /// Gets the logger this IRwClient is using.
+        /// </summary>
+        ILogger Logger { get; }
 
         /// <summary>
         /// Gets the Renderer instance of the currently active renderer.

@@ -117,7 +117,7 @@
     <Compile Include="Server\Game\IStatCalculator.cs" />
     <Compile Include="Server\Game\Economy\Shops\IShopItem.cs" />
     <Compile Include="Server\ICommandCaller.cs" />
-    <Compile Include="Server\ILogger.cs" />
+    <Compile Include="Generic\ILogger.cs" />
     <Compile Include="Server\IPlugin.cs" />
     <Compile Include="Server\IRwServer.cs" />
     <Compile Include="Server\Item\IInventory.cs" />
