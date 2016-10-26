@@ -75,7 +75,7 @@ namespace Oddmatics.RozWorld.API.Client
             Author = author;
             Description = description;
 
-            if (rendererType.GetInterface("IRenderer") == typeof(IRenderer))
+            if (rendererType == typeof(Renderer))
             {
                 RendererType = rendererType;
                 Valid = true;
