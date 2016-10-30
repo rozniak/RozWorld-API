@@ -59,7 +59,7 @@ namespace Oddmatics.RozWorld.API.Generic
         /// <summary>
         /// The message is logged in the disconnect status update context.
         /// </summary>
-        public const string STATUS_DICONNECT = "STAT/DISC";
+        public const string STATUS_DISCONNECT = "STAT/DISC";
 
         /// <summary>
         /// The message is logged in the login status context.
