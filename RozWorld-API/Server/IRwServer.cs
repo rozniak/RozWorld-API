@@ -274,6 +274,14 @@ namespace Oddmatics.RozWorld.API.Server
         bool IsValidEntity(ushort id);
 
         /// <summary>
+        /// Kicks a Player from the server by their instance with a specified reason.
+        /// </summary>
+        /// <param name="player">The Player instance.</param>
+        /// <param name="reason">Provide a reason to the Player for kicking them, leave blank for no reason given.</param>
+        /// <returns>True if the Player was kicked.</returns>
+        bool Kick(Player player, string reason = "");
+
+        /// <summary>
         /// Kicks a Player from the server by their display name with a specified reason.
         /// </summary>
         /// <param name="name">The display name of the Player.</param>
