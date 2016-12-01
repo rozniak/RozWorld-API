@@ -22,11 +22,6 @@ namespace Oddmatics.RozWorld.API.Client
     public interface IRwClient
     {
         /// <summary>
-        /// Gets the available renderers as an IList&lt;RendererInfo&gt; collection.
-        /// </summary>
-        IList<RendererInfo> AvailableRenderers { get; }
-
-        /// <summary>
         /// Gets the name of this client implementation.
         /// </summary>
         string ClientName { get; }
@@ -52,26 +47,8 @@ namespace Oddmatics.RozWorld.API.Client
         ILogger Logger { get; }
 
         /// <summary>
-        /// Gets the Renderer instance of the currently active renderer.
-        /// </summary>
-        Renderer Renderer { get; }
-
-        /// <summary>
-        /// Gets the RendererInfo instance associated with the active renderer.
-        /// </summary>
-        RendererInfo RendererInformation { get; }
-
-        /// <summary>
         /// Gets the target RozWorld version of this client implementation.
         /// </summary>
         string RozWorldVersion { get; }
-
-        
-        /// <summary>
-        /// Attempts to set the active renderer.
-        /// </summary>
-        /// <param name="index">The index of the renderer to set from the available renderers.</param>
-        /// <returns>True if the renderer was successfully changed.</returns>
-        bool SetRenderer(int index);
     }
 }

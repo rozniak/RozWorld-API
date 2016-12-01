@@ -16,5 +16,6 @@ namespace Oddmatics.RozWorld.API.Client.Input
     /// </summary>
     /// <param name="inputType">The input type being updated.</param>
     /// <param name="status">The new status of the input.</param>
-    public delegate void InputUpdateCallback(InputType inputType, byte status);
+    /// <param name="extraData">Extra data for the input update, should provide information regarding ports etc.</param>
+    public delegate void InputUpdateCallback(InputType inputType, byte status, byte extraData);
 }
