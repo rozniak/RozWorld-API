@@ -68,6 +68,7 @@
     <Compile Include="Client\RendererInfo.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
+    <Compile Include="Generic\Event\TrustedPluginCheckCallback.cs" />
     <Compile Include="Generic\GameCore.cs" />
     <Compile Include="Generic\Game\Difficulty.cs" />
     <Compile Include="Generic\Game\GameMode.cs" />
