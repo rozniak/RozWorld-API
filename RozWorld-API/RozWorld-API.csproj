@@ -82,7 +82,7 @@
     <Compile Include="Generic\Level\Weather.cs" />
     <Compile Include="Generic\Level\IWorld.cs" />
     <Compile Include="Generic\Location.cs" />
-    <Compile Include="Generic\LoggingContext.cs" />
+    <Compile Include="Generic\LogLevel.cs" />
     <Compile Include="Generic\Progression\IRankSystem.cs" />
     <Compile Include="Generic\RwCore.cs" />
     <Compile Include="Generic\Size.cs" />
