@@ -20,7 +20,8 @@ namespace Oddmatics.RozWorld.API.Generic
         /// Outputs a message into the logger.
         /// </summary>
         /// <param name="message">The message to output.</param>
+        /// <param name="level">The log level of the message.</param>
         /// <param name="colours">Allow colours in the logged message.</param>
-        void Out(string message, bool colours = true);
+        void Out(string message, LogLevel level, bool colours = true);
     }
 }
