@@ -61,5 +61,15 @@ namespace Oddmatics.RozWorld.API.Client
         /// <param name="width">The new width.</param>
         /// <param name="height">The new height</param>
         public abstract void SetWindowSize(byte window, short width, short height);
+
+        /// <summary>
+        /// Starts this Renderer.
+        /// </summary>
+        public abstract void Start();
+
+        /// <summary>
+        /// Stops this Renderer.
+        /// </summary>
+        public abstract void Stop();
     }
 }
