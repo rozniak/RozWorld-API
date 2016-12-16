@@ -32,6 +32,11 @@ namespace Oddmatics.RozWorld.API.Client
         string ClientVersion { get; }
 
         /// <summary>
+        /// Gets the display resolutions of screens that have been configured.
+        /// </summary>
+        Size[] DisplayResolutions { get; }
+
+        /// <summary>
         /// Gets the IInputHandler instance for this IRwClient.
         /// </summary>
         IInputHandler Input { get; }
