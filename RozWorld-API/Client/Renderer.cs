@@ -43,14 +43,10 @@ namespace Oddmatics.RozWorld.API.Client
 
 
         /// <summary>
-        /// Draws the next frame to the output window.
-        /// </summary>
-        public abstract void Draw();
-
-        /// <summary>
         /// Initialises this Renderer.
         /// </summary>
-        public abstract void Initialise();
+        /// <returns>True if the renderer was successfully initialised.</returns>
+        public abstract bool Initialise();
         
         /// <summary>
         /// Attempts to set the amount of live windows.
