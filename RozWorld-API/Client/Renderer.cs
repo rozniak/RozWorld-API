@@ -32,7 +32,7 @@ namespace Oddmatics.RozWorld.API.Client
         {
             get { return _InputUpdateCallback; }
             set { if (_InputUpdateCallback == null) _InputUpdateCallback = value; else
-                    throw new InvalidOperationException("Renderer.InputUpdateCallback.Set: Cannot set input update callback, it is not null"); }
+                    throw new InvalidOperationException("Renderer.InputUpdateCallback.Set: Cannot set input update callback, it is not null."); }
         }
         private InputUpdateCallback _InputUpdateCallback;
 
@@ -40,6 +40,12 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the amount of windows active.
         /// </summary>
         public abstract byte WindowCount { get; }
+
+
+        /// <summary>
+        /// Occurs when the user closes the renderer's last window.
+        /// </summary>
+        public event EventHandler Closed;
 
 
         /// <summary>
