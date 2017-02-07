@@ -41,6 +41,25 @@ namespace Oddmatics.RozWorld.API.Generic
         private static GameCore _Game = new GameCore();
 
         /// <summary>
+        /// Gets or sets the instance type for this RozWorld instance.
+        /// </summary>
+        public static RwInstanceType InstanceType
+        {
+            get { return _InstanceType; }
+            set
+            {
+                if (_InstanceType != RwInstanceType.Unset)
+                    throw new InvalidOperationException("RwCore.InstanceType.Set: Cannot set instance type, it has already been set.");
+
+                if (value == RwInstanceType.Unset)
+                    throw new InvalidOperationException("RwCore.InstanceType.Set: Cannot set instance type to unset.");
+
+                _InstanceType = value;
+            }
+        }
+        private static RwInstanceType _InstanceType = RwInstanceType.Unset;
+        
+        /// <summary>
         /// Gets or sets the shared ILanguageSystem instance for RozWorld.
         /// 
         /// Setting this must be done at initialisation stage, this can't be set if an instance already exists.

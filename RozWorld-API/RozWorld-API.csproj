@@ -85,6 +85,7 @@
     <Compile Include="Generic\LogLevel.cs" />
     <Compile Include="Generic\Progression\IRankSystem.cs" />
     <Compile Include="Generic\RwCore.cs" />
+    <Compile Include="Generic\RwInstanceType.cs" />
     <Compile Include="Generic\Size.cs" />
     <Compile Include="Generic\Vector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
