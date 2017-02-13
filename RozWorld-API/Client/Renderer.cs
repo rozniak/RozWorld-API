@@ -77,10 +77,5 @@ namespace Oddmatics.RozWorld.API.Client
         /// Stops this Renderer.
         /// </summary>
         public abstract void Stop();
-
-        /// <summary>
-        /// Informs this Renderer that the screen(s) should be updated.
-        /// </summary>
-        public abstract void Update();
     }
 }

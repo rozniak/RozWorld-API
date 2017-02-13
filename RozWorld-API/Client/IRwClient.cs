@@ -32,6 +32,11 @@ namespace Oddmatics.RozWorld.API.Client
         string ClientVersion { get; }
 
         /// <summary>
+        /// Gets the window title to be used in this implementation.
+        /// </summary>
+        string ClientWindowTitle { get; }
+
+        /// <summary>
         /// Gets the display resolutions of screens that have been configured.
         /// </summary>
         Dictionary<byte, Size> DisplayResolutions { get; }
