@@ -13,6 +13,8 @@ namespace Oddmatics.RozWorld.API.Generic
 {
     /// <summary>
     /// Specifies constants defining the result of a method.
+    /// 
+    /// When transmitting this enum over the network, cast it as an unsigned short (UInt16).
     /// </summary>
     public enum RwResult
     {
@@ -96,7 +98,12 @@ namespace Oddmatics.RozWorld.API.Generic
         /// <summary>
         /// The token provided was not correct.
         /// </summary>
-        BadToken = 19
+        BadToken = 19,
+
+        /// <summary>
+        /// The account operation cannot be performed it is logged on currently, it must be logged off.
+        /// </summary>
+        MustBeOffline = 20
             
         #endregion
     }

@@ -91,6 +91,7 @@
     <Compile Include="Generic\Size.cs" />
     <Compile Include="Generic\Vector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Accounts\AccountRecord.cs" />
     <Compile Include="Server\Accounts\IAccount.cs" />
     <Compile Include="Server\Accounts\IAccountsManager.cs" />
     <Compile Include="Server\Accounts\IPermissionAuthority.cs" />

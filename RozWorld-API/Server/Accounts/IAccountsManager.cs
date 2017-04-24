@@ -1,13 +1,15 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Server.Accounts.IAccountsManager -- RozWorld Server Accounts Manager
- *
- * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
- * <<http://www.oddmatics.uk>>
- * <<http://roz.world>>
- * <<http://github.com/rozniak/RozWorld-API>>
- *
- * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
- */
+* Oddmatics.RozWorld.API.Server.Accounts.IAccountsManager -- RozWorld Server Accounts Manager
+*
+* This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
+* <<http://www.oddmatics.uk>>
+* <<http://roz.world>>
+* <<http://github.com/rozniak/RozWorld-API>>
+*
+* Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
+*/
+
+using Oddmatics.RozWorld.API.Generic;
 
 namespace Oddmatics.RozWorld.API.Server.Accounts
 {
@@ -26,15 +28,15 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// Deletes saved data of a given IAccount.
         /// </summary>
         /// <param name="account">The IAccount to delete.</param>
-        /// <returns>True if the was deleted.</returns>
-        bool DeleteAccount(IAccount account);
+        /// <returns>Success if the account existed was deleted.</returns>
+        RwResult DeleteAccount(IAccount account);
 
         /// <summary>
         /// Deletes the saved data of an account of the given name.
         /// </summary>
         /// <param name="name">The name of the account to delete.</param>
-        /// <returns>True if the account existed and was deleted.</returns>
-        bool DeleteAccount(string name);
+        /// <returns>Success if the account existed and was deleted.</returns>
+        RwResult DeleteAccount(string name);
 
         /// <summary>
         /// Gets the IAccount associated with the specified name.
@@ -48,12 +50,20 @@ namespace Oddmatics.RozWorld.API.Server.Accounts
         /// </summary>
         /// <param name="account">The IAccount instance to rename.</param>
         /// <param name="newName">The new name of the IAccount.</param>
-        /// <returns>True if the IAccount was renamed.</returns>
-        bool RenameAccount(IAccount account, string newName);
+        /// <returns>Success if the account was renamed.</returns>
+        RwResult RenameAccount(IAccount account, string newName);
+
+        /// <summary>
+        /// Updates saved account information when fields are updated.
+        /// </summary>
+        /// <param name="account">The IAccount instance to update.</param>
+        /// <returns>Success if the account was updated.</returns>
+        RwResult UpdateAccount(IAccount account);
 
         /// <summary>
         /// Saves all account data to the disk.
         /// </summary>
-        void Save();
+        /// <returns>Success if the account data was saved successfully.</returns>
+        RwResult Save();
     }
 }
