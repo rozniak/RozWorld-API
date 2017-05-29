@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Client.Interface.Control.IForm -- RozWorld Client Interface Form
+ * Oddmatics.RozWorld.API.Client.Interface.Control.Form -- RozWorld Client Interface Form
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
