@@ -9,7 +9,6 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using Oddmatics.RozWorld.API.Client.Interface.Control;
 using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Client.Interface
@@ -20,8 +19,13 @@ namespace Oddmatics.RozWorld.API.Client.Interface
     public interface IControlContainer
     {
         /// <summary>
-        /// Gets the child controls of this IControlContainer as a List&lt;IControl&gt; collection.
+        /// Gets the child controls of this container as an IList&lt;IControl&gt; collection.
         /// </summary>
-        IList<IControl> Controls { get; }
+        ControlCollection Controls { get; }
+        
+        /// <summary>
+        /// Gets or sets the currently focused control.
+        /// </summary>
+        Control FocusedControl { get; set; }
     }
 }

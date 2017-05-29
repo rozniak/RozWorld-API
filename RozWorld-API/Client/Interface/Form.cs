@@ -9,61 +9,88 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using Oddmatics.RozWorld.API.Client.Interface.Control;
+using System;
 using Oddmatics.RozWorld.API.Generic;
-using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Client.Interface
 {
     /// <summary>
     /// Represents a single interface form for the RozWorld client's interface handler.
     /// </summary>
-    public interface IForm : IControlContainer
+    public abstract class Form : IControlContainer
     {
         /// <summary>
-        /// Gets or sets whether this IForm is active.
+        /// Gets or sets whether this form is active.
         /// </summary>
-        bool Active { get; set; }
+        public bool Focused
+        {
+            get
+            {
+                return Parent?.FocusedForm == this;
+            }
+        }
 
         /// <summary>
-        /// Gets or sets the Location of this IForm.
+        /// Gets or sets the location of this form.
         /// </summary>
         Location Location { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of this IForm.
+        /// Gets or sets the name of this form.
         /// </summary>
         string Name { get; set; }
 
         /// <summary>
-        /// Gets the parent IInterfaceHandler of this IForm.
+        /// Gets the parent IInterfaceHandler object of this form.
         /// </summary>
-        IInterfaceHandler Parent { get; }
+        public IInterfaceHandler Parent { get; protected set; }
 
         /// <summary>
-        /// Gets or sets whether this IForm should maintain persistent input focus.
+        /// Gets whether this form should maintain persistent input focus.
         /// </summary>
-        bool PersistentInputFocus { get; set; }
+        public bool PersistentInputFocus { get; }
+
+        /// <summary>
+        /// Gets the collection of controls contained within the control.
+        /// </summary>
+        public ControlCollection Controls { get; protected set; }
+
+        /// <summary>
+        /// Gets or sets the currently focused control.
+        /// </summary>
+        public Control FocusedControl { get; set; }
 
 
         /// <summary>
         /// Selects the control below the currently selected control.
         /// </summary>
-        void MoveSelectionDown();
+        public void MoveSelectionDown()
+        {
+            // TODO: Code this
+        }
 
         /// <summary>
         /// Selects the control to the left of the currently selected control.
         /// </summary>
-        void MoveSelectionLeft();
+        public void MoveSelectionLeft()
+        {
+            // TODO: Code this
+        }
 
         /// <summary>
         /// Selects the control to the right of the currently selected control.
         /// </summary>
-        void MoveSelectionRight();
+        public void MoveSelectionRight()
+        {
+            // TODO: Code this
+        }
 
         /// <summary>
         /// Selects the control above the currently selected control.
         /// </summary>
-        void MoveSelectionUp();
+        public void MoveSelectionUp()
+        {
+            // TODO: Code this
+        }
     }
 }

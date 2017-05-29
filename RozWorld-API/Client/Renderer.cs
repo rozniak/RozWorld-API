@@ -10,7 +10,6 @@
  */
 
 using Oddmatics.RozWorld.API.Client.Input;
-using Oddmatics.RozWorld.API.Generic;
 using System;
 
 namespace Oddmatics.RozWorld.API.Client
