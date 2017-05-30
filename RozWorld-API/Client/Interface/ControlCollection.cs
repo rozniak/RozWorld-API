@@ -12,6 +12,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Oddmatics.RozWorld.API.Client.Interface
 {
@@ -98,21 +99,44 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         }
 
         /// <summary>
-        /// Adds the specified control to the control collection.
+        /// This function is not intended to be used in your code.
         /// </summary>
-        /// <param name="value">The Control to add to the control collection, cast as an object.</param>
-        /// <returns>0 upon success.</returns>
+        /// <param name="value">Do not use.</param>
+        /// <returns>This function will throw a NotImplementedException if called.</returns>
         public int Add(object value)
         {
-            if (value == null)
-                throw new ArgumentNullException("ControlCollection.Add: Parameter 'value' cannot be null.");
+            throw new NotImplementedException();
+        }
 
-            if (!value.GetType().IsSubclassOf(typeof(Control)))
-                throw new ArgumentException("ControlCollection.Add: Parameter 'value' must be a subclass of Control.");
-            
-            Add((Control)value);
+        /// <summary>
+        /// Adds an array of control objects to the collection.
+        /// </summary>
+        /// <param name="controls">An array of Control objects to add to the collection.</param>
+        /// <returns>Any Control objects that could not be added to the collection, as an IList&lt;Control&gt; collection.</returns>
+        public IList<Control> AddRange(Control[] controls)
+        {
+            var leftovers = new List<Control>();
 
-            return 0;
+            foreach (Control control in controls)
+            {
+                if (String.IsNullOrEmpty(control.Name))
+                {
+                    leftovers.Add(control);
+                    continue;
+                }
+
+                string lowKey = control.Name.ToLower();
+
+                if (Controls.ContainsKey(lowKey))
+                {
+                    leftovers.Add(control);
+                    continue;
+                }
+
+                Controls.Add(lowKey, control);
+            }
+
+            return leftovers.AsReadOnly();
         }
 
         /// <summary>
@@ -123,14 +147,27 @@ namespace Oddmatics.RozWorld.API.Client.Interface
             Controls.Clear();
         }
 
+        /// <summary>
+        /// Creates an exact copy of this ControlCollection.
+        /// </summary>
+        /// <returns>The ControlCollection this method makes, cast as an object.</returns>
         public object Clone()
         {
-            throw new NotImplementedException();
+            var clone = new ControlCollection(this.Owner);
+
+            clone.AddRange(Controls.Values.ToArray());
+
+            return clone;
         }
 
+        /// <summary>
+        /// Determines whether the specified control is a member of the collection.
+        /// </summary>
+        /// <param name="value">The Control to locate inside the collection, cast as an object.</param>
+        /// <returns>True if the Control is a member of the collection.</returns>
         public bool Contains(object value)
         {
-            throw new NotImplementedException();
+            return Controls.ContainsValue((Control)value);
         }
 
         public void CopyTo(Array array, int index)
@@ -140,7 +177,7 @@ namespace Oddmatics.RozWorld.API.Client.Interface
 
         public IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            return Controls.GetEnumerator();
         }
 
         public int IndexOf(object value)

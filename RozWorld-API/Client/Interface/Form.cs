@@ -8,9 +8,9 @@
  *
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
-
-using System;
+ 
 using Oddmatics.RozWorld.API.Generic;
+using System;
 
 namespace Oddmatics.RozWorld.API.Client.Interface
 {
@@ -20,25 +20,27 @@ namespace Oddmatics.RozWorld.API.Client.Interface
     public abstract class Form : IControlContainer
     {
         /// <summary>
-        /// Gets or sets whether this form is active.
+        /// Gets whether this form can be focused.
+        /// </summary>
+        public abstract bool CanFocus { get; }
+
+        /// <summary>
+        /// Gets whether this form is currently focused.
         /// </summary>
         public bool Focused
         {
-            get
-            {
-                return Parent?.FocusedForm == this;
-            }
+            get { return Parent?.FocusedForm == this; }
         }
 
         /// <summary>
         /// Gets or sets the location of this form.
         /// </summary>
-        Location Location { get; set; }
+        public virtual Location Location { get; set; }
 
         /// <summary>
         /// Gets or sets the name of this form.
         /// </summary>
-        string Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets the parent IInterfaceHandler object of this form.
@@ -48,7 +50,7 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         /// <summary>
         /// Gets whether this form should maintain persistent input focus.
         /// </summary>
-        public bool PersistentInputFocus { get; }
+        public abstract bool PersistentInputFocus { get; }
 
         /// <summary>
         /// Gets the collection of controls contained within the control.
@@ -60,6 +62,20 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         /// </summary>
         public Control FocusedControl { get; set; }
 
+
+        /// <summary>
+        /// Gives focus to this form.
+        /// </summary>
+        public void Focus()
+        {
+            if (!CanFocus)
+                throw new InvalidOperationException("Form.Focus: This control is not allowed to be focused.");
+
+            if (Parent == null)
+                throw new InvalidOperationException("Form.Focus: This control cannot be focused as no parent object reference has been set.");
+
+            Parent.FocusedForm = this;
+        }
 
         /// <summary>
         /// Selects the control below the currently selected control.

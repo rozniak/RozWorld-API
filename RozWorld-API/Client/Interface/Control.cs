@@ -43,19 +43,19 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         public Control ControlBelow { get; set; }
 
         /// <summary>
-        /// Gets or sets the IControl that is on the left of this IControl, and will be selected when moving left.
+        /// Gets or sets the control that is on the left of this control, and will be selected when moving left.
         /// </summary>
         public Control ControlLeft { get; set; }
 
         /// <summary>
-        /// Gets or sets the IControl that is on the right of this IControl, and will be selected when moving right.
+        /// Gets or sets the control that is on the right of this control, and will be selected when moving right.
         /// </summary>
         public Control ControlRight { get; set; }
 
         /// <summary>
-        /// Gets or sets the Location of this IControl.
+        /// Gets or sets the location of this IControl.
         /// </summary>
-        public Location Location { get; set; }
+        public virtual Location Location { get; set; }
 
         /// <summary>
         /// Gets or sets the name of this control.
