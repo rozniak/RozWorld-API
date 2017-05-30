@@ -45,8 +45,14 @@ namespace Oddmatics.RozWorld.API.Client.Interface
             get { return false; }
         }
 
+        /// <summary>
+        /// This property is not intended to be used in your code.
+        /// </summary>
         public bool IsSynchronized => throw new NotImplementedException();
 
+        /// <summary>
+        /// This property is not intended to be used in your code.
+        /// </summary>
         public object SyncRoot => throw new NotImplementedException();
 
 
@@ -74,6 +80,52 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         }
 
 
+        /// <summary>
+        /// Gets or sets the control associated with the specified name.
+        /// </summary>
+        /// <param name="name">The name of the Control to get or set.</param>
+        /// <returns>The Control associated with the specified name. If the specified key is not found, both get and set operations will throw a KeyNotFoundException.</returns>
+        public Control this[string name]
+        {
+            get
+            {
+                string lowKey = name.ToLower();
+
+                if (Controls.ContainsKey(lowKey))
+                    return Controls[lowKey];
+
+                throw new KeyNotFoundException("ControlCollection[string].get: No control of the specified name was found within the collection.");
+            }
+
+            set
+            {
+                if (value == null)
+                    throw new ArgumentNullException("ControlCollection[string].set: Cannot assign control to null value.");
+
+                string lowKey = name.ToLower();
+                string lowName = value.Name.ToLower();
+
+                if (!Controls.ContainsKey(lowKey))
+                    throw new KeyNotFoundException("ControlsCollection[string].set: No control of the specified name was found within the collection.");
+
+                if (lowKey != lowName)
+                {
+                    if (Controls.ContainsKey(lowName))
+                        throw new InvalidOperationException("ControlCollection[string].set: New Control value has a different name, however the name is already in use by another Control in the collection.");
+
+                    Controls.Remove(lowKey);
+                    Controls.Add(lowName, value);
+                }
+                else
+                    Controls[lowKey] = value;
+            }
+        }
+
+        /// <summary>
+        /// This indexer is not intended to be used in your code.
+        /// </summary>
+        /// <param name="index">Do not use.</param>
+        /// <returns>This indexer will throw a NotImplementedException if called.</returns>
         public object this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         
 
@@ -170,31 +222,90 @@ namespace Oddmatics.RozWorld.API.Client.Interface
             return Controls.ContainsValue((Control)value);
         }
 
+        /// <summary>
+        /// Copies the entire contents of this collection to a compatible one-dimensional Array, starting at the specified index of the target array.
+        /// </summary>
+        /// <param name="array">The one-dimensional Array that is the destination of the elements copied from the current collection. The array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in array at which copying begins.</param>
         public void CopyTo(Array array, int index)
         {
-            throw new NotImplementedException();
+            Control[] controls = Controls.Values.ToArray();
+
+            Array.Copy(controls, 0, array, index, controls.Length);
         }
 
+        /// <summary>
+        /// Retrieves a reference to an enumerator object that is used to iterate over a ControlCollection.
+        /// </summary>
+        /// <returns>An IEnumerator.</returns>
         public IEnumerator GetEnumerator()
         {
             return Controls.GetEnumerator();
         }
 
+        /// <summary>
+        /// This function is not intended to be used in your code.
+        /// </summary>
+        /// <param name="value">Do not use.</param>
+        /// <returns>This function will throw a NotImplementedException if called.</returns>
         public int IndexOf(object value)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// This function is not intended to be used in your code.
+        /// </summary>
+        /// <param name="value">Do not use.</param>
+        /// <returns>This function will throw a NotImplementedException if called.</returns>
         public void Insert(int index, object value)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Removes the specified control from the control collection.
+        /// </summary>
+        /// <param name="value">The Control to remove from the ControlCollection.</param>
+        public void Remove(Control value)
+        {
+            string lowKey = value.Name.ToLower();
+
+            if (!Controls.ContainsKey(lowKey) || Controls[lowKey] != value)
+                throw new InvalidOperationException("ControlCollection.Remove: The specified Control object does not exist in this collection.");
+
+            Controls.Remove(lowKey);
+        }
+
+        /// <summary>
+        /// This function is not intended to be used in your code.
+        /// </summary>
+        /// <param name="value">Do not use.</param>
+        /// <returns>This function will throw a NotImplementedException if called.</returns>
         public void Remove(object value)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Removes the specified control from the control collection.
+        /// </summary>
+        /// <param name="value">The name of the control to remove from the ControlCollection.</param>
+        public void Remove(string value)
+        {
+            string lowKey = value.ToLower();
+
+            if (!Controls.ContainsKey(lowKey))
+                throw new InvalidOperationException("ControlCollection.Remove: The specified name does not correspond with any control that exists within this collecton.");
+
+            Controls.Remove(lowKey);
+        }
+
+        /// <summary>
+        /// This function is not intended to be used in your code.
+        /// </summary>
+        /// <param name="index">Do not use.</param>
+        /// <returns>This function will throw a NotImplementedException if called.</returns>
         public void RemoveAt(int index)
         {
             throw new NotImplementedException();
