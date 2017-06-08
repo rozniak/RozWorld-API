@@ -58,6 +58,8 @@
     <Compile Include="Client\Interface\Form.cs" />
     <Compile Include="Client\Interface\IInterfaceHandler.cs" />
     <Compile Include="Client\Input\IKeyboard.cs" />
+    <Compile Include="Client\Interface\IRendererContext.cs" />
+    <Compile Include="Client\Interface\IRenderTask.cs" />
     <Compile Include="Client\IPlugin.cs" />
     <Compile Include="Client\Renderer.cs" />
     <Compile Include="Client\IRwClient.cs" />
