@@ -10,27 +10,41 @@
  */
 
 using Oddmatics.RozWorld.API.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Client.Interface
 {
     /// <summary>
     /// Represents a task that is operated by the renderer.
     /// </summary>
-    public interface IRenderTask
+    public interface IRenderTask : IDisposable
     {
         /// <summary>
-        /// Gets or sets the location that this render task takes place at.
+        /// Gets or sets the list of render parts in this task.
         /// </summary>
-        Location Location { get; set; }
+        List<RenderPart> Parts { get; set; }
 
         /// <summary>
-        /// Gets or sets the opacity of this render task.
+        /// Gets or sets the rotation amount (in radians) that will be applied to all render parts in this task.
         /// </summary>
-        float Opacity { get; set; }
+        float Rotation { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of the texture resource to use.
+        /// Gets or sets the rotation origin that will be used when rotating all render parts in this task.
         /// </summary>
-        string TextureName { get; set; }
+        Location RotationOrigin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tint effect that will be applied to all render parts in this task.
+        /// </summary>
+        byte[] Tint { get; set; }
+        
+
+        /// <summary>
+        /// Constructs or reconstructs this task ready for the renderer to use.
+        /// </summary>
+        /// <returns>Success if the task was constructed.</returns>
+        RwResult ConstructNow();
     }
 }

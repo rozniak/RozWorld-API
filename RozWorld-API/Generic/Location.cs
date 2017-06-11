@@ -17,14 +17,14 @@ namespace Oddmatics.RozWorld.API.Generic
     public struct Location
     {
         /// <summary>
-        /// Gets or sets the X coordinate of this Location.
+        /// Gets or sets the X coordinate of this location.
         /// </summary>
-        public int X;
+        public int X { get; set; }
 
         /// <summary>
-        /// Gets or sets the Y coordinate of this Location.
+        /// Gets or sets the Y coordinate of this location.
         /// </summary>
-        public int Y;
+        public int Y { get; set; }
 
 
         /// <summary>

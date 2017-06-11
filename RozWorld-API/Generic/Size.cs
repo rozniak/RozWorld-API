@@ -17,12 +17,12 @@ namespace Oddmatics.RozWorld.API.Generic
     public struct Size
     {
         /// <summary>
-        /// Gets or sets the height of this Size.
+        /// Gets or sets the height of this size.
         /// </summary>
         public int Height;
 
         /// <summary>
-        /// Gets or sets the width of this Size.
+        /// Gets or sets the width of this size.
         /// </summary>
         public int Width;
 

@@ -10,6 +10,7 @@
  */
 
 using Oddmatics.RozWorld.API.Client.Input;
+using Oddmatics.RozWorld.API.Client.Interface;
 using System;
 
 namespace Oddmatics.RozWorld.API.Client
@@ -20,12 +21,17 @@ namespace Oddmatics.RozWorld.API.Client
     public abstract class Renderer
     {
         /// <summary>
-        /// Gets whether this Renderer is initialised.
+        /// Gets the IRendererContext object instance used to interact with this renderer.
         /// </summary>
-        public abstract bool Initialised { get; protected set; }
+        public abstract IRendererContext Context { get; protected set; }
 
         /// <summary>
-        /// Gets the InputUpdateCallback for this Renderer.
+        /// Gets whether this renderer has been initialised.
+        /// </summary>
+        public virtual bool Initialised { get; protected set; }
+
+        /// <summary>
+        /// Gets the InputUpdateCallback for this renderer.
         /// </summary>
         protected InputUpdateCallback InputUpdateCallback
         {
@@ -48,7 +54,7 @@ namespace Oddmatics.RozWorld.API.Client
 
 
         /// <summary>
-        /// Initialises this Renderer.
+        /// Initialises this renderer.
         /// </summary>
         /// <returns>True if the renderer was successfully initialised.</returns>
         public abstract bool Initialise();
@@ -68,12 +74,12 @@ namespace Oddmatics.RozWorld.API.Client
         public abstract void SetWindowSize(byte window, short width, short height);
 
         /// <summary>
-        /// Starts this Renderer.
+        /// Starts this renderer.
         /// </summary>
         public abstract void Start();
 
         /// <summary>
-        /// Stops this Renderer.
+        /// Stops this renderer.
         /// </summary>
         public abstract void Stop();
     }

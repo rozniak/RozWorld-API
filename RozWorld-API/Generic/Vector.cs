@@ -19,13 +19,12 @@ namespace Oddmatics.RozWorld.API.Generic
     public struct Vector
     {
         /// <summary>
-        /// The angle (in radians) of this Vector.
-        /// 0 is directly east.
+        /// The angle (in radians) of this vector. 0 is directly east.
         /// </summary>
         public double Angle { get; private set; }
 
         /// <summary>
-        /// The speed of this Vector.
+        /// The magnitude of this vector.
         /// </summary>
         public double Magnitude { get; private set; }
         
@@ -33,7 +32,7 @@ namespace Oddmatics.RozWorld.API.Generic
         /// <summary>
         /// Initialises a new instance of the Vector class with a specified angle and magnitude.
         /// </summary>
-        /// <param name="angle">The angle (in radians); 0 is directly east.</param>
+        /// <param name="angle">The angle (in radians). 0 is directly east.</param>
         /// <param name="magnitude">The magnitude.</param>
         public Vector(double angle, double magnitude)
             : this()

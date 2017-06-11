@@ -60,12 +60,14 @@
     <Compile Include="Client\Input\IKeyboard.cs" />
     <Compile Include="Client\Interface\IRendererContext.cs" />
     <Compile Include="Client\Interface\IRenderTask.cs" />
+    <Compile Include="Client\Interface\RenderPart.cs" />
     <Compile Include="Client\IPlugin.cs" />
     <Compile Include="Client\Renderer.cs" />
     <Compile Include="Client\IRwClient.cs" />
     <Compile Include="Client\RendererInfo.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
+    <Compile Include="Generic\Colour.cs" />
     <Compile Include="Generic\EmptyLogger.cs" />
     <Compile Include="Generic\Event\TrustedPluginCheckCallback.cs" />
     <Compile Include="Generic\GameCore.cs" />
