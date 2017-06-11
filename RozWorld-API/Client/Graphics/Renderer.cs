@@ -21,11 +21,6 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
     public abstract class Renderer
     {
         /// <summary>
-        /// Gets the IRendererContext object instance used to interact with this renderer.
-        /// </summary>
-        public abstract IRendererContext Context { get; protected set; }
-
-        /// <summary>
         /// Gets the value that indicates whether this renderer has been initialised.
         /// </summary>
         public virtual bool Initialised { get; protected set; }
@@ -48,10 +43,17 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
 
 
         /// <summary>
-        /// Occurs when the user closes the renderer's last window.
+        /// Occurs when the user closes this renderer's last window.
         /// </summary>
-        public event EventHandler Closed;
+        public abstract event EventHandler Closed;
 
+
+        /// <summary>
+        /// Gets the render context of a window.
+        /// </summary>
+        /// <param name="window">The index of the window.</param>
+        /// <returns>The IRenderContext used by the window if it was found, null otherwise.</returns>
+        public abstract IRendererContext GetContext(byte window);
 
         /// <summary>
         /// Initialises this renderer.
