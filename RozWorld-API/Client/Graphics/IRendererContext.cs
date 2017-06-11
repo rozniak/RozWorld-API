@@ -11,7 +11,7 @@
 
 using Oddmatics.RozWorld.API.Generic;
 
-namespace Oddmatics.RozWorld.API.Client.Interface
+namespace Oddmatics.RozWorld.API.Client.Graphics
 {
     /// <summary>
     /// Represents a renderer context to be used by interface components.

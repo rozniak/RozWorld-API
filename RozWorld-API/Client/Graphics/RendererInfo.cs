@@ -11,7 +11,7 @@
 
 using System;
 
-namespace Oddmatics.RozWorld.API.Client
+namespace Oddmatics.RozWorld.API.Client.Graphics
 {
     /// <summary>
     /// Represents information regarding a graphics renderer for the RozWorld client.

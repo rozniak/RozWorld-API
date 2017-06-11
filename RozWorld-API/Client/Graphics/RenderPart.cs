@@ -11,7 +11,7 @@
 
 using Oddmatics.RozWorld.API.Generic;
 
-namespace Oddmatics.RozWorld.API.Client.Interface
+namespace Oddmatics.RozWorld.API.Client.Graphics
 {
     /// <summary>
     /// Represents an individual part of a render task that is used to construct the final operatable render task.

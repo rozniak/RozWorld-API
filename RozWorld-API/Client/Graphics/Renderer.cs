@@ -13,7 +13,7 @@ using Oddmatics.RozWorld.API.Client.Input;
 using Oddmatics.RozWorld.API.Client.Interface;
 using System;
 
-namespace Oddmatics.RozWorld.API.Client
+namespace Oddmatics.RozWorld.API.Client.Graphics
 {
     /// <summary>
     /// Represents a graphics renderer for the RozWorld client.
@@ -26,7 +26,7 @@ namespace Oddmatics.RozWorld.API.Client
         public abstract IRendererContext Context { get; protected set; }
 
         /// <summary>
-        /// Gets whether this renderer has been initialised.
+        /// Gets the value that indicates whether this renderer has been initialised.
         /// </summary>
         public virtual bool Initialised { get; protected set; }
 
@@ -42,7 +42,7 @@ namespace Oddmatics.RozWorld.API.Client
         private InputUpdateCallback _InputUpdateCallback;
 
         /// <summary>
-        /// Gets the amount of windows active.
+        /// Gets the amount of windows active in this renderer.
         /// </summary>
         public abstract byte WindowCount { get; }
 
@@ -60,13 +60,13 @@ namespace Oddmatics.RozWorld.API.Client
         public abstract bool Initialise();
         
         /// <summary>
-        /// Attempts to set the amount of live windows.
+        /// Sets the amount of windows in this renderer.
         /// </summary>
-        /// <param name="count">The amount of windows to set.</param>
+        /// <param name="count">The amount of windows.</param>
         public abstract void SetWindows(byte count);
 
         /// <summary>
-        /// Sets the size of a given window.
+        /// Sets the size of a window.
         /// </summary>
         /// <param name="window">The index of the window.</param>
         /// <param name="width">The new width.</param>

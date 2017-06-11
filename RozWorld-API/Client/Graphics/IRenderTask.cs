@@ -13,7 +13,7 @@ using Oddmatics.RozWorld.API.Generic;
 using System;
 using System.Collections.Generic;
 
-namespace Oddmatics.RozWorld.API.Client.Interface
+namespace Oddmatics.RozWorld.API.Client.Graphics
 {
     /// <summary>
     /// Represents a task that is operated by the renderer.
