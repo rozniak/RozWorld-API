@@ -30,13 +30,13 @@ namespace Oddmatics.RozWorld.API.Generic
         /// <summary>
         /// Initialises a new instance of the Size class with a specified width and height.
         /// </summary>
-        /// <param name="height">The height.</param>
         /// <param name="width">The width.</param>
-        public Size(int height, int width)
+        /// <param name="height">The height.</param>
+        public Size(int width, int height)
             : this()
         {
-            Height = height;
             Width = width;
+            Height = height;
         }
     }
 }

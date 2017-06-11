@@ -52,7 +52,7 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// Gets the render context of a window.
         /// </summary>
         /// <param name="window">The index of the window.</param>
-        /// <returns>The IRenderContext used by the window if it was found, null otherwise.</returns>
+        /// <returns>The IRendererContext used by the window if it was found, null otherwise.</returns>
         public abstract IRendererContext GetContext(byte window);
 
         /// <summary>
