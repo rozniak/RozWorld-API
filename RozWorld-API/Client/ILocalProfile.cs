@@ -19,12 +19,12 @@ namespace Oddmatics.RozWorld.API.Client
     public interface ILocalProfile
     {
         /// <summary>
-        /// Gets the input preferences for this ILocalProfile.
+        /// Gets the input preferences for this profile.
         /// </summary>
         IInputPreferences InputPreferences { get; }
 
         /// <summary>
-        /// Gets the name of this ILocalProfile.
+        /// Gets the name of this profile.
         /// </summary>
         string Name { get; }
     }

@@ -66,7 +66,7 @@ namespace Oddmatics.RozWorld.API.Client.Input
 
 
         /// <summary>
-        /// Sets this IControlMapping to defaults.
+        /// Sets this control mapping to defaults.
         /// </summary>
         void SetToDefaults();
     }

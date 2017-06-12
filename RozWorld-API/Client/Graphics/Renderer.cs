@@ -11,6 +11,7 @@
 
 using Oddmatics.RozWorld.API.Client.Input;
 using Oddmatics.RozWorld.API.Client.Interface;
+using Oddmatics.RozWorld.API.Generic;
 using System;
 
 namespace Oddmatics.RozWorld.API.Client.Graphics
@@ -60,6 +61,21 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// </summary>
         /// <returns>True if the renderer was successfully initialised.</returns>
         public abstract bool Initialise();
+
+        /// <summary>
+        /// Loads a texture from the specified relative filepath and maps it to the given identifier.
+        /// </summary>
+        /// <param name="filepath">The relative filepath of the texture.</param>
+        /// <param name="identifier">The texture identifier.</param>
+        /// <returns>Success if the texture was loaded and mapped to the identifier.</returns>
+        /// <remarks>
+        /// The 'relative filepath' is called such as it is supposed to allow support for texture packs
+        /// to be used in future.
+        /// 
+        /// For example, when loading "\rwcore\tiles\grass.png" the filepath will be translated to
+        /// something like "%gameroot%\texturepacks\default\rwcore\tiles\grass.png"
+        /// </remarks>
+        public abstract RwResult LoadTexture(string filepath, string identifier);
         
         /// <summary>
         /// Sets the amount of windows in this renderer.

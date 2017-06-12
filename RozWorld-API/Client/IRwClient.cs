@@ -42,17 +42,17 @@ namespace Oddmatics.RozWorld.API.Client
         Dictionary<byte, Size> DisplayResolutions { get; }
 
         /// <summary>
-        /// Gets the IInputHandler instance for this IRwClient.
+        /// Gets the input handler of this client.
         /// </summary>
         IInputHandler Input { get; }
 
         /// <summary>
-        /// Gets the IInterfaceHandler instance for this IRwClient.
+        /// Gets the interface handler of this client.
         /// </summary>
         IInterfaceHandler Interface { get; }
 
         /// <summary>
-        /// Gets the logger this IRwClient is using.
+        /// Gets the logger this client is using.
         /// </summary>
         ILogger Logger { get; }
 
@@ -60,5 +60,13 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the target RozWorld version of this client implementation.
         /// </summary>
         string RozWorldVersion { get; }
+
+
+        /// <summary>
+        /// Calls upon this client to load in required assets as listed in the specified require file.
+        /// </summary>
+        /// <param name="requireFile">The require file.</param>
+        /// <returns>Success if all assets were loaded correctly.</returns>
+        RwResult LoadAssets(string requireFile);
     }
 }

@@ -17,12 +17,12 @@ namespace Oddmatics.RozWorld.API.Client.Input
     public interface IInputPreferences
     {
         /// <summary>
-        /// Gets or sets the IControlMapping being used.
+        /// Gets or sets the control mapping being used.
         /// </summary>
         IControlMapping ControlMapping { get; }
 
         /// <summary>
-        /// Gets or sets the ControlMethod being used.
+        /// Gets or sets the control method being used.
         /// </summary>
         ControlMethod ControlMethod { get; set; }
 
