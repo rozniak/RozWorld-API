@@ -65,6 +65,7 @@
     <Compile Include="Client\Graphics\Renderer.cs" />
     <Compile Include="Client\IRwClient.cs" />
     <Compile Include="Client\Graphics\RendererInfo.cs" />
+    <Compile Include="Client\RwResource.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
     <Compile Include="Generic\Colour.cs" />
