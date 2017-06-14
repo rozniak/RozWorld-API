@@ -12,6 +12,7 @@
 using Oddmatics.RozWorld.API.Client.Input;
 using Oddmatics.RozWorld.API.Client.Interface;
 using Oddmatics.RozWorld.API.Generic;
+using System;
 using System.Collections.Generic;
 
 namespace Oddmatics.RozWorld.API.Client
@@ -60,6 +61,12 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the target RozWorld version of this client implementation.
         /// </summary>
         string RozWorldVersion { get; }
+
+
+        /// <summary>
+        /// Occurs when the client has reached a stage where it is ready to load assets.
+        /// </summary>
+        event EventHandler ReadyForAssets;
 
 
         /// <summary>
