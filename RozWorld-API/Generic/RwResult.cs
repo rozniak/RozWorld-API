@@ -103,8 +103,17 @@ namespace Oddmatics.RozWorld.API.Generic
         /// <summary>
         /// The account operation cannot be performed it is logged on currently, it must be logged off.
         /// </summary>
-        MustBeOffline = 20
-            
+        MustBeOffline = 20,
+
+        #endregion
+
+        #region System Status Codes
+
+        /// <summary>
+        /// The system is not in a state that is ready to perform the requested operation.
+        /// </summary>
+        NotReady = 100
+
         #endregion
     }
 }
