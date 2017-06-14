@@ -83,14 +83,14 @@
     <Compile Include="Generic\Level\ITile.cs" />
     <Compile Include="Generic\Level\Weather.cs" />
     <Compile Include="Generic\Level\IWorld.cs" />
-    <Compile Include="Generic\Location.cs" />
+    <Compile Include="Generic\RwPoint.cs" />
     <Compile Include="Generic\LogLevel.cs" />
     <Compile Include="Generic\Progression\IRankSystem.cs" />
     <Compile Include="Generic\RwCore.cs" />
     <Compile Include="Generic\RwInstanceType.cs" />
     <Compile Include="Generic\RwResult.cs" />
-    <Compile Include="Generic\Size.cs" />
-    <Compile Include="Generic\Vector.cs" />
+    <Compile Include="Generic\RwSize.cs" />
+    <Compile Include="Generic\RwVector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\Accounts\AccountRecord.cs" />
     <Compile Include="Server\Accounts\IAccount.cs" />

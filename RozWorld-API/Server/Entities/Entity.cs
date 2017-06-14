@@ -75,14 +75,14 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// <summary>
         /// Gets or sets the current velocity of this Entity.
         /// </summary>
-        public Vector Velocity { get; set; }
+        public RwVector Velocity { get; set; }
 
 
         /// <summary>
         /// Applies a force onto this Entity.
         /// </summary>
         /// <param name="force">The force Vector to apply.</param>
-        public void ApplyForce(Vector force)
+        public void ApplyForce(RwVector force)
         {
             // TODO: Some physics calcs for getting resultant velocity vector
         }

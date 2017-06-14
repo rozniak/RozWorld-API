@@ -40,7 +40,7 @@ namespace Oddmatics.RozWorld.API.Client
         /// <summary>
         /// Gets the display resolutions of screens that have been configured.
         /// </summary>
-        Dictionary<byte, Size> DisplayResolutions { get; }
+        Dictionary<byte, RwSize> DisplayResolutions { get; }
 
         /// <summary>
         /// Gets the input handler of this client.

@@ -55,7 +55,7 @@ namespace Oddmatics.RozWorld.API.Client.Interface
         /// <summary>
         /// Gets or sets the location of this IControl.
         /// </summary>
-        public virtual Location Location { get; set; }
+        public virtual RwPoint Location { get; set; }
 
         /// <summary>
         /// Gets or sets the name of this control.

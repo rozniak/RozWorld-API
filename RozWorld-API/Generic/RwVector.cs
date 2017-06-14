@@ -16,7 +16,7 @@ namespace Oddmatics.RozWorld.API.Generic
     /// <summary>
     /// Represents a 2D vector.
     /// </summary>
-    public struct Vector
+    public struct RwVector
     {
         /// <summary>
         /// The angle (in radians) of this vector. 0 is directly east.
@@ -34,7 +34,7 @@ namespace Oddmatics.RozWorld.API.Generic
         /// </summary>
         /// <param name="angle">The angle (in radians). 0 is directly east.</param>
         /// <param name="magnitude">The magnitude.</param>
-        public Vector(double angle, double magnitude)
+        public RwVector(double angle, double magnitude)
             : this()
         {
             Angle = angle;

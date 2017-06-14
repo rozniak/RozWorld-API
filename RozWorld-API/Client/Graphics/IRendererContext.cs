@@ -21,7 +21,7 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <summary>
         /// Gets the size of the client area of the parent window.
         /// </summary>
-        Size ClientSize { get; }
+        RwSize ClientSize { get; }
 
 
         /// <summary>

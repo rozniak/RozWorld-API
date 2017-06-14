@@ -21,7 +21,7 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <summary>
         /// Gets or sets the target triangle vertices to draw this part.
         /// </summary>
-        public Location[] DrawVertices { get; set; }
+        public RwPoint[] DrawVertices { get; set; }
 
         /// <summary>
         /// Gets or sets the texture ID of this part.
@@ -31,7 +31,7 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <summary>
         /// Gets or sets the UV vertices used to map the texture of this part.
         /// </summary>
-        public Location[] UvVetices { get; set; }
+        public RwPoint[] UvVetices { get; set; }
 
 
         /// <summary>
@@ -39,20 +39,20 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// </summary>
         public RenderPart()
         {
-            DrawVertices = new Location[]
+            DrawVertices = new RwPoint[]
             {
-                new Location(0, 0),
-                new Location(0, 0),
-                new Location(0, 0)
+                new RwPoint(0, 0),
+                new RwPoint(0, 0),
+                new RwPoint(0, 0)
             };
 
             TextureId = -1;
 
-            UvVetices = new Location[]
+            UvVetices = new RwPoint[]
             {
-                new Location(0, 0),
-                new Location(0, 0),
-                new Location(0, 0)
+                new RwPoint(0, 0),
+                new RwPoint(0, 0),
+                new RwPoint(0, 0)
             };
         }
     }

@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Generic.Size -- 2D Size
+ * Oddmatics.RozWorld.API.Generic.Location -- 2D Location
  * 
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<http://www.oddmatics.uk>>
@@ -12,31 +12,31 @@
 namespace Oddmatics.RozWorld.API.Generic
 {
     /// <summary>
-    /// Represents a size in 2D.
+    /// Represents a location on a 2D plane.
     /// </summary>
-    public struct Size
+    public struct RwPoint
     {
         /// <summary>
-        /// Gets or sets the height of this size.
+        /// Gets or sets the X coordinate of this location.
         /// </summary>
-        public int Height;
+        public int X { get; set; }
 
         /// <summary>
-        /// Gets or sets the width of this size.
+        /// Gets or sets the Y coordinate of this location.
         /// </summary>
-        public int Width;
+        public int Y { get; set; }
 
 
         /// <summary>
-        /// Initialises a new instance of the Size class with a specified width and height.
+        /// Initialises a new instance of the Location class with a specified set of 2D coordinates.
         /// </summary>
-        /// <param name="width">The width.</param>
-        /// <param name="height">The height.</param>
-        public Size(int width, int height)
+        /// <param name="x">The x-coordinate.</param>
+        /// <param name="y">The y-coordinate.</param>
+        public RwPoint(int x, int y)
             : this()
         {
-            Width = width;
-            Height = height;
+            X = x;
+            Y = y;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <summary>
         /// Gets or sets the rotation origin that will be used when rotating all render parts in this task.
         /// </summary>
-        Location RotationOrigin { get; set; }
+        RwPoint RotationOrigin { get; set; }
 
         /// <summary>
         /// Gets or sets the tint effect that will be applied to all render parts in this task.

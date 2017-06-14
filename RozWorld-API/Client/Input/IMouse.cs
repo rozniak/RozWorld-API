@@ -32,6 +32,6 @@ namespace Oddmatics.RozWorld.API.Client.Input
         /// <summary>
         /// Gets the Location of the mouse pointer.
         /// </summary>
-        Location Location { get; }
+        RwPoint Location { get; }
     }
 }
