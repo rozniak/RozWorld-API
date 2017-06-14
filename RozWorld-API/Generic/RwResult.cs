@@ -45,6 +45,16 @@ namespace Oddmatics.RozWorld.API.Generic
         /// </summary>
         FileNotFound = 5,
 
+        /// <summary>
+        /// The requested file could not be read because the format is invalid or unsupported.
+        /// </summary>
+        InvalidFileFormat = 6,
+
+        /// <summary>
+        /// The requested file could not be loaded because another asset is already using the same identifier.
+        /// </summary>
+        DuplicateAssetIdentifier = 7,
+
         #endregion
 
 
