@@ -13,6 +13,7 @@ using Oddmatics.RozWorld.API.Client;
 using Oddmatics.RozWorld.API.Generic.Language;
 using Oddmatics.RozWorld.API.Server;
 using System;
+using System.IO;
 
 namespace Oddmatics.RozWorld.API.Generic
 {
@@ -70,7 +71,7 @@ namespace Oddmatics.RozWorld.API.Generic
             }
         }
         private static RwInstanceType _InstanceType = RwInstanceType.Unset;
-        
+
         /// <summary>
         /// Gets or sets the shared ILanguageSystem instance for RozWorld.
         /// </summary>
@@ -79,7 +80,7 @@ namespace Oddmatics.RozWorld.API.Generic
         {
             get { return _LanguageSystem; }
             set { if (_LanguageSystem == null) _LanguageSystem = value; else
-                throw new InvalidOperationException("RwCore.LanguageSystem.Set: Cannot set language system, it is not null."); }
+                    throw new InvalidOperationException("RwCore.LanguageSystem.Set: Cannot set language system, it is not null."); }
         }
         private static ILanguageSystem _LanguageSystem;
 
@@ -107,5 +108,24 @@ namespace Oddmatics.RozWorld.API.Generic
             }
         }
         private static IRwServer _Server;
+
+        /// <summary>
+        /// Gets or sets the working directory for RozWorld.
+        /// </summary>
+        public static string WorkingDirectory
+        {
+            get { return _WorkingDirectory; }
+            set
+            {
+                if (!String.IsNullOrEmpty(_WorkingDirectory))
+                    throw new InvalidOperationException("RwCore.WorkingDirectory.Set: Working directory has already been set.");
+
+                if (!Directory.Exists(value))
+                    throw new DirectoryNotFoundException("RwCore.WorkingDirectory.Set: The specified directory does not exist.");
+
+                _WorkingDirectory = value;
+            }
+        }
+        private static string _WorkingDirectory;
     }
 }
