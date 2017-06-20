@@ -46,5 +46,12 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <param name="id">The ID of the texture to delete.</param>
         /// <returns>Success if the texture was deleted.</returns>
         RwResult DeleteTexture(int id);
+
+        /// <summary>
+        /// Retrieves a texture's ID by its string identifier.
+        /// </summary>
+        /// <param name="identifier">The texture identifier.</param>
+        /// <returns>The ID of the texture if it was found, -1 otherwise.</returns>
+        int GetTextureId(string identifier);
     }
 }
