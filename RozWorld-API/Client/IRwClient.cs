@@ -62,6 +62,11 @@ namespace Oddmatics.RozWorld.API.Client
         /// </summary>
         string RozWorldVersion { get; }
 
+        /// <summary>
+        /// Gets the root directory that relative texture paths stem from.
+        /// </summary>
+        string TexturesRoot { get; }
+
 
         /// <summary>
         /// Occurs when the client has reached a stage where it is ready to load assets.
