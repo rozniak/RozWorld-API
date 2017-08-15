@@ -59,8 +59,6 @@
     <Compile Include="Client\Interface\IInterfaceHandler.cs" />
     <Compile Include="Client\Input\IKeyboard.cs" />
     <Compile Include="Client\Graphics\IRendererContext.cs" />
-    <Compile Include="Client\Graphics\IRenderTask.cs" />
-    <Compile Include="Client\Graphics\RenderPart.cs" />
     <Compile Include="Client\IPlugin.cs" />
     <Compile Include="Client\Graphics\Renderer.cs" />
     <Compile Include="Client\IRwClient.cs" />

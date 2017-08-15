@@ -35,12 +35,6 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         int CreateFontTexture(string fontFilename, string text, byte pt, Colour colour);
 
         /// <summary>
-        /// Creates a task for the renderer.
-        /// </summary>
-        /// <returns>The IRenderTask object this method creates.</returns>
-        IRenderTask CreateTask();
-
-        /// <summary>
         /// Deletes a texture.
         /// </summary>
         /// <param name="id">The ID of the texture to delete.</param>
