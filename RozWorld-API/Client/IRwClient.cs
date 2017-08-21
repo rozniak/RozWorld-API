@@ -2,9 +2,9 @@
  * Oddmatics.RozWorld.API.Client.IRwClient -- RozWorld Client
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
- * <<http://www.oddmatics.uk>>
+ * <<https://oddmatics.uk>>
  * <<http://roz.world>>
- * <<http://github.com/rozniak/RozWorld-API>>
+ * <<https://github.com/rozniak/RozWorld-API>>
  *
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
@@ -66,19 +66,5 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the root directory that relative texture paths stem from.
         /// </summary>
         string TexturesRoot { get; }
-
-
-        /// <summary>
-        /// Occurs when the client has reached a stage where it is ready to load assets.
-        /// </summary>
-        event EventHandler ReadyForAssets;
-
-
-        /// <summary>
-        /// Calls upon this client to load in required assets as listed in the specified require file.
-        /// </summary>
-        /// <param name="requireFile">The require file.</param>
-        /// <returns>Success if all assets were loaded correctly.</returns>
-        RwResult LoadAssets(string requireFile);
     }
 }
