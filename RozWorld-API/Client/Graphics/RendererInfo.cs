@@ -75,7 +75,7 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
             Author = author;
             Description = description;
 
-            if (rendererType is Renderer)
+            if (rendererType.BaseType == typeof(Renderer))
             {
                 RendererType = rendererType;
                 Valid = true;
