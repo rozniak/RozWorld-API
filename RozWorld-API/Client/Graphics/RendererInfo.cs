@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Client.RendererInfo -- RozWorld Client Renderer Information
+ * Oddmatics.RozWorld.API.Client.Graphics.RendererInfo -- RozWorld Client Renderer Information
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<https://oddmatics.uk>>

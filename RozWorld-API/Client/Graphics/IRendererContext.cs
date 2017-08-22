@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Client.Interface.IRendererContext -- RozWorld Client Renderer Context
+ * Oddmatics.RozWorld.API.Client.Graphics.IRendererContext -- RozWorld Client Renderer Context
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<https://oddmatics.uk>>
@@ -22,17 +22,27 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// Gets the size of the client area of the parent window.
         /// </summary>
         RwSize ClientSize { get; }
+        
+        /// <summary>
+        /// Gets the amount of render jobs being done by this context.
+        /// </summary>
+        int JobCount { get; }
+
 
 
         /// <summary>
-        /// Creates a font texture.
+        /// Creates a new render job.
         /// </summary>
-        /// <param name="fontFilename">The filename of the font file to use.</param>
-        /// <param name="text">The text string.</param>
-        /// <param name="pt">The font size in points (pt).</param>
-        /// <param name="colour">The colour of the text.</param>
-        /// <returns>The texture ID of the created font texture, -1 if the creation failed.</returns>
-        int CreateFontTexture(string fontFilename, string text, byte pt, Colour colour);
+        /// <returns>The render job that was created, cast as an IRenderJob.</returns>
+        IRenderJob CreateJob();
+
+        /// <summary>
+        /// Creates a new render job for drawing a string.
+        /// </summary>
+        /// <param name="text">The string of text.</param>
+        /// <param name="fontIdentifier">The identifier of the font.</param>
+        /// <returns>The render job that was created, cast as an IRenderJob.</returns>
+        IRenderJob CreateStringJob(string text, string fontIdentifier);
 
         /// <summary>
         /// Deletes a texture.

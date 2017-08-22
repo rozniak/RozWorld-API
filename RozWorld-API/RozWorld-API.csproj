@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\Graphics\IDrawSprite.cs" />
+    <Compile Include="Client\Graphics\IRenderJob.cs" />
     <Compile Include="Client\ILocalProfile.cs" />
     <Compile Include="Client\Input\IControlMapping.cs" />
     <Compile Include="Client\Input\ControlMethod.cs" />
