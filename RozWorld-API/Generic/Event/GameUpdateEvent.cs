@@ -29,14 +29,14 @@ namespace Oddmatics.RozWorld.API.Generic.Event
         /// <summary>
         /// Gets the time elapsed since the last game update.
         /// </summary>
-        public float DeltaTime { get; private set; }
+        public TimeSpan DeltaTime { get; private set; }
 
 
         /// <summary>
         /// Initialises a new instance fo the GameUpdateEventArgs class with a specified time delta.
         /// </summary>
         /// <param name="deltaTime">The time elapsed since the last game update.</param>
-        public GameUpdateEventArgs(float deltaTime)
+        public GameUpdateEventArgs(TimeSpan deltaTime)
         {
             DeltaTime = deltaTime;
         }
