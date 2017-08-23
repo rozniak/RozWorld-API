@@ -69,6 +69,11 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <param name="identifier">The font identifier.</param>
         /// <returns>Success if the font was loaded and mapped to the identifier.</returns>
         public abstract RwResult LoadFont(string filepath, int pointSize, string identifier);
+
+        /// <summary>
+        /// Renders the next frame to all contexts.
+        /// </summary>
+        public abstract void RenderFrame();
         
         /// <summary>
         /// Sets the amount of windows in this renderer.
