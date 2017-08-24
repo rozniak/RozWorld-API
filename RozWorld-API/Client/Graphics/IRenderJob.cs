@@ -50,6 +50,7 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <param name="location">The top-left point to draw the sprite.</param>
         /// <param name="blitStart">The top-left point in which to start blitting from.</param>
         /// <param name="blitEnd">The bottom-right point in which to cease blitting.</param>
+        /// <param name="rotation">The amount to rotate the sprite, in radians.</param>
         /// <param name="colour">The tint to apply to the sprite.</param>
         /// <returns>The sprite that this method creates, cast as an IDrawSprite.</returns>
         IDrawSprite CreateSprite(RwPoint location, RwPoint blitStart, RwPoint blitEnd, float rotation, Colour colour);

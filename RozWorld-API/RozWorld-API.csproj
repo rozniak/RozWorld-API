@@ -70,7 +70,6 @@
     <Compile Include="Generic\Chat\ChatColour.cs" />
     <Compile Include="Generic\Colour.cs" />
     <Compile Include="Generic\EmptyLogger.cs" />
-    <Compile Include="Generic\Event\GameUpdateEvent.cs" />
     <Compile Include="Generic\Event\TrustedPluginCheckCallback.cs" />
     <Compile Include="Generic\GameCore.cs" />
     <Compile Include="Generic\Game\Difficulty.cs" />

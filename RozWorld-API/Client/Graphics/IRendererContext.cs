@@ -33,8 +33,9 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <summary>
         /// Creates a new render job.
         /// </summary>
+        /// <param name="textureIdentifier">The identifier of the texture.</param>
         /// <returns>The render job that was created, cast as an IRenderJob.</returns>
-        IRenderJob CreateJob();
+        IRenderJob CreateJob(string textureIdentifier);
 
         /// <summary>
         /// Creates a new render job for drawing a string.
@@ -57,5 +58,14 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         /// <param name="identifier">The texture identifier.</param>
         /// <returns>The ID of the texture if it was found, -1 otherwise.</returns>
         int GetTextureId(string identifier);
+
+        /// <summary>
+        /// Loads a font from the specified filepath and point size, and maps it to the given identifier.
+        /// </summary>
+        /// <param name="filepath">The filepath of the font.</param>
+        /// <param name="pointSize">The point size to load.</param>
+        /// <param name="identifier">The font identifier.</param>
+        /// <returns>Success if the font was loaded and mapped to the identifier.</returns>
+        RwResult LoadFont(string filepath, int pointSize, string identifier);
     }
 }
