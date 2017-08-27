@@ -35,6 +35,11 @@ namespace Oddmatics.RozWorld.API.Client.Graphics
         Colour Colour { get; set; }
 
         /// <summary>
+        /// Gets the point at which to draw this sprite to the viewport.
+        /// </summary>
+        RwPoint Location { get; set; }
+
+        /// <summary>
         /// Gets or sets the amount to rotate this sprite, in radians.
         /// </summary>
         float Rotation { get; set; }
