@@ -42,23 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\Window\Graphics\IDrawSprite.cs" />
-    <Compile Include="Client\Window\Graphics\IGraphics.cs" />
-    <Compile Include="Client\Window\Graphics\IRenderJob.cs" />
-    <Compile Include="Client\ILocalProfile.cs" />
-    <Compile Include="Client\Input\IControlMapping.cs" />
-    <Compile Include="Client\Input\ControlMethod.cs" />
-    <Compile Include="Client\Input\IInputHandler.cs" />
-    <Compile Include="Client\Input\IInputPreferences.cs" />
-    <Compile Include="Client\Input\IMouse.cs" />
-    <Compile Include="Client\Input\InputType.cs" />
-    <Compile Include="Client\Input\InputUpdateCallback.cs" />
-    <Compile Include="Client\Input\IXboxController.cs" />
-    <Compile Include="Client\Input\IKeyboard.cs" />
-    <Compile Include="Client\Window\Graphics\IRendererContext.cs" />
-    <Compile Include="Client\Graphics\Renderer.cs" />
     <Compile Include="Client\IRwClient.cs" />
-    <Compile Include="Client\Graphics\RendererInfo.cs" />
+    <Compile Include="Client\Window\InputUpdate.cs" />
     <Compile Include="Client\Window\IWindowManager.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
@@ -80,7 +65,6 @@
     <Compile Include="Generic\RwPoint.cs" />
     <Compile Include="Generic\LogLevel.cs" />
     <Compile Include="Generic\Progression\IRankSystem.cs" />
-    <Compile Include="Generic\RwCore.cs" />
     <Compile Include="Generic\RwInstanceType.cs" />
     <Compile Include="Generic\RwResult.cs" />
     <Compile Include="Generic\RwSize.cs" />

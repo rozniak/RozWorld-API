@@ -139,7 +139,7 @@ namespace Oddmatics.RozWorld.API.Server.Entities
         /// </summary>
         public void PerformServerAttachment()
         {
-            RwCore.Server.Tick += new ServerTickEventHandler(Server_Tick);
+            //RwCore.Server.Tick += new ServerTickEventHandler(Server_Tick);
         }
 
         /// <summary>

@@ -8,8 +8,7 @@
  *
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
-
-using Oddmatics.RozWorld.API.Client.Input;
+ 
 using Oddmatics.RozWorld.API.Generic;
 using System.Collections.Generic;
 
@@ -39,11 +38,6 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the display resolutions of screens that have been configured.
         /// </summary>
         Dictionary<byte, RwSize> DisplayResolutions { get; }
-
-        /// <summary>
-        /// Gets the input handler of this client.
-        /// </summary>
-        IInputHandler Input { get; }
 
         /// <summary>
         /// Gets the logger this client is using.
