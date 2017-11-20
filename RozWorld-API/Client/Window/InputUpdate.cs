@@ -80,13 +80,17 @@ namespace Oddmatics.RozWorld.API.Client.Window
 
             // Set up new presses
             //
-            var newPresses = ActiveDownedInputs.Except(LastDownedInputs);
+            var newPresses = LastDownedInputs == null ?
+                ActiveDownedInputs :
+                ActiveDownedInputs.Except(LastDownedInputs);
 
             NewPresses = new List<string>(newPresses).AsReadOnly();
 
             // Set up new releases
             //
-            var newReleases = LastDownedInputs.Except(ActiveDownedInputs);
+            var newReleases = LastDownedInputs == null ?
+                new List<string>() :
+                LastDownedInputs.Except(ActiveDownedInputs);
 
             NewReleases = new List<string>(newReleases).AsReadOnly();
 
