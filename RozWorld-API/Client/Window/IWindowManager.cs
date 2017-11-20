@@ -36,9 +36,19 @@ namespace Oddmatics.RozWorld.API.Client.Window
 
 
         /// <summary>
+        /// Starts this window manager, with a single open window.
+        /// </summary>
+        void Start();
+
+        /// <summary>
         /// Retrieves the latest input state from this window manager.
         /// </summary>
         /// <returns>The latest input state.</returns>
         InputUpdate GetInputEvents();
+
+        /// <summary>
+        /// Stops this window manager, closing all open windows.
+        /// </summary>
+        void Stop();
     }
 }
