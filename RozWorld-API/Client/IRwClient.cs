@@ -1,5 +1,5 @@
 ﻿/**
- * Oddmatics.RozWorld.API.Client.IRwClient -- RozWorld Client
+ * Oddmatics.RozWorld.API.Client.IRozWorldClient -- RozWorld Client
  *
  * This source-code is part of the API for the RozWorld project by rozza of Oddmatics:
  * <<https://oddmatics.uk>>
@@ -10,7 +10,6 @@
  */
 
 using Oddmatics.RozWorld.API.Client.Input;
-using Oddmatics.RozWorld.API.Client.Interface;
 using Oddmatics.RozWorld.API.Generic;
 using System.Collections.Generic;
 
@@ -47,11 +46,6 @@ namespace Oddmatics.RozWorld.API.Client
         IInputHandler Input { get; }
 
         /// <summary>
-        /// Gets the interface handler of this client.
-        /// </summary>
-        IInterfaceHandler Interface { get; }
-
-        /// <summary>
         /// Gets the logger this client is using.
         /// </summary>
         ILogger Logger { get; }
@@ -60,10 +54,5 @@ namespace Oddmatics.RozWorld.API.Client
         /// Gets the target RozWorld version of this client implementation.
         /// </summary>
         string RozWorldVersion { get; }
-
-        /// <summary>
-        /// Gets the root directory that relative texture paths stem from.
-        /// </summary>
-        string TexturesRoot { get; }
     }
 }

@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\Graphics\IDrawSprite.cs" />
-    <Compile Include="Client\Graphics\IRenderJob.cs" />
+    <Compile Include="Client\Window\Graphics\IDrawSprite.cs" />
+    <Compile Include="Client\Window\Graphics\IGraphics.cs" />
+    <Compile Include="Client\Window\Graphics\IRenderJob.cs" />
     <Compile Include="Client\ILocalProfile.cs" />
     <Compile Include="Client\Input\IControlMapping.cs" />
     <Compile Include="Client\Input\ControlMethod.cs" />
@@ -53,25 +54,17 @@
     <Compile Include="Client\Input\InputType.cs" />
     <Compile Include="Client\Input\InputUpdateCallback.cs" />
     <Compile Include="Client\Input\IXboxController.cs" />
-    <Compile Include="Client\Interface\ControlCollection.cs" />
-    <Compile Include="Client\Interface\Control.cs" />
-    <Compile Include="Client\Interface\GamepadCursorMode.cs" />
-    <Compile Include="Client\Interface\IControlContainer.cs" />
-    <Compile Include="Client\Interface\Form.cs" />
-    <Compile Include="Client\Interface\IInterfaceHandler.cs" />
     <Compile Include="Client\Input\IKeyboard.cs" />
-    <Compile Include="Client\Graphics\IRendererContext.cs" />
-    <Compile Include="Client\IPlugin.cs" />
+    <Compile Include="Client\Window\Graphics\IRendererContext.cs" />
     <Compile Include="Client\Graphics\Renderer.cs" />
     <Compile Include="Client\IRwClient.cs" />
     <Compile Include="Client\Graphics\RendererInfo.cs" />
-    <Compile Include="Client\RwResource.cs" />
+    <Compile Include="Client\Window\IWindowManager.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
     <Compile Include="Generic\Colour.cs" />
     <Compile Include="Generic\EmptyLogger.cs" />
     <Compile Include="Generic\Event\TrustedPluginCheckCallback.cs" />
-    <Compile Include="Generic\GameCore.cs" />
     <Compile Include="Generic\Game\Difficulty.cs" />
     <Compile Include="Generic\Game\GameMode.cs" />
     <Compile Include="Generic\Game\Economy\ICurrency.cs" />
