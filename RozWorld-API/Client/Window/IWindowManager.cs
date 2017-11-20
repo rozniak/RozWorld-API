@@ -38,13 +38,19 @@ namespace Oddmatics.RozWorld.API.Client.Window
         /// <summary>
         /// Starts this window manager, with a single open window.
         /// </summary>
-        void Start();
+        /// <param name="clientReference">A reference to the client responsible for starting this renderer.</param>
+        bool Start(IRwClient clientReference);
 
         /// <summary>
         /// Retrieves the latest input state from this window manager.
         /// </summary>
         /// <returns>The latest input state.</returns>
         InputUpdate GetInputEvents();
+
+        /// <summary>
+        /// Renders the next game frame.
+        /// </summary>
+        void RenderFrame();
 
         /// <summary>
         /// Stops this window manager, closing all open windows.
