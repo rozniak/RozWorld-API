@@ -21,6 +21,11 @@ namespace Oddmatics.RozWorld.API.Client.Window
     public sealed class InputUpdate
     {
         /// <summary>
+        /// Gets the latest Unicode console key input.
+        /// </summary>
+        public char ConsoleInput { get; private set; }
+
+        /// <summary>
         /// Gets the current inputs that are pressed.
         /// </summary>
         public IList<string> DownedInputs { get; private set; }
@@ -96,6 +101,18 @@ namespace Oddmatics.RozWorld.API.Client.Window
 
 
             IsReadOnly = true;
+        }
+
+        /// <summary>
+        /// Reports a Unicode console input.
+        /// </summary>
+        /// <param name="input">The filtered Unicode input.</param>
+        public void ReportConsoleInput(char input)
+        {
+            if (IsReadOnly)
+                throw new InvalidOperationException("This input update state is current read-only and cannot be modified.");
+
+            ConsoleInput = input;
         }
 
         /// <summary>
