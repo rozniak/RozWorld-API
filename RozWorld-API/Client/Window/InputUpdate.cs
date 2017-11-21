@@ -62,7 +62,8 @@ namespace Oddmatics.RozWorld.API.Client.Window
         /// </summary>
         public InputUpdate(IList<string> lastDownedInputs = null)
         {
-            ActiveDownedInputs = new List<string>();
+            ActiveDownedInputs = lastDownedInputs == null ? new List<string>() : new List<string>(lastDownedInputs);
+            ConsoleInput = (char)255;
             DownedInputs = new List<string>().AsReadOnly();
             IsReadOnly = false;
             LastDownedInputs = lastDownedInputs;
