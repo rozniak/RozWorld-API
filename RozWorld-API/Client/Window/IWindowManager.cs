@@ -24,6 +24,11 @@ namespace Oddmatics.RozWorld.API.Client.Window
         string NiceName { get; }
 
         /// <summary>
+        /// Gets the controller interface for commanding this renderer.
+        /// </summary>
+        IRendererInterface RendererInterface { get; }
+
+        /// <summary>
         /// Gets the number of windows that are active in this window manager.
         /// </summary>
         byte WindowCount { get; set; }
