@@ -19,9 +19,10 @@ namespace Oddmatics.RozWorld.API.Client.Window
         /// <summary>
         /// Adds an instruction to the render instruction queue.
         /// </summary>
+        /// <param name="window">The window index.</param>
         /// <param name="instruction">The instruction.</param>
         /// <returns>The ID of the instruction as it exists in the queue.</returns>
-        uint AddInstruction(AbstractRendererInstruction instruction);
+        uint AddInstruction(byte window, AbstractRendererInstruction instruction);
 
         /// <summary>
         /// Acquires an ID for a loaded font.
@@ -33,7 +34,8 @@ namespace Oddmatics.RozWorld.API.Client.Window
         /// <summary>
         /// Removes an instruction from the render instruction queue.
         /// </summary>
+        /// <param name="window">The window index.</param>
         /// <param name="id">The ID of the instruction.</param>
-        void RemoveInstruction(uint id);
+        void RemoveInstruction(byte window, uint id);
     }
 }

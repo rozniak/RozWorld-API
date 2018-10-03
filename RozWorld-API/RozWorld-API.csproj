@@ -43,9 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client\IRwClient.cs" />
+    <Compile Include="Client\Window\AbstractRendererInstruction.cs" />
+    <Compile Include="Client\Window\FontInfo.cs" />
     <Compile Include="Client\Window\InputUpdate.cs" />
+    <Compile Include="Client\Window\IRendererInterface.cs" />
     <Compile Include="Client\Window\IWindowManager.cs" />
     <Compile Include="Client\Window\RendererInfo.cs" />
+    <Compile Include="Client\Window\RenderInstructionType.cs" />
+    <Compile Include="Client\Window\TextRendererInstruction.cs" />
     <Compile Include="Generic\Chat\ChatGraphic.cs" />
     <Compile Include="Generic\Chat\ChatColour.cs" />
     <Compile Include="Generic\Colour.cs" />
